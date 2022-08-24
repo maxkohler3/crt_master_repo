@@ -3,6 +3,7 @@ Library                   QForce
 Library                   String
 Library                   QVision
 Library                   DateTime 
+Library                   Collections
 
 
 *** Variables ***
