@@ -2,7 +2,7 @@
 Library                   QWeb
 Library                   QForce
 Library                   String
-Library                   QVision
+# Library                   QVision
 Library                   DateTime 
 Library                   Collections
 
