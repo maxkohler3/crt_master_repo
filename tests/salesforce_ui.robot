@@ -5,211 +5,206 @@ Suite Teardown                End suite
 
 
 *** Test Cases ***
-Enter A Lead
-    [tags]               Lead   Smoke   Regression
-    Home
-    LaunchApp            Sales
-    ClickText            Leads
-    VerifyText           Change Owner
-    ClickUntil           Lead Information        New
+Entering A Lead
+    [tags]                    Lead
+    Appstate                  Home
+    LaunchApp                 Sales
+    ClickText                 Leads
+    VerifyText                Change Owner
+    ClickText                 New
+    VerifyText                Lead Information
+    UseModal                  On                          # Only find fields from open modal dialog
 
-    UseModal             On                      #Only find fields from open modal dialog
-    Picklist             Salutation              Ms.
-    TypeText             First Name              Martha
-    TypeText             Last Name               Vineyard
-    Picklist             Lead Status             Open - Not Contacted
-    TypeText             Phone                   +12234567858449
-    TypeText             Company                 Copado
-    TypeText             Title                   Manager
-    TypeText             Email                   martha.vineyard@gmail.com
-    TypeText             Website                 https://www.copado.com/
-    Picklist             Lead Source             Web
-    ClickText            Save                    partial_match=False
-    UseModal             Off
-    Sleep                1
+    Picklist                  Salutation                  Ms.
+    TypeText                  First Name                  Tina
+    TypeText                  Last Name                   Smith
+    Picklist                  Lead Status                 New
+    TypeText                  Phone                       +12234567858449             First Name
+    TypeText                  Company                     Growmore                    Last Name
+    TypeText                  Title                       Manager                     Address Information
+    TypeText                  Email                       tina.smith@gmail.com        Rating
+    TypeText                  Website                     https://www.growmore.com/
 
-    ClickText            Details
-    VerifyField          Name                    Ms. Martha Vineyard
-    VerifyField          Lead Status             Open - Not Contacted
-    VerifyField          Phone                   +12234567858449
-    VerifyField          Company                 Copado    
-    VerifyField          Website                 https://www.copado.com/
-
-Convert Lead to Opportunity
-    [tags]               Lead
-    Home
-    LaunchApp            Sales
-    ClickText            Leads
-    ClickText            Martha Vineyard
-
-    ClickUntil           Convert Lead                Convert
-    ClickText            Opportunity                 2
-    TypeText             Opportunity Name            Robotic Testing
-    ClickUntil           Your lead has been converted               Convert             2
-
-    ClickText            Go to Leads
-    ClickText            Opportunities
-    VerifyText           Robotic Testing
-    ClickText            Accounts
-    VerifyText           Copado
-    ClickText            Contacts
-    VerifyText           Martha Vineyard
-
-Update Opportunity Record
-    [tags]               status_change
-    Home
-    ClickText            Opportunities
-    ClickText            Robotic Testing             delay=2   
-    ClickText            Show more actions 
-    ClickText            Edit                        anchor=Include Document    
-    UseModal
-    VerifyText           Edit Robotic Testing                   
-    PickList             Currency                    USD - U.S. Dollar  
-    PickList             Solution Type               Cloud Platform  
-    ClickText            Save                        partial_match=false
-    UseModal             Off
-
-    ClickText            Details
-    VerifyField          Opportunity Currency        USD - U.S. Dollar
-    VerifyField          Solution Type               Cloud Platform
-
-    ClickText            Mark Stage as Complete
-    Sleep                3
-    VerifyStage          Qualification               true   
-    VerifyStage          Prospecting                 false
-
-Create CPQ Quote
-    [Documentation]       Create quote against existing opportunity 
-    [Tags]                Lead    Regression
-    Appstate              Home
-    LaunchApp             Salesforce CPQ
-    ClickText             Opportunities   
-    ClickText             Robotic Testing              delay=2 
-    VerifyText            Mark Stage as Complete
-    VerifyStage           Qualification            
-    ClickText             Details
-    VerifyField           Opportunity Name            Robotic Testing
-    ClickText             Create Quote  
-
-    UseModal                  
-    VerifyText            Create Quote
-    ${date}               Get Current Date            result_format=%-m/%-d/%Y
-    Set Suite Variable    ${date}
-    TypeText              Quote Start Date            ${date}  
-    TypeText              Contract Length (months)     12
-    ClickText             Next 
-    UseModal              Off
-
-Edit CPQ Quote
-    ${quoteID}            GetText                   Q-
-    Set Suite Variable    ${quoteID}
-    ClickText             ${quoteID}
-    VerifyField           Quote Number              ${quoteID}
-    ClickText             Edit                      anchor=Delete
-    UseModal                
-    VerifyText            Edit ${quoteID}
-    PickList              Approval Status           Pending
-    TypeText              Notes                     Must Win Deal!
-    ClickText             Save                      partial_match=false
-    Sleep                 3
-
-    VerifyField           Primary Contact           Martha Vineyard            partial_match=true          
-    VerifyField           Approval Status           Pending
-    LogScreenshot
-
-Edit Lines in CPQ Quote
-    ClickText             Quotes   
-    ClickUntil            Details             ${quoteID}                delay=2
-    ClickText             Show more actions
-    ClickText             Edit Lines
-    Sleep                 10
-
-    Log                   Entering the ShadowDOM, duh duh duh    
-    SetConfig             ShadowDOM    True
-
-    ${startDate}          GetInputValue             Start Date
-    Set Suite Variable    ${startDate}
-    Should Be Equal       ${startDate}              ${date}
-
-    ${subTerm}            GetInputValue             Subscription Term
-    Set Suite Variable    ${subTerm}
-    Should Be Equal       ${subTerm}                12
-    LogScreenshot
-
-    ClickText             Add Products              anchor=Add Group
-    VerifyText            Guided Selling
-    QVision.ClickText     Cloud platform or individual product?          below=2          
-    QVision.ClickText     Cloud Platform            anchor=Cloud Product     
-    ClickText             Suggest
-    ClickCheckbox         BigQuery                  On  
-    ClickText             Save                      anchor=Cancel
-
-    ClickText             Calculate                 delay=3
-    ClickText             Quick Save
-    VerifyRow             USD 120,000.00            row_text=Google Cloud 
-    ClickText             Save                      anchor=Cancel
-    LogScreenshot
-    Sleep                 30
-
-    VerifyField           List Amount               USD 120,000.00           partial_match=true    
-    VerifyField           Price Book                Google Cloud Platform    partial_match=true
-
-Preview & Validate PDF Document
-    ClickText                 Show more actions
-    ClickText                 Preview Document
-    ClickText                 Preview                 anchor=Cancel    delay=10
-    QVision.VerifyText        Quotation               timeout=60
-    VerifyRow                 Net 30                  row_text=TEST ROBOT 
-    VerifyRow                 slockard@copado.com     row_text=TEST ROBOT 
-    VerifyRow                 USD 120,000.00          row_text=TOTAL
-    LogScreenshot
+    Picklist                  Lead Source                 Partner
+    ClickText                 Save                        partial_match=False
+    UseModal                  Off
+    Sleep                     1
     
-Submit and Approve Opportunity 
-    ClickText             Opportunities 
-    ClickText             Robotic Testing              delay=2 
-    ClickText             ${quoteID}
-    ClickText             Show more actions
-    ClickText             Submit for Approval 
-    VerifyField           Approval Status              Approved
+    ClickText                 Details
+    VerifyField               Name                        Ms. Tina Smith
+    VerifyField               Lead Status                 New
+    VerifyField               Phone                       +12234567858449
+    VerifyField               Company                     Growmore
+    VerifyField               Website                     https://www.growmore.com/
+
+    # as an example, let's check Phone number format. Should be "+" and 14 numbers
+    ${phone_num}=             GetFieldValue               Phone
+    Should Match Regexp	      ${phone_num}	              ^[+]\\d{14}$
+    
+    ClickText                 Leads
+    VerifyText                Tina Smith
+    VerifyText                Manager
+    VerifyText                Growmore
+
+
+Converting A Lead To Opportunity-Account-Contact
+    [tags]                    Lead
+    Appstate                  Home
+    LaunchApp                 Sales
+
+    ClickText                 Leads
+    ClickText                 Tina Smith
+
+    ClickUntil                Convert Lead                Convert
+    ClickText                 Opportunity                 2
+    TypeText                  Opportunity Name            Growmore Pace
+    ClickText                 Convert                     2
+    VerifyText                Your lead has been converted                            timeout=30
+
+    ClickText                 Go to Leads
+    ClickText                 Opportunities
+    VerifyText                Growmore Pace
+    ClickText                 Accounts
+    VerifyText                Growmore
+    ClickText                 Contacts
+    VerifyText                Tina Smith
+
+
+Creating An Account
+    [tags]                    Account
+    Appstate                  Home
+    LaunchApp                 Sales
+
+    ClickText                 Accounts
+    ClickUntil                Account Information         New
+
+    TypeText                  Account Name                Salesforce                  anchor=Parent Account
+    TypeText                  Phone                       +12258443456789             anchor=Fax
+    TypeText                  Fax                         +12258443456766
+    TypeText                  Website                     https://www.salesforce.com
+    Picklist                  Type                        Partner
+    Picklist                  Industry                    Finance
+
+    TypeText                  Employees                   35000
+    TypeText                  Annual Revenue              12 billion
+    ClickText                 Save                        partial_match=False
+
+    ClickText                 Details
+    VerifyText                Salesforce
+    VerifyText                35,000
+
+
+Creating An Opportunity For The Account
+    [tags]                    Account
+    Appstate                  Home
+    LaunchApp                 Sales
+    ClickText                 Accounts
+    VerifyText                Salesforce
+    VerifyText                Opportunities
+
+    ClickUntil                Stage                       Opportunities
+    ClickUntil                Opportunity Information     New
+    TypeText                  Opportunity Name            Safesforce Pace             anchor=Cancel   delay=2
+    TypeText                  Search Accounts...          Salesforce                  check=False
+    ClickText                 +12258443456789
+    Picklist                  Type                        New Business
+    ClickText                 Close Date                  Opportunity Information
+    ClickText                 Next Month
+    ClickText                 Today
+
+    Picklist                  Stage                       Prospecting
+    TypeText                  Amount                      5000000
+    Picklist                  Lead Source                 Partner
+    TypeText                  Next Step                   Qualification
+    TypeText                  Description                 This is first step
+    ClickText                 Save                        partial_match=False         # Do not accept partial match, i.e. "Save All"
+
+    Sleep                     1
+    ClickText                 Opportunities
+    VerifyText                Safesforce Pace
+
+
+Change status of opportunity
+    [tags]                    status_change
+    Appstate                  Home
+    ClickText                 Opportunities
+    ClickText                 Safesforce Pace             delay=2                     # intentionally delay action - 2 seconds
+    VerifyText                Contact Roles
+
+    ClickText                 Show actions for this object
+    ClickText                 Add Contact Roles
+    TypeText                  Search Contacts...          Tina    delay=2
+    ClickText                 Tina Smith
+    ClickText                 Next                        delay=3
+    ClickText                 Edit Role: Item 1
+    ClickText                 --None--
+    ClickText                 Decision Maker
+    ClickText                 Save                        partial_match=False
+    VerifyText                Tina Smith
+
+    ClickText                 Mark Stage as Complete
+    ClickText                 Opportunities               delay=2
+    ClickText                 Safesforce Pace
+    VerifyStage               Qualification               true
+    VerifyStage               Prospecting                 false
+
+
+Create A Contact For The Account
+    [tags]                    salesforce.Account
+    Appstate                  Home
+    LaunchApp                 Sales
+    ClickText                 Accounts
+    VerifyText                Salesforce
+    VerifyText                Contacts
+
+    ClickUntil                Email                       Contacts
+    ClickUntil                Contact Information         New
+    Picklist                  Salutation                  Mr.
+    TypeText                  First Name                  Richard
+    TypeText                  Last Name                   Brown
+    TypeText                  Phone                       +00150345678134             anchor=Mobile
+    TypeText                  Mobile                      +00150345678178
+    TypeText                  Search Accounts...          Salesforce                  check=False
+    ClickText                 +12258443456789
+
+    TypeText                  Email                       richard.brown@gmail.com     anchor=Reports To
+    TypeText                  Title                       Manager
+    ClickText                 Save                        partial_match=False
+    Sleep                     1
+    ClickText                 Contacts
+    VerifyText                Richard Brown
+
 
 Delete Test Data
-    [tags]                Test data
-    SetConfig             ShadowDOM    False
-    Home
-    LaunchApp             Salesforce CPQ
-    ClickText             Quotes    
-    VerifyText            ${quoteID}                 delay=3
-    ClickText             ${quoteID}
-    ClickText             Delete       Clone
-    ClickText             Delete       Cancel
+    [tags]                    Test data
+    Appstate                  Home
+    LaunchApp                 Sales
+    ClickText                 Accounts
+
+    Set Suite Variable        ${data}                     Salesforce
+    RunBlock                  NoData                      timeout=180s                exp_handler=DeleteAccounts
+    Set Suite Variable        ${data}                     Growmore
+    RunBlock                  NoData                      timeout=180s                exp_handler=DeleteAccounts
+
+    ClickText                 Opportunities
+    VerifyText                0 items
+    VerifyNoText              Safesforce Pace
+    VerifyNoText              Growmore Pace
+    VerifyNoText              Richard Brown
+    VerifyNoText              Tina Smith
+
+    # Delete Leads
+    ClickText                 Leads
+    VerifyText                Change Owner
+    Set Suite Variable        ${data}                     Tina Smith
+    RunBlock                  NoData                      timeout=180s                exp_handler=DeleteLeads
+    Set Suite Variable        ${data}                     John Doe
+    RunBlock                  NoData                      timeout=180s                exp_handler=DeleteLeads
     
-    LaunchApp             Sales
-    ClickText             Accounts
+LoginAs Example
+     [Documentation]           Example how to impersonate another user. Note: Admin rights needed
+     ...                       for the user who tries to impersonate another user
+     Appstate                  Home
+     LoginAs                   Chatter Expert
+     VerifyText                Salesforce Chatter
 
-    Set Suite Variable    ${data}                     Salesforce
-    RunBlock              NoData                      timeout=180s                exp_handler=DeleteAccounts
-    Set Suite Variable    ${data}                     Copado
-    RunBlock              NoData                      timeout=180s                exp_handler=DeleteAccounts
-
-    ClickText             Opportunities
-    VerifyNoText          Robotic Testing               
-    VerifyNoText          Martha Vineyard
-
-    ClickText             Leads
-    VerifyText            Change Owner
-    Set Suite Variable    ${data}                     Martha Vineyard
-    RunBlock              NoData                      timeout=180s                exp_handler=DeleteLeads
-
-Verify Picklist Options    
-    Home
-    LaunchApp             Sales
-    ClickText             Leads
-    ClickText             New
-    UseModal
-    ${salutation_options}=            GetPickList           Salutation 
-    @{salutation_list}=                Convert to List           ${salutation_options}
-    FOR    ${salutation}      IN    @{salutation_list}             
-        PickList            Salutation           ${salutation}
-        VerifyPickList      Salutation           ${salutation}
-        LogScreenshot
-    END
