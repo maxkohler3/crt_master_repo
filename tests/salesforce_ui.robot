@@ -44,9 +44,8 @@ Entering A Lead
 
 Converting A Lead To Opportunity
     [tags]                    Lead
-    Appstate                  Home
+    Home
     LaunchApp                 Sales
-
     ClickText                 Leads
     ClickUntil                Convert                 Tina Smith
 
