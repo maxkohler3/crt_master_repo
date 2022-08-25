@@ -14,7 +14,7 @@ ${home_url}               ${login_url}/lightning/page/home
 
 &{ext_api_headers}        Content-Type=application/json    X-AUTHORIZATION=${pat}
 ${api}                    https://api.robotic.copado.com/
-${first_name}             Sandeep
+
 
 
 *** Keywords ***
