@@ -22,7 +22,7 @@ Verify Picklist Options
 
 
 Data Driven Excel Test
-    Login
+    Home
     ClickText    Accounts
     ClickText    New
     UseModal
