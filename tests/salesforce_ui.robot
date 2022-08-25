@@ -97,4 +97,3 @@ LoginAs Example
      LoginAs                   Evan Bartlik
      VerifyText                Evan Bartlik 
      ClickText                 Log out as Evan Bartlik
-
