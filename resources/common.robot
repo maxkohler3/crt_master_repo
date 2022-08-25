@@ -41,6 +41,7 @@ Login
 Home
     [Documentation]       Navigate to homepage, login if needed
     GoTo                  ${home_url}
+    Sleep                 2
     ${login_status} =     IsText                      To access this page, you have to log in to Salesforce.    2
     Run Keyword If        ${login_status}             Login
     ClickText             Home
