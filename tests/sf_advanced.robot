@@ -29,7 +29,6 @@ E2E Data Driven Test
     Picklist          Salutation        ${salutation}
     TypeText          First Name        ${first_name}
     TypeText          Last Name         ${last_name}
-    PickList          Lead Status       ${lead_status}
     TypeText          Phone             ${phone}             
     TypeText          Company           ${company}                   
     TypeText          Title             ${title}                  
