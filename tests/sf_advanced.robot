@@ -19,38 +19,22 @@ E2E Data Driven Test
     DropDown          Country           United States
 
     Home
-    LaunchApp                 Sales
-    ClickText                 Leads
-    VerifyText                Change Owner
-    ClickText                 New
-    VerifyText                Lead Information
-    UseModal                  On                          # Only find fields from open modal dialog
+    LaunchApp         Sales
+    ClickText         Leads
+    ClickText         New
+    UseModal          On                          # Only find fields from open modal dialog
 
-    Picklist                  Salutation                  Ms.
-    TypeText                  First Name                  Tina
-    TypeText                  Last Name                   Smith
-    PickList                  Lead Status                 Open - Not Contacted
-    TypeText                  Phone                       +12234567858449             First Name
-    TypeText                  Company                     Growmore                    Last Name
-    TypeText                  Title                       Manager                     Address Information
-    TypeText                  Email                       tina.smith@gmail.com        Rating
-    TypeText                  Website                     https://www.growmore.com/
-
+    Picklist          Salutation        Ms.
+    TypeText          First Name        Tina
+    TypeText          Last Name         Smith
+    PickList          Lead Status       Open - Not Contacted
+    TypeText          Phone             12234567858449             First Name
+    TypeText          Company           Growmore                    Last Name
+    TypeText          Title             Manager                     Address Information
+    TypeText          Email             tina.smith@gmail.com        Rating
+    TypeText          Website           https://www.growmore.com/
+    ClickText         Cancel 
     
-    Home
-    LaunchApp    Sales
-    ClickText    Accounts
-    ClickText    New
-    UseModal
-
-    TypeText     Account Name    ${account_name}
-    TypeText     Phone           ${phone}
-    TypeText     Fax             ${fax}
-    TypeText     Website         ${website}
-    PickList     Industry        ${industry}
-    TypeText     Employees       ${employees}
-    TypeText     Annual Revenue  ${annual_revenue}
-    ClickText    Cancel  
 
 Verify Picklist Options    
     Home
