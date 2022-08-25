@@ -7,7 +7,7 @@ Suite Teardown                End suite
 *** Test Cases ***
  
 E2E Data Driven Test
-    [Documentation]   Create Lead on company website
+    [Documentation]   Create Lead on company website then verify record in SFDC
 
     GoTo              https://www.copado.com
     ClickText         GET A DEMO      
@@ -20,7 +20,7 @@ E2E Data Driven Test
     TypeText          Job Title*        ${title}
     DropDown          Country           ${country}
 
-    Home             
+    Home              #login to SFDC            
     LaunchApp         Sales
     ClickText         Leads
     ClickText         New
