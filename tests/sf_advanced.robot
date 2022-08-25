@@ -20,7 +20,6 @@ E2E Data Driven Test
     TypeText          Job Title*        ${title}
     DropDown          Country           ${country}
 
-    #Verify Lead record created in Salesforce
     Home             
     LaunchApp         Sales
     ClickText         Leads
