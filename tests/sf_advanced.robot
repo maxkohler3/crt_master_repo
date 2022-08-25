@@ -6,7 +6,19 @@ Suite Teardown                End suite
 
 *** Test Cases ***
 
-Data Driven Excel Test
+E2E Data Driven Test
+    GoTo              https://www.copado.com
+    ClickText         GET A DEMO      
+    TypeText          First Name*       Marty
+    TypeText          Last Name*        McFly
+    TypeText          Business Email*   delorean88@copado.com
+    TypeText          Phone*            1234567890
+    TypeText          Company*          Copado
+    DropDown          Employee Size*    1-2,500
+    TypeText          Job Title*        Sales Engineer
+    DropDown          Country           United States
+
+    
     Home
     LaunchApp    Sales
     ClickText    Accounts
