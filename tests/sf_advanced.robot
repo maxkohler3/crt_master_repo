@@ -8,7 +8,8 @@ Suite Teardown                End suite
  
 
 E2E Data Driven Test
-    [Arguments]    ${first_name}    ${last_name}    ${email}    ${phone}    ${company}    ${employees}    ${title}    ${website}
+    [Documentation]   Create Lead on company website
+
     GoTo              https://www.copado.com
     ClickText         GET A DEMO      
     TypeText          First Name*       ${first_name}
@@ -16,20 +17,21 @@ E2E Data Driven Test
     TypeText          Business Email*   ${email}
     TypeText          Phone*            ${phone} 
     TypeText          Company*          ${company}
-    DropDown          Employee Size*    1-2,500
+    DropDown          Employee Size*    ${employees}
     TypeText          Job Title*        ${title}
-    DropDown          Country           United States
+    DropDown          Country           ${country}
 
-    Home
+    #Verify Lead record created in Salesforce
+    Home             
     LaunchApp         Sales
     ClickText         Leads
     ClickText         New
     UseModal          On                          
 
-    Picklist          Salutation        Ms.
-    TypeText          First Name        Tina
-    TypeText          Last Name         Smith
-    PickList          Lead Status       Open - Not Contacted
+    Picklist          Salutation        ${salutation}
+    TypeText          First Name        ${first_name}
+    TypeText          Last Name         ${last_name}
+    PickList          Lead Status       ${lead_status}
     TypeText          Phone             ${phone}             
     TypeText          Company           ${company}                   
     TypeText          Title             ${title}                  
