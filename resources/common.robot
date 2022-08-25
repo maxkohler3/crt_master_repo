@@ -12,9 +12,9 @@ ${BROWSER}                chrome
 ${username}               crt-short@copado.com
 ${login_url}              https://slockard-dev-ed.lightning.force.com/          
 ${home_url}               ${login_url}/lightning/page/home
+
 &{ext_api_headers}        Content-Type=application/json    X-AUTHORIZATION=${pat}
 ${api}                    https://api.robotic.copado.com/
-${persona}                Max Kohler
 ${first_name}             Sandeep
 
 
@@ -63,6 +63,8 @@ Login As
     [Arguments]           ${persona}
     ClickText             Setup
     ClickText             Setup for current app
+    CloseWindow
+    CloseWindow
     SwitchWindow          NEW
     TypeText              Search Setup                ${persona}             delay=2
     ClickText             User                        anchor=${persona}      delay=5    # wait for list to populate, then click
