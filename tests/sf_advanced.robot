@@ -5,34 +5,36 @@ Suite Teardown                End suite
 
 
 *** Test Cases ***
+ 
 
 E2E Data Driven Test
+    [Arguments]    ${first_name}    ${last_name}    ${email}    ${phone}    ${company}    ${employees}    ${title}    ${website}
     GoTo              https://www.copado.com
     ClickText         GET A DEMO      
-    TypeText          First Name*       Marty
-    TypeText          Last Name*        McFly
-    TypeText          Business Email*   delorean88@copado.com
-    TypeText          Phone*            1234567890
-    TypeText          Company*          Copado
+    TypeText          First Name*       ${first_name}
+    TypeText          Last Name*        ${last_name}
+    TypeText          Business Email*   ${email}
+    TypeText          Phone*            ${phone} 
+    TypeText          Company*          ${company}
     DropDown          Employee Size*    1-2,500
-    TypeText          Job Title*        Sales Engineer
+    TypeText          Job Title*        ${title}
     DropDown          Country           United States
 
     Home
     LaunchApp         Sales
     ClickText         Leads
     ClickText         New
-    UseModal          On                          # Only find fields from open modal dialog
+    UseModal          On                          
 
     Picklist          Salutation        Ms.
     TypeText          First Name        Tina
     TypeText          Last Name         Smith
     PickList          Lead Status       Open - Not Contacted
-    TypeText          Phone             12234567858449             First Name
-    TypeText          Company           Growmore                    Last Name
-    TypeText          Title             Manager                     Address Information
-    TypeText          Email             tina.smith@gmail.com        Rating
-    TypeText          Website           https://www.growmore.com/
+    TypeText          Phone             ${phone}             
+    TypeText          Company           ${company}                   
+    TypeText          Title             ${title}                  
+    TypeText          Email             ${email}       
+    TypeText          Website           ${website}
     ClickText         Cancel 
     
 
