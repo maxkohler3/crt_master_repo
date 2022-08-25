@@ -63,7 +63,6 @@ Login As
     ClickText             Setup
     ClickText             Setup for current app
     CloseWindow
-    CloseWindow
     SwitchWindow          NEW
     TypeText              Search Setup                ${persona}             delay=2
     ClickText             User                        anchor=${persona}      delay=5    # wait for list to populate, then click
