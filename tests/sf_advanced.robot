@@ -6,7 +6,6 @@ Suite Teardown                End suite
 
 *** Test Cases ***
  
-
 E2E Data Driven Test
     [Documentation]   Create Lead on company website
 
