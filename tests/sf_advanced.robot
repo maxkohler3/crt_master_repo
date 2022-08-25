@@ -8,10 +8,11 @@ Suite Teardown                End suite
 
 Data Driven Excel Test
     Home
+    LaunchApp    Sales
     ClickText    Accounts
     ClickText    New
     UseModal
-    
+
     TypeText     Account Name    ${account_name}
     TypeText     Phone           ${phone}
     TypeText     Fax             ${fax}
