@@ -52,4 +52,11 @@ Verify Picklist Options
     END
 
 
+Browser Examples
+    OpenWindow
+    SwitchWindow    1
+    OpenBrowser     https://www.copado.com      firefox
+    OpenBrowser     about:chrome                chrome
+    OpenBrowser     about:chrome     chrome    options=incognito
+
 
