@@ -4,7 +4,6 @@ Library                   QForce
 Library                   String
 Library                   DateTime 
 Library                   Collections
-Library                   SeleniumLibrary
 
 
 *** Variables ***
