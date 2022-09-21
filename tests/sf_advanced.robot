@@ -44,10 +44,10 @@ Verify Picklist Options
     ClickText             New
     UseModal
     ${salutation_options}=            GetPickList           Salutation 
-    @{salutation_list}=                Convert to List           ${salutation_options}
-    FOR    ${salutation}      IN    @{salutation_list}             
-        PickList            Salutation           ${salutation}
-        VerifyPickList      Salutation           ${salutation}
+    @{salutation_list}=               Convert to List       ${salutation_options}
+    FOR    ${salutation}              IN                    @{salutation_list}             
+        PickList                      Salutation            ${salutation}
+        VerifyPickList                Salutation            ${salutation}
         LogScreenshot
     END
 
