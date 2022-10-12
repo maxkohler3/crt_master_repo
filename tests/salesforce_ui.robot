@@ -70,8 +70,6 @@ Delete Test Data
     LaunchApp                 Sales
     ClickText                 Accounts
 
-    Set Suite Variable        ${data}                     Salesforce
-    RunBlock                  NoData                      timeout=180s                exp_handler=DeleteAccounts
     Set Suite Variable        ${data}                     Growmore
     RunBlock                  NoData                      timeout=180s                exp_handler=DeleteAccounts
 
@@ -90,10 +88,10 @@ Delete Test Data
     Set Suite Variable        ${data}                     John Doe
     RunBlock                  NoData                      timeout=180s                exp_handler=DeleteLeads
     
-LoginAs Example
-     [Documentation]           Example how to impersonate another user. Note: Admin rights needed
-     ...                       for the user who tries to impersonate another user
-     Home
-     LoginAs                   Evan Bartlik
-     VerifyText                Evan Bartlik 
-     ClickText                 Log out as Evan Bartlik
+# LoginAs Example
+#      [Documentation]           Example how to impersonate another user. Note: Admin rights needed
+#      ...                       for the user who tries to impersonate another user
+#      Home
+#      LoginAs                   Evan Bartlik
+#      VerifyText                Evan Bartlik 
+#      ClickText                 Log out as Evan Bartlik
