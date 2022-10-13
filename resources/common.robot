@@ -46,6 +46,7 @@ Home
     Run Keyword If        ${login_status}             Login
     ClickText             Home
     VerifyTitle           Home | Salesforce
+    Sleep                 2
 
 
 # Example of custom keyword with robot fw syntax
