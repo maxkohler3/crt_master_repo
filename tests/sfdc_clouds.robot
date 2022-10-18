@@ -41,7 +41,7 @@ ExperienceCloud Example
     PickList              Type                       Customer - Direct
     PickList              Industry                   Technology
     ClickCheckbox         Combine Asset Quantities   on
-    ClickText             Save                       partial_match=False
+    ClickText             Cancel                     
     UseModal              Off
     ClickText             Close
 
@@ -57,7 +57,7 @@ ExperienceCloud Example
     TypeText              Contract Term (months)*    12
     PickList              Owner Expiration Notice    30 Days
     PickList              Contract Currency          USD - U.S. Dollar
-    ClickText             Save                       partial_match=False
+    ClickText             Cancel                    
     UseModal              Off
 
 Delete Case
