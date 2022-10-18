@@ -17,7 +17,6 @@ Get User Data from CRT REST API
     Set Suite Variable        ${title}
     Set Suite Variable        ${email}
     Set Suite Variable        ${phone}
-    
 
 Enter A Lead
     [tags]               Lead   Smoke   Regression
@@ -38,14 +37,6 @@ Enter A Lead
     Picklist             Lead Status             Open - Not Contacted
     ClickText            Save                    partial_match=False
     UseModal             Off
-
-    ClickText            Details                 delay=1
-    VerifyField          Name                    Mr. Maximus Aurelius
-    VerifyField          Email                   ${email}
-    VerifyField          Title                   ${title}
-    VerifyField          Phone                   ${phone}
-    VerifyField          Company                 Copado  
-    VerifyField          Lead Status             Open - Not Contacted  
 
 Delete Test Data
     ClickText             Leads
