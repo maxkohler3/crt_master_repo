@@ -19,6 +19,7 @@ ${api}                    https://slockard-dev-ed.my.salesforce.com/
 *** Keywords ***
 Setup Browser
     Set Library Search Order                          QWeb
+    Evaluate              random.seed()
     Open Browser          about:blank                 ${BROWSER}
     SetConfig             LineBreak                   ${EMPTY}               #\ue000
     SetConfig             DefaultTimeout              20s                    #sometimes salesforce is slow
