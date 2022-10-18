@@ -11,8 +11,6 @@ ServiceCloud Example
     ClickText             Cases                       partial_match=False
     ClickText             New                         partial_match=False
     UseModal              On
-    TypeText              Search Contacts...          Tina
-    ClickText             Tina Smith
     TypeText              Account Name                Robotic Testing
     ClickText             Robotic Testing             anchor=2
     PickList              Status                      New
@@ -20,13 +18,7 @@ ServiceCloud Example
     PickList              Priority                    Medium
     TypeText              Subject                     Bug Found
     TypeText              Description                 Something broken
-    ClickText             Save                        partial_match=False
-    VerifyText            Subject: Bug Found
-    VerifyText            Priority: Medium
-    VerifyText            Status: New
-    ${case_number}        GetText                     Case Number:           from_end=8
-    Set Suite Variable    ${case_number}
-
+    ClickText             Cancel
 
 ExperienceCloud Example
     Home
@@ -40,32 +32,7 @@ ExperienceCloud Example
     TypeText              Website                    https://copado.com
     PickList              Type                       Customer - Direct
     PickList              Industry                   Technology
-    ClickCheckbox         Combine Asset Quantities   on
     ClickText             Cancel                     
     UseModal              Off
-    ClickText             Close
 
-    ClickText             Details
-    VerifyText            4045551234
-    VerifyText            I Love Copado
-    VerifyText            https://copado.com
-    VerifyText            USD - U.S. Dollar
-    ClickText             Related
 
-    ClickText             New                        anchor=Contracts(0)
-    UseModal              On
-    TypeText              Contract Term (months)*    12
-    PickList              Owner Expiration Notice    30 Days
-    PickList              Contract Currency          USD - U.S. Dollar
-    ClickText             Cancel                    
-    UseModal              Off
-
-Delete Case
-    ClickText             Cases
-    VerifyText            ${case_number}
-    ClickText             ${case_number}
-    ClickText             Delete
-    UseModal              On
-    ClickText             Delete
-    UseModal              Off
-    LogScreenshot
