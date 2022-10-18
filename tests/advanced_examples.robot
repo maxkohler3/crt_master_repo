@@ -38,13 +38,52 @@ Verify Lead in SFDC
     ClickText         Cancel
 
 Advanced Logic & Conditionals
+    Loop Testing
+    GoTo                        https://qentinelqi.github.io/shop/
+    @{animals}                  Create List                 Sacha the Deer              Bumble the Elephant         Gerald the Giraffe
+    FOR                         ${item}                     IN                          @{animals}
+        ClickText               ${item}
+        VerifyText              Slim Fit, 5oz 100% Cotton T-Shirt.
+        ClickText               Add to cart
+        VerifyText              Shipping and taxes will be calculated at checkout.
+        ClickText               Products
+        VerifyText              Find your spirit animal
+    END
+
+
+LOOP over a LIST with IF statement
+    @{users}                    Create List                 Guest                       Sales                       Admin
+    FOR                         ${user}                     IN                          @{users}
+        IF                      '${user}' == 'Admin'
+            Log                 The current user is an Admin
+        ELSE IF                 '${user}' == 'Guest'
+            Log                 The current user is an Guest
+        ELSE
+            Log                 The current user is someone else
+        END
+    END
+
+
+Mathematical Expressions
+    ${discount_percentage}=     Set Variable                .2
+    ${list_price}=              Set Variable                100000
+    ${total_cost}=              Set Variable                5000
+    ${currency}=                Set Variable                USD
+
+    #Calculate Net Price at 20% discount of List Price
+    ${net_price}=               Evaluate                    int(${list_price}-(${list_price}*${discount_percentage}))
+    Should Be Equal As Integers                             ${net_price}                80000
+
+    #Convert 80000 to USD 80,000
+    ${net_price_formatted}=     Format String               {:,}                        ${net_price}
+    Should Be Equal             ${currency} ${net_price_formatted}                      USD 80,000
 
 
 Fake Data Generator 
-    ${address} =      FakerLibrary.address
-    ${country} =      FakerLibrary.country
-    ${email} =        FakerLibrary.email
-    ${first_name} =   FakerLibrary.first_name
-    ${last_name} =    FakerLibrary.last_name
-    ${phone_number} = FakerLibrary.phone_number
+    ${address} =       FakerLibrary.address
+    ${country} =       FakerLibrary.country
+    ${email} =         FakerLibrary.email
+    ${first_name} =    FakerLibrary.first_name
+    ${last_name} =     FakerLibrary.last_name
+    ${phone_number} =  FakerLibrary.phone_number
     Log               ${address}  ${country}  ${email}  ${first_name}  ${last_name}  ${phone_number}
