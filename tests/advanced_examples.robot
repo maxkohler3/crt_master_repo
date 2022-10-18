@@ -1,6 +1,5 @@
 *** Settings ***
 Resource                 ../resources/common.robot
-Resource                 ../resources/advanced.robot
 Suite Setup              Setup Browser
 Suite Teardown           End suite
 
@@ -70,11 +69,11 @@ Mathematical Expressions
     ${total_cost}=              Set Variable                5000
     ${currency}=                Set Variable                USD
 
-    #Calculate Net Price at 20% discount of List Price
+        #Calculate Net Price at 20% discount of List Price
     ${net_price}=               Evaluate                    int(${list_price}-(${list_price}*${discount_percentage}))
     Should Be Equal As Integers                             ${net_price}                80000
 
-    #Convert 80000 to USD 80,000
+        #Convert 80000 to USD 80,000
     ${net_price_formatted}=     Format String               {:,}                        ${net_price}
     Should Be Equal             ${currency} ${net_price_formatted}                      USD 80,000
 
