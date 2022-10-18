@@ -4,6 +4,8 @@ Library                   QForce
 Library                   String
 Library                   DateTime 
 Library                   Collections
+Library                   RequestsLibrary
+Library                   FakerLibrary
 
 
 *** Variables ***
@@ -11,10 +13,7 @@ ${BROWSER}                chrome
 ${username}               crt-short@copado.com
 ${login_url}              https://slockard-dev-ed.lightning.force.com/          
 ${home_url}               ${login_url}/lightning/page/home
-
-&{ext_api_headers}        Content-Type=application/json    X-AUTHORIZATION=${pat}
-${api}                    https://api.robotic.copado.com/
-
+${api}                    https://slockard-dev-ed.my.salesforce.com/ 
 
 
 *** Keywords ***
@@ -70,7 +69,7 @@ Login As
     ClickText             User                        anchor=${persona}      delay=5    # wait for list to populate, then click
     VerifyText            Freeze                      timeout=45                        # this is slow, needs longer timeout          
     ClickText             Login                       anchor=Freeze          delay=1  
-
+    
 
 NoData
     VerifyNoText          ${data}                     timeout=3                        delay=2
@@ -98,15 +97,3 @@ DeleteLeads
     VerifyText            Undo
     VerifyNoText          Undo
     ClickText             Leads                    partial_match=False
-
-
-GetUserData
-    [Documentation]       Get user information from CRT API
-    ${session}=           Create Session        crt  ${api}     debug=3  verify=true
-    ${resp}=              Get On Session
-    ...                   crt
-    ...                   /new/ui/user/me
-    ...                   headers=&{ext_api_headers}  timeout=10
-    Log                   ${resp.status_code}
-    Log                   ${resp.json()}
-    [Return]              ${resp.json()}
