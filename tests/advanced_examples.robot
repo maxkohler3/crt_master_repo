@@ -36,8 +36,7 @@ Verify Lead in SFDC
     TypeText          Website             ${website}
     ClickText         Cancel
 
-Advanced Logic & Conditionals
-    Loop Testing
+Loop Testing
     GoTo                        https://qentinelqi.github.io/shop/
     @{animals}                  Create List                 Sacha the Deer              Bumble the Elephant         Gerald the Giraffe
     FOR                         ${item}                     IN                          @{animals}
@@ -50,9 +49,11 @@ Advanced Logic & Conditionals
     END
 
 
-LOOP over a LIST with IF statement
+
+Loop Over a List with Nested If Statement
     @{users}                    Create List                 Guest                       Sales                       Admin
     FOR                         ${user}                     IN                          @{users}
+        Log                     This is a success message.
         IF                      '${user}' == 'Admin'
             Log                 The current user is an Admin
         ELSE IF                 '${user}' == 'Guest'
@@ -85,4 +86,4 @@ Fake Data Generator
     ${first_name} =    FakerLibrary.first_name
     ${last_name} =     FakerLibrary.last_name
     ${phone_number} =  FakerLibrary.phone_number
-    Log               ${address}  ${country}  ${email}  ${first_name}  ${last_name}  ${phone_number}   formatter=repr
+    Log               ${address} ${country} ${email} ${first_name} ${last_name} ${phone_number}   formatter=repr
