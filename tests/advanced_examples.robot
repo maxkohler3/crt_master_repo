@@ -5,8 +5,8 @@ Suite Teardown           End suite
 
 
 *** Test Cases ***
-Create Lead on Website
-    [Documentation]   E2E Test Scenario: Create Lead on company website; verify record in SFDC
+Create Lead on Website 
+    [Documentation]   Data-driven from Excel; cross application e2e test
     [Tags]            Data Driven
     GoTo              https://www.copado.com
     ClickText         GET A DEMO
