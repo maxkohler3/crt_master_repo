@@ -13,3 +13,5 @@ QForce API Examples
     Authenticate    ${client_id}   ${client_secret}   ${username}    ${password}
     ${contact}=      Create Record  Contact            FirstName=Jane         LastName=Doe
     ${account}=      Create Record  Account            Name=KindCorp
+    Delete Record    Contact        ${contact}
+    Delete Record    Account        ${account}
