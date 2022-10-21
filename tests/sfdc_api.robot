@@ -10,5 +10,6 @@ Suite Teardown                End suite
 *** Test Cases ***
     
 QForce API Examples
-    Authenticate
-    CreateRecord
+    Authenticate    ${client_id}   ${client_secret}   ${username}    ${password}
+    ${contact}=      Create Record  Contact            FirstName=Jane         LastName=Doe
+    ${account}=      Create Record  Account            Name=KindCorp
