@@ -86,4 +86,4 @@ Fake Data Generator
     ${first_name} =    FakerLibrary.first_name
     ${last_name} =     FakerLibrary.last_name
     ${phone_number} =  FakerLibrary.phone_number
-    Log               ${address} ${country} ${email} ${first_name} ${last_name} ${phone_number}   formatter=repr
+    Log               ${address} ${country} ${email} ${first_name} ${last_name} ${phone_number}   
