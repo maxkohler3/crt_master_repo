@@ -11,6 +11,9 @@ ${api_crt}                https://api.robotic.copado.com/
 
 *** Keywords ***
 
+Authenticate Salesforce API
+    Authenticate    ${client_id}   ${client_secret}   ${username}    ${password}
+
 GetUserData
     [Documentation]       Get user information from CRT API
     ${session}=           Create Session        crt  ${api_crt}     debug=3  verify=true
