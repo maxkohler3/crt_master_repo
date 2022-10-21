@@ -14,3 +14,13 @@ QForce API Examples
     ${account}=      Create Record  Account            Name=KindCorp
     Delete Record    Contact        ${contact}
     Delete Record    Account        ${account}
+
+    GetRecord
+
+    UpdateRecord
+    VerifyRecord
+    QueryRecords
+
+    ListObjects
+    Revoke
+    
