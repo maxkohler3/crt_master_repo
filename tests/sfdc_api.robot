@@ -3,7 +3,7 @@ Resource                      ../resources/common.robot
 Resource                      ../resources/api.resource  
 Suite Setup                   Run Keywords 
 ...                           Setup Browser  
-...                           Authenticate Authenticate Salesforce API
+...                           Authenticate Salesforce API
 Suite Teardown                End suite
 
 
