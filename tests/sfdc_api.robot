@@ -15,11 +15,11 @@ QForce API Examples
     Delete Record    Contact        ${contact}
     Delete Record    Account        ${account}
 
-    GetRecord
+    # GetRecord
 
-    UpdateRecord
-    VerifyRecord
-    QueryRecords
+    # UpdateRecord
+    # VerifyRecord
+    # QueryRecords
 
     ListObjects
     Revoke
