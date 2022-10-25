@@ -36,23 +36,6 @@ Verify Lead in SFDC
     TypeText          Website             ${website}
     ClickText         Cancel
 
-# Verify email contents and send a reply
-#     GoTo                        https://www.gmail.com
-#     TypeText                    Email or phone              CopadoTester@gmail.com
-#     ClickText                   Next
-#     TypeText                    Enter your password         ${emailPass}
-#     ClickText                   Next
-#     ClickText                   CRT & Malwarebytes
-#     VerifyText                  Bacon Doughnut
-#     ${parsedValue}=             GetText                     In this sentence I demonstrate                          between=such as???out of
-#     VerifyText                  ${parsedValue}
-#     ClickText                   Compose
-#     TypeText                    To                          CopadoTester@Gmail.com
-#     ClickText                   Cc
-#     TypeText                    Cc                          CopadoTester@gmail.com
-#     TypeText                    Subject                     TEST_${parsedValue}
-#     TypeText                    Body                        Beep Boop Beep Boop
-#     ClickText                   Send
 
 Loop Testing
     GoTo                        https://qentinelqi.github.io/shop/
@@ -65,7 +48,6 @@ Loop Testing
         ClickText               Products
         VerifyText              Find your spirit animal
     END
-
 
 
 Loop Over a List with Nested If Statement
