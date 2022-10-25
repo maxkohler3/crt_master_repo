@@ -99,6 +99,7 @@ DeleteLeads
     VerifyNoText          Undo
     ClickText             Leads                    partial_match=False
 
+
 InsertRandomValue
     [Documentation]       This keyword accepts a character count, suffix, and prefix. It then types a random string into the given field.
     [Arguments]           ${field}                    ${charCount}=5              ${prefix}=                  ${suffix}=
