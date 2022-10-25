@@ -1,42 +1,55 @@
 *** Settings ***
-Resource                      ../resources/common.robot
-Resource                      ../resources/api.resource  
-Suite Setup                   Setup Browser  
-Suite Teardown                End suite
+Resource                  ../resources/common.robot
+Resource                  ../resources/api.resource
+Suite Setup               Setup Browser
+Suite Teardown            End suite
 
 
 *** Test Cases ***
 Get User Data from CRT REST API
-    [Documentation]           Query data from ext API
-    ${data}=                  GetUserData
-    ${title}=                 Get From Dictionary  ${data}  title
-    ${email}=                 Get From Dictionary  ${data}  email
-    ${phone}=                 Get From Dictionary  ${data}  phone
-    Set Suite Variable        ${title}
-    Set Suite Variable        ${email}
-    Set Suite Variable        ${phone}
+    [Documentation]       Query data from ext API
+    ${data}=              GetUserData
+    ${title}=             Get From Dictionary         ${data}                     title
+    ${email}=             Get From Dictionary         ${data}                     email
+    ${phone}=             Get From Dictionary         ${data}                     phone
+    Set Suite Variable    ${title}
+    Set Suite Variable    ${email}
+    Set Suite Variable    ${phone}
 
 Enter A Lead
-    [tags]               Lead   Smoke   Regression
+    [tags]                Lead                        Smoke                       Regression
     Home
-    LaunchApp            Sales
-    ClickText            Leads
-    VerifyText           Change Owner
-    ClickUntil           Lead Information        New
+    LaunchApp             Sales
+    ClickText             Leads
+    VerifyText            Change Owner
+    ClickUntil            Lead Information            New
 
-    UseModal             On                      #Only find fields from open modal dialog
-    Picklist             Salutation              Mr.
-    TypeText             First Name              Maximus
-    TypeText             Last Name               Aurelius
-    TypeText             Title                   ${title}
-    TypeText             Phone                   ${phone}
-    TypeText             Email                   ${email}
-    TypeText             Company                 Copado
-    Picklist             Lead Status             Open - Not Contacted
-    ClickText            Save                    partial_match=False
-    UseModal             Off
+    UseModal              On                          #Only find fields from open modal dialog
+    Picklist              Salutation                  Mr.
+    TypeText              First Name                  Maximus
+    TypeText              Last Name                   Aurelius
+    TypeText              Title                       ${title}
+    TypeText              Phone                       ${phone}
+    TypeText              Email                       ${email}
+    TypeText              Company                     Copado
+    Picklist              Lead Status                 Open - Not Contacted
+    ClickText             Save                        partial_match=False
+    UseModal              Off
+
+Verify Email 
+    GoTo                  https://www.gmail.com
+    TypeText              Email or phone              CopadoTester@gmail.com
+    ClickText             Next
+    TypeText              Enter your password         ${emailPass}
+    ClickText             Next
+    ClickText             CRT Demo Email
+    VerifyText            ${email}
+    VerifyText            ${title}
+    ${accountID}=         GetText                     CRT-          
 
 Delete Test Data
+    Home
+    LaunchApp             Sales
     ClickText             Leads
     VerifyText            Change Owner
     Set Suite Variable    ${data}                     Maximus Aurelius
