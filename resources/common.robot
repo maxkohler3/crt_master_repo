@@ -24,11 +24,9 @@ Setup Browser
     SetConfig             LineBreak                   ${EMPTY}               #\ue000
     SetConfig             DefaultTimeout              20s                    #sometimes salesforce is slow
 
-
 End suite
     Set Library Search Order                          QWeb
     Close All Browsers
-
 
 Login
     [Documentation]       Login to Salesforce instance
@@ -36,7 +34,6 @@ Login
     TypeText              Username                    ${username}             delay=1
     TypeText              Password                    ${password}
     ClickText             Log In
-
 
 Home
     [Documentation]       Navigate to homepage, login if needed
@@ -48,13 +45,11 @@ Home
     VerifyTitle           Home | Salesforce
     Sleep                 2
 
-
-# Example of custom keyword with robot fw syntax
 VerifyStage
+    # Example of custom keyword with robot fw syntax
     [Documentation]       Verifies that stage given in ${text} is at ${selected} state; either selected (true) or not selected (false)
     [Arguments]           ${text}                     ${selected}=true
     VerifyElement         //a[@title\="${text}" and @aria-checked\="${selected}"]
-
 
 Login As
     [Documentation]       Login As different persona. User needs to be logged into Salesforce with Admin rights
@@ -71,10 +66,8 @@ Login As
     VerifyText            Freeze                      timeout=45                        # this is slow, needs longer timeout          
     ClickText             Login                       anchor=Freeze          delay=1  
     
-
 NoData
     VerifyNoText          ${data}                     timeout=3                        delay=2
-
 
 DeleteAccounts
     [Documentation]       RunBlock to remove all data until it doesn't exist anymore
@@ -87,7 +80,6 @@ DeleteAccounts
     VerifyNoText          Undo
     ClickText             Accounts                    partial_match=False
 
-
 DeleteLeads
     [Documentation]       RunBlock to remove all data until it doesn't exist anymore
     ClickText             ${data}
@@ -98,7 +90,6 @@ DeleteLeads
     VerifyText            Undo
     VerifyNoText          Undo
     ClickText             Leads                    partial_match=False
-
 
 InsertRandomValue
     [Documentation]       This keyword accepts a character count, suffix, and prefix. It then types a random string into the given field.
