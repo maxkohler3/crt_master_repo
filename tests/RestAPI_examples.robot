@@ -4,6 +4,7 @@ Resource                      ../resources/api.resource
 Suite Setup                   Run Keywords 
 ...                           Setup Browser  
 ...                           Authenticate Salesforce API
+...                           Create Session  jsonplaceholder  https://jsonplaceholder.typicode.com 
 Suite Teardown                End suite
 
 
