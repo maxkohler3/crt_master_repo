@@ -74,7 +74,6 @@ Delete Test Data
     RunBlock                  NoData                      timeout=180s                exp_handler=DeleteAccounts
 
     ClickText                 Opportunities
-    VerifyText                0 items
     VerifyNoText              Safesforce Pace
     VerifyNoText              Growmore Pace
     VerifyNoText              Richard Brown
@@ -88,10 +87,3 @@ Delete Test Data
     Set Suite Variable        ${data}                     John Doe
     RunBlock                  NoData                      timeout=180s                exp_handler=DeleteLeads
     
-# LoginAs Example
-#      [Documentation]           Example how to impersonate another user. Note: Admin rights needed
-#      ...                       for the user who tries to impersonate another user
-#      Home
-#      LoginAs                   Evan Bartlik
-#      VerifyText                Evan Bartlik 
-#      ClickText                 Log out as Evan Bartlik
