@@ -1,13 +1,12 @@
 *** Settings ***
 Resource               ../resources/common.robot
-Library                QVision
+Library                QVision   
 Suite Setup            Setup Browser
 Suite Teardown         End suite
 
 
 *** Test Cases ***
-Create CPQ Quote
-    [Documentation]    Create quote against existing opportunity
+Create CPQ Quote  
     Home
     LaunchApp          Salesforce CPQ
     ClickText          Opportunities
@@ -48,7 +47,7 @@ Edit CPQ Quote
     ClickText          Cancel
 
     UseFrame           //iframe                    #CPQ tables are embedded in iFrames
-    VerifyTableCell    Net Unit Price              1                120.000,00 USD
+    VerifyTableCell    Net Unit Price     1        120.000,00 USD
     ClickText          Save                        anchor=Cancel
     Sleep              10
 
@@ -56,9 +55,8 @@ Preview & Validate PDF Document
     ClickText          Show more actions
     ClickText          Preview Document
     ClickText          Preview                     anchor=Cancel    delay=10
-    Sleep              60
-    VerifyRow          Net 30                      row_text=TEST ROBOT
-    VerifyRow          slockard@copado.com         row_text=TEST ROBOT
+    Sleep              30
+    VerifyRow          Net 30                      row_text=mkohler@copado.com
     VerifyRow          USD 120,000.00              row_text=TOTAL
     LogScreenshot
 
@@ -81,11 +79,11 @@ Delete CPQ Quote Data
     ClickText          Delete                      Clone
     ClickText          Delete                      Cancel
 
-    ClickText          Opportunities
+    ClickText          Opportunities               anchor=Accounts       delay=2
     Clicktext          Robotic Testing
     ClickText          Products                    partial_match=true    anchor=Related
 
-    ClickText          Google Cloud Platform
+    ClickText          Google Cloud Platform       partial_match=false
     ClickText          Delete
     ClickText          Delete                      anchor=Cancel
 
