@@ -25,29 +25,11 @@ QForce API Examples (Salesforce)
     ListObjects
     Revoke
 
-# General RestAPI examples below...
-
-Get Request on Google
-    ${response}=    GET  https://www.google.com
-
-Get Request with Parameters
-    ${response}=    GET  https://www.google.com/search  params=query=ciao  expected_status=200
-
-Get REquest with Response Verification
-    ${response}=    GET  https://jsonplaceholder.typicode.com/posts/1
-    Should Be Equal As Strings    1  ${response.json()}[id]
-
-Get Request with JSON Body                                                                                       
-    Create Session    google  http://www.google.com                                                    
-                                                                                                       
-    ${resp_google}=   GET On Session  google  /  expected_status=200                                   
-    ${resp_json}=     GET On Session  jsonplaceholder  /posts/1                                        
-                                                                                                       
-    Should Be Equal As Strings          ${resp_google.reason}  OK                                      
-    Dictionary Should Contain Value     ${resp_json.json()}  sunt aut facere repellat provident occaecati excepturi optio reprehenderit        
-                                                                                                       
-Post Request with JSON Body                                                                                      
-    &{data}=    Create dictionary  title=Robotframework requests  body=This is a test!  userId=1       
-    ${resp}=    POST On Session    jsonplaceholder  /posts  json=${data}  expected_status=anything     
-                                                                                                       
-    Status Should Be                 201  ${resp}    
+Standard Rest API examples
+    [Documentation]    Reference reusable API blocks from api.resource file
+    [Tags]             API   
+    Quick Get Request Test
+    Quick Get Request With Parameters Test
+    Quick Get A JSON Body Test
+    Get Request Test
+    Post Request Test 
