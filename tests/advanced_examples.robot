@@ -5,8 +5,8 @@ Suite Teardown           End suite
 
 
 *** Test Cases ***
-Create Lead on Website 
-    [Documentation]   Data-driven from Excel; cross application e2e test
+Create Lead on Copado Website with Data from Excel
+    [Documentation]   Cross-application end-to-end test
     [Tags]            Data Driven
     GoTo              https://www.copado.com
     ClickText         GET A DEMO
@@ -19,7 +19,7 @@ Create Lead on Website
     TypeText          Job Title*          ${title}
     DropDown          Country             ${country}
 
-Verify Lead in SFDC
+Verify Lead created in SFDC from Copado Website
     Home
     LaunchApp         Sales
     ClickText         Leads
