@@ -15,12 +15,13 @@ Create CPQ Quote
     ClickText          Create Quote
 
     UseModal
-    VerifyText         Create Quote
-    ${date}=           Get Current Date            result_format=%-d/%-m/%Y
-    TypeText           Quote Start Date            ${date}
-    TypeText           Contract Length (months)    12
-    ClickText          Next
-    UseModal           Off
+    VerifyText          Create Quote
+    ${date}=            Get Current Date            result_format=%-d/%-m/%Y
+    Set Suite Variable  ${date}
+    TypeText            Quote Start Date            ${date}
+    TypeText            Contract Length (months)    12
+    ClickText           Next
+    UseModal            Off
 
 Edit CPQ Quote
     ${quoteID}=        GetText                     Q-
