@@ -35,10 +35,10 @@ Enter A Lead in SFDC with CRT User Data
     Picklist              Lead Status                 Open - Not Contacted
     ClickText             Cancel                      partial_match=False
     UseModal              Off
-    ClickText             View profile
-    ClickText             Log Out
+
 
 Verify Email sent to new SFDC User
+    OpenWindow
     GoTo                  https://www.gmail.com       
     TypeText              Email or phone              CopadoTester@gmail.com
     ClickText             Next
