@@ -18,7 +18,7 @@ ${api}                    https://slockard-dev-ed.my.salesforce.com/
 
 *** Keywords ***
 Setup Browser
-    Set Library Search Order                          QWeb
+    Set Library Search Order                   QWeb    QForce    QVision
     Evaluate              random.seed()
     Open Browser          about:blank                 ${BROWSER}
     SetConfig             LineBreak                   ${EMPTY}               #\ue000
