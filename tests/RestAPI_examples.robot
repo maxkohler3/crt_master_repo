@@ -4,7 +4,6 @@ Resource                      ../resources/api.resource
 Suite Setup                   Run Keywords 
 ...                           Setup Browser  
 ...                           Authenticate Salesforce API
-...                           Create Session  jsonplaceholder  https://jsonplaceholder.typicode.com 
 Suite Teardown                End suite
 
 
@@ -29,6 +28,7 @@ QForce API Examples (Salesforce)
 Standard Rest API examples
     [Documentation]    Reference reusable API blocks from api.resource file
     [Tags]             API   
+    Create Session  jsonplaceholder  https://jsonplaceholder.typicode.com 
     Quick Get Request Test
     Quick Get Request With Parameters Test
     Quick Get A JSON Body Test
