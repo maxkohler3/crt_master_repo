@@ -97,3 +97,14 @@ Delete CPQ Quote Data
     VerifyNoText       ${quoteID}
     VerifyNoText       Google Cloud Platform
     VerifyNoText       BigQuery
+
+
+# Below script shows how to login as a different user to approve a quote, for example
+
+# LoginAs Example
+#      [Documentation]           Example how to impersonate another user. Note: Admin rights needed
+#      ...                       for the user who tries to impersonate another user
+#      Home
+#      LoginAs                   Evan Bartlik
+#      VerifyText                Evan Bartlik 
+#      ClickText                 Log out as Evan Bartlik
