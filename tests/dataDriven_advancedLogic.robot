@@ -87,3 +87,8 @@ Fake Data Generator
     ${last_name} =     FakerLibrary.last_name
     ${phone_number} =  FakerLibrary.phone_number
     Log               ${address} ${country} ${email} ${first_name} ${last_name} ${phone_number}   
+
+
+Lightning Web Component Test
+#     Home
+#     GoTo    https://slockard-dev-ed.lightning.force.com/lightning/r/copado__ExtensionConfiguration__c/a0f7Q000000gShGQAU/view
