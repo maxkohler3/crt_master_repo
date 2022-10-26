@@ -7,7 +7,7 @@ Suite Teardown            End suite
 
 *** Test Cases ***
 Get User Data from CRT REST API
-    [Documentation]       Query data from ext API
+    [Documentation]       Query data from Copado Robotic Testing API
     ${data}=              GetUserData
     ${title}=             Get From Dictionary         ${data}                     title
     ${email}=             Get From Dictionary         ${data}                     email
@@ -16,7 +16,7 @@ Get User Data from CRT REST API
     Set Suite Variable    ${email}
     Set Suite Variable    ${phone}
 
-Enter A Lead
+Enter A Lead in SFDC with CRT User Data
     [tags]                Lead                        Smoke                       Regression
     Home
     LaunchApp             Sales
@@ -33,11 +33,11 @@ Enter A Lead
     TypeText              Email                       ${email}
     TypeText              Company                     Copado
     Picklist              Lead Status                 Open - Not Contacted
-    ClickText             Save                        partial_match=False
+    ClickText             Cancel                      partial_match=False
     UseModal              Off
 
-Verify Email 
-    GoTo                  https://www.gmail.com
+Verify Email sent to new SFDC User
+    GoTo                  https://www.gmail.com       delay=2
     TypeText              Email or phone              CopadoTester@gmail.com
     ClickText             Next
     TypeText              Enter your password         ${emailPass}
@@ -45,12 +45,5 @@ Verify Email
     ClickText             CRT Demo Email
     VerifyText            ${email}
     VerifyText            ${title}
-    ${accountID}=         GetText                     CRT-          
-
-Delete Test Data
-    Home
-    LaunchApp             Sales
-    ClickText             Leads
-    VerifyText            Change Owner
-    Set Suite Variable    ${data}                     Maximus Aurelius
-    RunBlock              NoData                      timeout=180s                exp_handler=DeleteLeads
+    ${accountID}=         GetText                     CRT-       
+    Log                   ${accountID}   
