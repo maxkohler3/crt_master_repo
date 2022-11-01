@@ -54,7 +54,7 @@ Edit CPQ Quote
     Sleep                 10
 
 Preview & Validate PDF Document
-    ClickText             Show more actions
+    ClickText             Show more actions           timeout=60
     ClickText             Preview Document
     ClickText             Preview                     anchor=Cancel               delay=10
     Sleep                 30
