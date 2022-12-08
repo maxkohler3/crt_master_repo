@@ -34,6 +34,8 @@ Login
     TypeText              Username                    ${username}             delay=1
     TypeText              Password                    ${password}
     ClickText             Log In
+    ${MFA_needed}=        Run Keyword And Return Status       Should Not Be Equal    ${None}       ${secret}
+    Run Keyword If        ${MFA_needed}               Fill MFA
 
 Home
     [Documentation]       Navigate to homepage, login if needed
@@ -44,6 +46,11 @@ Home
     ClickText             Home
     VerifyTitle           Home | Salesforce
     Sleep                 2
+
+Fill MFA
+    ${mfa_code}=         GetOTP    ${username}   ${secret}   ${login_url}    
+    TypeSecret           Verification Code       ${mfa_code}      
+    ClickText            Verify
 
 VerifyStage
     # Example of custom keyword with robot fw syntax
@@ -65,6 +72,12 @@ Login As
     ClickText             User                        anchor=${persona}      delay=5    # wait for list to populate, then click
     VerifyText            Freeze                      timeout=45                        # this is slow, needs longer timeout          
     ClickText             Login                       anchor=Freeze          delay=1  
+
+InsertRandomValue
+    [Documentation]       This keyword accepts a character count, suffix, and prefix. It then types a random string into the given field.
+    [Arguments]           ${field}                    ${charCount}=5              ${prefix}=                  ${suffix}=
+    ${testRandom}=        Generate Random String      ${charCount}
+    TypeText              ${field}                    ${prefix}${testRandom}${suffix}
     
 NoData
     VerifyNoText          ${data}                     timeout=3                        delay=2
@@ -91,8 +104,4 @@ DeleteLeads
     VerifyNoText          Undo
     ClickText             Leads                    partial_match=False
 
-InsertRandomValue
-    [Documentation]       This keyword accepts a character count, suffix, and prefix. It then types a random string into the given field.
-    [Arguments]           ${field}                    ${charCount}=5              ${prefix}=                  ${suffix}=
-    ${testRandom}=        Generate Random String      ${charCount}
-    TypeText              ${field}                    ${prefix}${testRandom}${suffix}
+
