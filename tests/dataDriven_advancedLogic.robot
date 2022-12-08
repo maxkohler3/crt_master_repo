@@ -9,7 +9,7 @@ Create Lead on Copado Website with Data from Excel
     [Documentation]   Cross-application end-to-end test
     [Tags]            Data Driven
     GoTo              https://www.copado.com
-    ClickText         GET A DEMO           # XPath of same button ->  /html/body/div[2]/div/header/div[1]/div[2]/nav/ul/li[5]
+    ClickText         TALK TO SALES       # XPath of button> /html/body/div[2]/div/header/div[1]/div[2]/nav/ul/li[5]
     TypeText          First Name*         ${first_name}
     TypeText          Last Name*          ${last_name}
     TypeText          Business Email*     ${email}
