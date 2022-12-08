@@ -34,8 +34,8 @@ Login
     TypeText              Username                    ${username}             delay=1
     TypeText              Password                    ${password}
     ClickText             Log In
-    ${MFA_needed}=        Run Keyword And Return Status       Should Not Be Equal    ${None}       ${secret}
-    Run Keyword If        ${MFA_needed}               Fill MFA
+    Fill MFA
+    
 
 Home
     [Documentation]       Navigate to homepage, login if needed
@@ -48,9 +48,12 @@ Home
     Sleep                 2
 
 Fill MFA
-    ${mfa_code}=         GetOTP    ${username}   ${secret}   ${login_url}    
-    TypeSecret           Verification Code       ${mfa_code}      
-    ClickText            Verify
+    ${isMFA}=  IsText     Verify Your Identity                            #Determines MFA is prompted
+     IF   ${isMFA}                                                        #Conditional Statement for if MFA verification is required to proceed
+          ${mfa_code}=    GetOTP    ${username}    ${MY_SECRET}    ${password}
+          TypeSecret      Code      ${mfa_code}
+          ClickText       Verify
+    END
 
 VerifyStage
     # Example of custom keyword with robot fw syntax
