@@ -83,7 +83,7 @@ Delete CPQ Quote Data
 
     ClickText             Opportunities               anchor=Accounts             delay=2
     Clicktext             Robotic Testing                                         delay=2
-    ClickText             Products                    partial_match=true          anchor=Quote Documents
+    ClickText             Products                    partial_match=true          anchor=Related
 
     ClickText             Google Cloud Platform       partial_match=false
     ClickText             Delete
