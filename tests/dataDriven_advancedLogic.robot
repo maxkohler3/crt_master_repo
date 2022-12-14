@@ -36,6 +36,17 @@ Verify Lead created in SFDC from Copado Website
     TypeText          Website             ${website}
     ClickText         Cancel
 
+Table Validations
+    Home
+    LaunchApp         Sales
+    ClickText         Accounts
+
+    UseTable          Account Name
+    VerifyTable       r1c4                      18001234567
+    VerifyTable       r?Robots, Inc./c?Phone    18001234567
+
+    ${account_phone}=  GetCellText              r?I Love Copado/c?Phone
+ 
 
 Loop Testing
     GoTo                        https://qentinelqi.github.io/shop/
