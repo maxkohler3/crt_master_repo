@@ -8,7 +8,7 @@ Test Template     Create Account
 
 *** Test Case ***
 Test feature with ${account_name}
-    [Tags]        data          testgen    numtests=2   
+    [Tags]        data          testgen    nwise=2    numtests=2   
 
 
 *** Keywords ***
