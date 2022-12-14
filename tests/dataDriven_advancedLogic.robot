@@ -38,13 +38,13 @@ Verify Lead created in SFDC from Copado Website
 
 Table Validations
     Home
-    LaunchApp         Sales
-    ClickText         Accounts
+    LaunchApp          Sales
+    ClickText          Accounts
 
-    UseTable          Account Name
-    VerifyTable       r1c4                      18001234567
-    VerifyTable       r?Robots, Inc./c?Phone    18001234567
-
+    UseTable           Account Name
+    VerifyTable        r1c4                      18001234567
+    VerifyTable        r?Robots, Inc./c?Phone    18001234567
+    ClickCell          r1c6
     ${account_phone}=  GetCellText              r?I Love Copado/c?Phone
  
 
