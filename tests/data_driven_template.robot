@@ -1,8 +1,7 @@
 *** Settings ***
 Resource          ../resources/common.robot
-Library           QWeb
 Library           DataDriver    reader_class=TestDataApi    name=new_accounts.xlsx
-Suite Setup       Open Browser        about:blank     Chrome
+Suite Setup       Setup Browser
 Suite Teardown    Close All Browsers
 Test Template     Create Account
 
