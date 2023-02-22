@@ -42,7 +42,7 @@ Table Validations
     ClickText          Accounts
 
     UseTable           Account Name
-    VerifyTable        r1c4                      18001234567
+    VerifyTable        r2c4                      18001234567
     VerifyTable        r?Robots, Inc./c?Phone    18001234567
     ClickCell          r1c6
     ${account_phone}=  GetCellText              r?I Love Copado/c?Phone
