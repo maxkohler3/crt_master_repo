@@ -25,6 +25,16 @@ QForce API Examples (Salesforce)
     ListObjects
     Revoke
 
+# QForce CPQ API Examples 
+#     AddCpqProducts
+#     SaveCpqQuote
+#     CalculateCpqQuote
+#     ReadCpqProduct
+#     ReadCpqQuote
+#     ValidateCpqQuote
+    
+    
+
 Standard Rest API examples
     [Documentation]    Reference reusable API blocks from api.resource file
     [Tags]             API   
