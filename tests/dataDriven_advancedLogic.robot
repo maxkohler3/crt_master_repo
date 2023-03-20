@@ -46,7 +46,19 @@ Table Validations
     VerifyTable        r?Robots, Inc./c?Phone    18001234567
     ClickCell          r1c6
     ${account_phone}=  GetCellText              r?I Love Copado/c?Phone
- 
+
+# File Interaction
+#     Home
+#     LaunchApp    Sales
+#     ClickText    Opportunities 
+#     ClickText    Robotic Testing
+#     UploadFile   Upload Files    ../files/new_accounts.xlsx
+#     VerifyText                   1 of 1 file uploaded
+#     ClickText    Done
+#     ClickText    Notes & Attachments    partial_match=true
+#     ClickText    Show 8 more actions 
+
+
 
 Loop Testing
     GoTo                        https://qentinelqi.github.io/shop/
