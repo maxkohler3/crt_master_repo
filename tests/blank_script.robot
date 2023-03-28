@@ -7,18 +7,22 @@ Library                       ../libraries/custom_library.py
 
 *** Test Cases ***
 
-# Test Sample
-#     ${next_button}=           IsText                      Next    anchor=Cancel
-#     IF                          ${next_button}
-#         ClickText               Next
-#     END
+Test Sample
+    Home
+    LaunchApp    Sales 
+    ClickText    Opportunities
 
-#     # VerifyTable                     r?text/c?text          Account 1
-#     # VerifyTable                     r2/c4                  Account 2
+    RunBlock     Validate Table Cell        exp_handler=Click Next Page in Table   
+    #create custom keyword for exception handler if additional action is needed
     
-#     # GetText 
-#     # GetInputValue
+    # GetText | GetInputValue | GetCellText are 3 commonly used keywords to capture data from the UI
+    ${data_from_ui}=           GetText                    Robotic
+    Should Be Equal            ${data_from_ui}            Robotic Testing 
 
-#     # Exception handler to continue testing upon failure
-#     Run Keyword And Continue On Failure                    ClickText    asdfkgjh
-#     ClickText                        Chatter
+    ${next_button}=           IsText                      Next    anchor=Cancel
+    IF                          ${next_button}
+        ClickText               Next
+    END                                                         
+
+    Run Keyword And Continue On Failure               ClickText    asdfkgjh     
+    Log                        This step worked
