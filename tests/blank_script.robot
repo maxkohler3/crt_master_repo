@@ -1,8 +1,42 @@
 *** Settings ***
-Resource                      ../resources/common.robot
-Suite Setup                   Setup Browser
-Suite Teardown                End suite
-Library                       ../libraries/custom_library.py
+Library    QWeb
+Library    DataDriver    reader_class=TestDataApi    name=acis_intake.csv
+
+Suite Setup       Open Browser        about:blank     Chrome
+Suite Teardown    Close All Browsers
+Test Template     Example Test
+
+*** Test Case ***
+Example Test with ${first_name}
+
+*** Keywords ***
+Data Template Test
+    [Arguments]    ${first_name}    ${last_name}    ${gender}    ${ethnicity}    ${dob}    ${role}
+
+    FOR                   ${item}          IN         @{first_name}   
+
+        Log                 ${first_name}
+        Log                 ${last_name}
+        Log                 ${gender}                  
+        Log                 ${ethnicity}
+        
+    END
+
+
+
+
+
+
+
+
+
+
+
+# *** Settings ***
+# Resource                      ../resources/common.robot
+# Suite Setup                   Setup Browser
+# Suite Teardown                End suite
+# Library                       ../libraries/custom_library.py
 
 
 *** Test Cases ***
