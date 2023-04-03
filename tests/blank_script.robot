@@ -7,8 +7,7 @@ Suite Teardown    Close All Browsers
 Test Template     Example Test
 
 *** Test Case ***
-Example Test with ${first_name}
-    Data Template Test
+Data Template Test with ${first_name}
 
 *** Keywords ***
 Data Template Test
