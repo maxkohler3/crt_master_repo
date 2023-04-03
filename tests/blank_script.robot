@@ -1,46 +1,42 @@
+
 *** Settings ***
-Library    QWeb
-Library    DataDriver    reader_class=TestDataApi    name=acis_intake.csv
+Resource                      ../resources/common.robot
+Suite Setup                   Setup Browser
+Suite Teardown                End suite
+# Library                       ../libraries/custom_library.py
+Library        Collections
 
-Suite Setup       Open Browser        about:blank     Chrome
-Suite Teardown    Close All Browsers
-Test Template     Data Template Test
+*** Variables *** 
+@{first_name}=    Xarl    Monty    Magnolia
+@{last_name}=    Chin    Maguire    Blossom
+@{gender}=    Female    Male     Female
+@{ethnicity}=    American Indian or Alaska Native    Asian    American Indian or Alaska Native
+@{role}=    Observer    Alleged Maltreator    Alleged Victim
+@{dob}=    01/02/1978    03/05/1981    10/15/2006
 
-*** Test Case ***
-Data Template Test with ${first_name}
+&{persons}=
 
-*** Keywords ***
-Data Template Test
-    [Arguments]    ${first_name}    ${last_name}    ${gender}    ${ethnicity}    ${dob}    ${role}
-    GoTo           https://www.copado.com
-    FOR                   ${item}          IN         &{first_name}   
+*** Test Cases ***
+
+
+Scratchwork Test 
+    ${date}=     Get Current Date    result_format=%m/%d/%Y
+    ${20yo_date}=  Subtract Time From Date    ${date}          7300 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
+    ${50yo_date}=  Subtract Time From Date    ${date}          18263 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
+    
+
+    FOR                   ${person}          IN         @{first_name}   
 
         Log                 ${first_name}
         Log                 ${last_name}
         Log                 ${gender}                  
         Log                 ${ethnicity}
+        Log                 ${role} 
+        Log                 ${dob}
         
     END
 
-
-
-
-
-
-
-
-
-
-
-# *** Settings ***
-# Resource                      ../resources/common.robot
-# Suite Setup                   Setup Browser
-# Suite Teardown                End suite
-# Library                       ../libraries/custom_library.py
-
-
-*** Test Cases ***
-
+    
 # Test Sample
 #     Home
 #     LaunchApp    Sales 
@@ -60,3 +56,4 @@ Data Template Test
 
 #     Run Keyword And Continue On Failure               ClickText    asdfkgjh     
 #     Log                        This step worked
+
