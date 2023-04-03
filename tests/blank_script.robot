@@ -13,7 +13,7 @@ Data Template Test with ${first_name}
 Data Template Test
     [Arguments]    ${first_name}    ${last_name}    ${gender}    ${ethnicity}    ${dob}    ${role}
     GoTo           https://www.copado.com
-    FOR                   ${item}          IN         @{first_name}   
+    FOR                   ${item}          IN         &{first_name}   
 
         Log                 ${first_name}
         Log                 ${last_name}
