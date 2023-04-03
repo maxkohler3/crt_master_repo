@@ -8,6 +8,7 @@ Test Template     Example Test
 
 *** Test Case ***
 Example Test with ${first_name}
+    Data Template Test
 
 *** Keywords ***
 Data Template Test
