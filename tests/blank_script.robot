@@ -4,7 +4,7 @@ Library    DataDriver    reader_class=TestDataApi    name=acis_intake.csv
 
 Suite Setup       Open Browser        about:blank     Chrome
 Suite Teardown    Close All Browsers
-Test Template     Example Test
+Test Template     Data Template Test
 
 *** Test Case ***
 Data Template Test with ${first_name}
