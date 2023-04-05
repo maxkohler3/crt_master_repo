@@ -1,40 +1,40 @@
 
-*** Settings ***
-Resource                      ../resources/common.robot
-Suite Setup                   Setup Browser
-Suite Teardown                End suite
-# Library                       ../libraries/custom_library.py
-Library        Collections
+# *** Settings ***
+# Resource                      ../resources/common.robot
+# Suite Setup                   Setup Browser
+# Suite Teardown                End suite
+# # Library                       ../libraries/custom_library.py
+# Library        Collections
 
-*** Variables *** 
-@{first_name}=    Xarl    Monty    Magnolia
-@{last_name}=    Chin    Maguire    Blossom
-@{gender}=    Female    Male     Female
-@{ethnicity}=    American Indian or Alaska Native    Asian    American Indian or Alaska Native
-@{role}=    Observer    Alleged Maltreator    Alleged Victim
-@{dob}=    01/02/1978    03/05/1981    10/15/2006
+# *** Variables *** 
+# @{first_name}=    Xarl    Monty    Magnolia
+# @{last_name}=    Chin    Maguire    Blossom
+# @{gender}=    Female    Male     Female
+# @{ethnicity}=    American Indian or Alaska Native    Asian    American Indian or Alaska Native
+# @{role}=    Observer    Alleged Maltreator    Alleged Victim
+# @{dob}=    01/02/1978    03/05/1981    10/15/2006
 
-&{persons}=
+# &{persons}=
 
-*** Test Cases ***
+# *** Test Cases ***
 
 
-Scratchwork Test 
-    ${date}=     Get Current Date    result_format=%m/%d/%Y
-    ${20yo_date}=  Subtract Time From Date    ${date}          7300 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
-    ${50yo_date}=  Subtract Time From Date    ${date}          18263 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
+# Scratchwork Test 
+#     ${date}=     Get Current Date    result_format=%m/%d/%Y
+#     ${20yo_date}=  Subtract Time From Date    ${date}          7300 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
+#     ${50yo_date}=  Subtract Time From Date    ${date}          18263 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
     
 
-    FOR                   ${person}          IN         @{first_name}   
+#     FOR                   ${person}          IN         @{first_name}   
 
-        Log                 ${first_name}
-        Log                 ${last_name}
-        Log                 ${gender}                  
-        Log                 ${ethnicity}
-        Log                 ${role} 
-        Log                 ${dob}
+#         Log                 ${first_name}
+#         Log                 ${last_name}
+#         Log                 ${gender}                  
+#         Log                 ${ethnicity}
+#         Log                 ${role} 
+#         Log                 ${dob}
         
-    END
+#     END
 
     
 # Test Sample
