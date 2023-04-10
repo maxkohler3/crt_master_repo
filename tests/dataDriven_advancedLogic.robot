@@ -51,12 +51,11 @@ File Interaction
     LaunchApp    Sales
     ClickText    Opportunities 
     ClickText    Robotic Testing
-    ScrollTo     Upload Files
+    ScrollTo     Upload Files    visibility=false 
     UploadFile   Upload Files    ../files/new_accounts.xlsx
     VerifyText                   1 of 1 file uploaded
     ClickText    Done
     ClickText    Notes & Attachments    partial_match=true
-    ClickText    Show more actions 
 
     UseTable     Title
     ClickCell    r1c5
