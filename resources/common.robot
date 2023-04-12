@@ -107,10 +107,6 @@ DeleteLeads
     VerifyNoText          Undo
     ClickText             Leads                    partial_match=False
 
-Concatenate Strings
-    [Arguments]    ${string1}    ${string2}
-    ${concatenated_string}=    Catenate    ${string1}    ${string2}
-    [Return]    ${concatenated_string}
     
 # Validate Table Cell 
 #     ${opp_name}=                Set Variable       Robotic Testing
