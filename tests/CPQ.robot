@@ -7,11 +7,7 @@ Suite Teardown            End suite
 
 *** Test Cases ***
 Create CPQ Quote  
-    Home
-
-    VerifyText    Home
-    LaunchApp    Salesforce CPQ
-    Concatenate Strings    Dave    Belove
+    Home 
     LaunchApp             Salesforce CPQ
     ClickText             Opportunities
     ClickText             Robotic Testing             delay=2
