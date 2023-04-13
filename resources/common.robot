@@ -119,3 +119,10 @@ DeleteLeads
 
 # Click Next Page in Table 
 #     ClickText    Next Page
+
+Close All Salesforce Tabs
+    HotKey                      shift                       w
+    ${multiple_tabs}=           IsText                      Close all tabs?             5s
+    IF                          ${multiple_tabs}
+        ClickText               Close All
+    END
