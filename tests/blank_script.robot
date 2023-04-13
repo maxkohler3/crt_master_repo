@@ -8,12 +8,25 @@ Library                       String
 *** Test Cases ***
     Home
     ${string}=    Set Variable    lake ocean river mountain sky
-    ${split}=     Split String    ${string}
+    
+    @{split}=     Split String    ${string}
+
+    ${third}=          Get From List             ${split}    3 
+
+    FOR           ${x}            IN RANGE       0  5
+        Log to console       ${split}[${x}]
+    END
 
 
+    FOR           ${x}            IN             ${split}
+        Log to console       ${x}[0]
+        Log to console       ${x}[1]
+        Log to console       ${x}[2]
+        Log to console       ${x}[3]
+        Log to console       ${x}[4]
+    END
 
-
-
+    ${third}=          Get From List             ${split}    3  
 
 
 
@@ -49,12 +62,12 @@ Library                       String
 
 #     FOR                   ${person}          IN         @{first_name}   
 
-#         Log                 ${first_name}
-#         Log                 ${last_name}
-#         Log                 ${gender}                  
-#         Log                 ${ethnicity}
-#         Log                 ${role} 
-#         Log                 ${dob}
+#         Log to console                 ${first_name}
+#         Log to console                 ${last_name}
+#         Log to console                 ${gender}                  
+#         Log to console                 ${ethnicity}
+#         Log to console                 ${role} 
+#         Log to console                 ${dob}
         
 #     END
 
@@ -77,5 +90,5 @@ Library                       String
 #     END                                                         
 
 #     Run Keyword And Continue On Failure               ClickText    asdfkgjh     
-#     Log                        This step worked
+#     Log to console                        This step worked
 
