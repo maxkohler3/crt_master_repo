@@ -1,3 +1,25 @@
+*** Settings ***
+Resource                      ../resources/common.robot
+Suite Setup                   Setup Browser
+Suite Teardown                End suite
+Library                       String
+
+
+*** Test Cases ***
+    Home
+    ${string}=    Set Variable    lake ocean river mountain sky
+    ${split}=     Split String    ${string}
+
+
+
+
+
+
+
+
+
+
+
 
 # *** Settings ***
 # Resource                      ../resources/common.robot
