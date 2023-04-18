@@ -46,21 +46,6 @@ Table Validations
     ClickCell          r1c6
     ${account_phone}=  GetCellText              r?Robots, Inc./c?Phone
 
-File Interaction
-    Home
-    LaunchApp    Sales
-    ClickText    Opportunities 
-    ClickText    Robotic Testing
-    ScrollTo     Upload Files    visibility=false 
-    UploadFile   Upload Files    ../files/new_accounts.xlsx
-    VerifyText                   1 of 1 file uploaded
-    ClickText    Done
-    ClickText    Notes & Attachments    partial_match=true
-
-    UseTable     Title
-    ClickCell    r1c5
-    ClickText    Delete
-    ClickText    Delete                 anchor=Cancel
 
 Loop Testing
     GoTo                        https://qentinelqi.github.io/shop/
@@ -118,3 +103,19 @@ Fake Data Generator
 #     GoTo          https://slockard-dev-ed.lightning.force.com/lightning/r/copado__ExtensionConfiguration__c/a0f7Q000000gShGQAU/view
 #     VerifyText    Extension Configuration Status
 #     VerifyText    Active                        anchor=2
+
+# File Interaction
+#     Home
+#     LaunchApp    Sales
+#     ClickText    Opportunities 
+#     ClickText    Robotic Testing
+#     ScrollTo     Upload Files    visibility=false 
+#     UploadFile   Upload Files    ../files/new_accounts.xlsx
+#     VerifyText                   1 of 1 file uploaded
+#     ClickText    Done
+#     ClickText    Notes & Attachments    partial_match=true
+
+#     UseTable     Title
+#     ClickCell    r1c5
+#     ClickText    Delete
+#     ClickText    Delete                 anchor=Cancel
