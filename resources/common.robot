@@ -6,6 +6,7 @@ Library                   DateTime
 Library                   Collections
 Library                   RequestsLibrary
 Library                   FakerLibrary
+Library                   ExcelLibrary
 
 
 *** Variables ***
