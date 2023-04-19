@@ -12,8 +12,7 @@ Excel Handling
     Home
     LaunchApp    Sales
     ClickText    Opportunities 
-    ClickText    Robotic Testing
-    VerifyText   Recently Viewed
+    ClickUntil   Activity           Robotic Testing
     ClickText    Notes & Attachments
     
     UseTable     Title
