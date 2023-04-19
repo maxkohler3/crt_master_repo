@@ -21,10 +21,7 @@ ${api}                    https://slockard-dev-ed.my.salesforce.com/
 Setup Browser
     Set Library Search Order                   QWeb    QForce    QVision
     Evaluate              random.seed()
-    &{chrome_prefs}=    Create Dictionary
-    ...    download.default_directory=${EXECDIR}
-    ...    download.prompt_for_download=${FALSE}
-    Open Browser    about:blank    ${BROWSER}    prefs=${chrome_prefs}
+    Open Browser          about:blank                 ${BROWSER}
     SetConfig             LineBreak                   ${EMPTY}               #\ue000
     SetConfig             DefaultTimeout              20s                    #sometimes salesforce is slow
 
