@@ -21,7 +21,7 @@ Excel Handling
     ClickText               Download
     VerifyFileDownload
 	 
-    ${document}=        Open Excel Document    ${EXECDIR}/../new_accounts.xlsx  doc_id=doc1
+    ${document}=        Open Excel Document    /home/executor/new_accounts.xlsx  doc_id=doc1
     @{account_names}=   Read Excel Column    col_num=1    max_num=3  row_offset=1   sheet_name=Data sheet 1
     @{account_data}=    Read Excel Row       row_num=2    max_num=8   sheet_name=Data sheet 1
 
