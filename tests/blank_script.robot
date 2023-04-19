@@ -6,7 +6,7 @@ Suite Teardown                End suite
 
 *** Test Cases ***
 
-Excel Handling
+Download and Validate Excel
     [Documentation]     Read product names from excel sheet and verify that those can be found from a webshop page
     [Tags]              excel    products    verify
     Home
@@ -22,7 +22,11 @@ Excel Handling
     ClickText               Download
     VerifyFileDownload
 
-    ${document}=        Open Excel Document    ${EXECDIR}/../Downloads/new_accounts.xlsx  doc_id=doc1
+    #this path works in headless execution 
+    ${document}=        Open Excel Document    /home/executor/Downloads/new_accounts.xlsx  doc_id=doc1
+    
+    #this path works in live testing
+    ${document}=        Open Excel Document    /home/services/Downloads/new_accounts.xlsx  doc_id=doc1
 
     @{account_names}=   Read Excel Column    col_num=1    max_num=3  row_offset=1   sheet_name=Data sheet 1
     @{account_data}=    Read Excel Row       row_num=2    max_num=8   sheet_name=Data sheet 1
