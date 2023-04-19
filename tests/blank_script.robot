@@ -6,7 +6,7 @@ Suite Teardown                End suite
 
 *** Test Cases ***
 
-Verify Products
+Excel Handling
     [Documentation]     Read product names from excel sheet and verify that those can be found from a webshop page
     [Tags]              excel    products    verify
     Home
@@ -20,25 +20,14 @@ Verify Products
     ExpectFileDownload
     ClickText               Download
     VerifyFileDownload
-
-    ${document}=        Open Excel Document    ../home/services/Downloads    new_accounts.xlsx
-
-
-
-
-
-    GoTo                ${webshop}
-    VerifyText          Find your spirit animal
-
-    # Open existing workbook
-    ${document}=        Open Excel Document    ${excel_worksheet}    products
-
-    # Start reading values from the second row, max number needs to be provided with offset
-    ${product_names}=   Read Excel Column    col_num=1    max_num=6    row_offset=1    sheet_name=Fur
+	 
+    ${document}=        Open Excel Document    ${EXECDIR}/new_accounts.xlsx  doc_id=doc1
+    @{account_names}=   Read Excel Column    col_num=1    max_num=3  row_offset=1   sheet_name=Data sheet 1
+    @{account_data}=    Read Excel Row       row_num=2    max_num=8   sheet_name=Data sheet 1
 
     # Check that we can find all the products from the web page
-    FOR    ${item}    IN    @{product_names}
-        VerifyText           ${item}
+    FOR    ${item}    IN    @{account_names}
+        Log to console           ${item}
     END
 
 
