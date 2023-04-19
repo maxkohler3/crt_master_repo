@@ -13,6 +13,7 @@ Excel Handling
     LaunchApp    Sales
     ClickText    Opportunities 
     ClickText    Robotic Testing
+    VerifyText   Recently Viewed
     ClickText    Notes & Attachments
     
     UseTable     Title
