@@ -121,6 +121,9 @@ DeleteLeads
 # Click Next Page in Table 
 #     ClickText    Next Page
 
+Click CRT Email 
+    ClickText  CRT Demo Email
+
 Check Older Emails 
     ClickItem    Older
 
