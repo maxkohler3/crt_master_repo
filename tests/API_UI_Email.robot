@@ -45,7 +45,16 @@ Verify Email sent to new SFDC User
     TypeText              Enter your password         ${emailPass}
     ClickText             Next
 
-    RunBlock    Click CRT Email   exp_handler=Check Older Emails
+    ${crt_email}=   IsText   CRT Demo Email
+    IF              ${crt_email} == True
+        ClickText   CRT Demo Email
+    ELSE IF         ${crt_email} == False
+        ClickItem   Older
+        ClickText   CRT Demo Email
+    ELSE            
+        ClickItem   Older
+        ClickText   CRT Demo Email
+    END  
 
     VerifyText            ${email}
     VerifyText            ${title}
