@@ -121,12 +121,6 @@ DeleteLeads
 # Click Next Page in Table 
 #     ClickText    Next Page
 
-Click CRT Email 
-    ClickText  CRT Demo Email
-
-Check Older Emails 
-    ClickItem    Older
-
 Close All Salesforce Tabs
     HotKey                      shift                       w
     ${multiple_tabs}=           IsText                      Close all tabs?             5s
