@@ -121,6 +121,9 @@ DeleteLeads
 # Click Next Page in Table 
 #     ClickText    Next Page
 
+Check Older Emails 
+    ClickItem    Older
+
 Close All Salesforce Tabs
     HotKey                      shift                       w
     ${multiple_tabs}=           IsText                      Close all tabs?             5s
