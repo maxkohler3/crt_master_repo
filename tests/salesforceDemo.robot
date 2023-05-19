@@ -63,11 +63,6 @@ Converting A Lead To Opportunity
     ClickText                 Contacts
     VerifyText                Tina Smith
 
-Expected Failed Test 
-    Home 
-    LaunchApp                 Sales
-    ClickText                 Opportunitys                timeout=5
-
 Delete Test Data
     [tags]                    Test data
     Home
