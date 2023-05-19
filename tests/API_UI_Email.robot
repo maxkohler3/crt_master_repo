@@ -44,7 +44,9 @@ Verify Email sent to new SFDC User
     ClickText             Next
     TypeText              Enter your password         ${emailPass}
     ClickText             Next
-    ClickText             CRT Demo Email
+
+    RunBlock    ClickText  CRT Demo Email   exp_handler=Check Older Emails
+
     VerifyText            ${email}
     VerifyText            ${title}
     ${accountID}=         GetText                     CRT-       
