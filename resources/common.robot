@@ -35,7 +35,13 @@ Login
     TypeText              Username                    ${username}             delay=1
     TypeText              Password                    ${password}
     ClickText             Log In
-    Fill MFA
+    ${isMFA}=  IsText     Verify Your Identity                            #Determines MFA is prompted
+     IF   ${isMFA}                                                        #Conditional Statement for if MFA verification is required to proceed
+          ${mfa_code}=    GetOTP    ${username}    ${MY_SECRET}    ${password}
+          TypeSecret      Code      ${mfa_code}
+          ClickText       Verify
+    END
+    # Fill MFA
     
 
 Home
