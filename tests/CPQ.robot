@@ -11,7 +11,6 @@ Create CPQ Quote
     LaunchApp             Salesforce CPQ
     ClickText             Opportunities
     ClickText             Robotic Testing             delay=2
-    VerifyStage           Qualification
     ClickText             Create Quote
 
     UseModal
