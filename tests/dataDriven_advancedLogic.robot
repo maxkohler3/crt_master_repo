@@ -36,6 +36,14 @@ Verify Lead created in SFDC from Copado Website
     TypeText          Website             ${website}
     ClickText         Cancel
 
+
+Date Time examples
+
+    ${current_date_us}    Get Current Date           result_format=%m/%d/%Y
+    ${plus45_date}        Add Time To Date           ${current_date_us}          45 days            date_format=%m/%d/%Y     result_format=%m/%d/%Y
+    Log To Console        ${plus45_date}
+
+
 Table Validations
     Home
     LaunchApp          Sales
