@@ -3,6 +3,7 @@ Library         QWeb
 Library         QImage
 Suite Setup     OpenBrowser     about:blank     chrome
 Suite Teardown  CloseAllBrowsers
+Library        DateTime
 
 *** Test Cases ***
 Verify Boat Color
@@ -81,8 +82,8 @@ Verify Boat Color
 # # *** Test Cases ***
 
 
-# # Scratchwork Test 
-# #     ${date}=     Get Current Date    result_format=%m/%d/%Y
-# #     ${20yo_date}=  Subtract Time From Date    ${date}          7300 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
-# #     ${50yo_date}=  Subtract Time From Date    ${date}          18263 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
+Scratchwork Test 
+    ${date}=     Get Current Date    result_format=%b %d, %Y
+    ${20yo_date}=  Subtract Time From Date    ${date}          7300 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
+    ${50yo_date}=  Subtract Time From Date    ${date}          18263 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
     
