@@ -15,7 +15,6 @@ Create Lead on Copado Website with Data from Excel
     TypeText          Business Email*     ${email}
     TypeText          Phone*              ${phone}
     TypeText          Company*            ${company}
-    DropDown          Employee Size*      ${employees}
     TypeText          Job Title*          ${title}
     DropDown          Country             ${country}
 
