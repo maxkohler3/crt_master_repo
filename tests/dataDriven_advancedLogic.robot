@@ -38,10 +38,17 @@ Verify Lead created in SFDC from Copado Website
 
 
 Date Time examples
+    #Capture today's date in format of 01/01/2000
+    ${date}    Get Current Date           result_format=%m/%d/%Y
+    #Capture today's date in format of 1/1/2000 by including a minus symbol before "m" and "d" in result_format parameter
+    ${date_without_zeros}    Get Current Date           result_format=%-m/%-d/%Y
+    #Convert today's date to format of Jan 01,2000 by using %b in result_format parameter
+    ${date_month_name}    Convert Date   ${date}  date_format=%m/%d/%Y   result_format=%b %d, %Y
+    #Add 45 days to today's date
+    ${plus45_date}    Add Time To Date      ${date}          45 days       date_format=%m/%d/%Y     result_format=%m/%d/%Y
+    #Subtract 45 days from today's date
+    ${plus45_date}    Subtract Time From Date      ${date}          45 days       date_format=%m/%d/%Y     result_format=%m/%d/%Y
 
-    ${current_date_us}    Get Current Date           result_format=%m/%d/%Y
-    ${plus45_date}        Add Time To Date           ${current_date_us}          45 days            date_format=%m/%d/%Y     result_format=%m/%d/%Y
-    Log To Console        ${plus45_date}
 
 
 Table Validations
