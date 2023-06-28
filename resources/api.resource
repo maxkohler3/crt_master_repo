@@ -5,7 +5,7 @@ Library                   Collections
 
 
 *** Variables ***    
-${api_crt}                https://platform.eu-robotic.copado.com/  
+${api_crt}                https://platform.robotic.copado.com/  
 &{ext_api_headers}        Content-Type=application/json    X-AUTHORIZATION=${pat}
 
 
