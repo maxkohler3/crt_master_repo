@@ -19,7 +19,7 @@ GetUserData
     ${session}=           Create Session        crt  ${api_crt}     debug=3  verify=true
     ${resp}=              Get On Session
     ...                   crt
-    ...                   /user/me
+    ...                   /users/me
     ...                   headers=&{ext_api_headers}  timeout=10
     Log                   ${resp.status_code}
     Log                   ${resp.json()}
