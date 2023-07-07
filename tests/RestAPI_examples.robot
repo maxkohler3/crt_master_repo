@@ -52,7 +52,7 @@ Standard Rest API examples
 #     ${json}=    GetFile  ../files/body.json   
 #     ${json_dict}=    Evaluate      json.loads('''${json}''')         json
 
-#     ${resp}=    POST On Session    jsonplaceholder  /posts  json=${data}  expected_status=anything     
+#     ${resp}=    POST On Session    jsonplaceholder  /posts  json=${json_dict}  expected_status=anything     
 #     Log To Console                 ${resp.text}                                                                                                   
 #     Status Should Be                 201  ${resp}
 
