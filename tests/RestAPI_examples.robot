@@ -5,6 +5,7 @@ Suite Setup                   Run Keywords
 ...                           Setup Browser  
 ...                           Authenticate Salesforce API
 Suite Teardown                End suite
+Library                       OperatingSystem
 
 
 *** Test Cases ***
@@ -44,3 +45,9 @@ Standard Rest API examples
     Quick Get A JSON Body Test
     Get Request Test
     Post Request Test 
+
+Test                                                                                      
+    ${data}=    GetFile  ../files/body.json     
+    ${resp}=    POST On Session    jsonplaceholder  /posts  json=${data}  expected_status=anything     
+                                                                                                       
+    Status Should Be                 201  ${resp}
