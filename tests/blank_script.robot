@@ -1,12 +1,47 @@
+*** Settings ***
+Resource                      ../resources/common.robot
+Suite Setup                   Setup Browser
+Suite Teardown                End suite
 
 
-# *** Settings ***
-# Resource                      ../resources/common.robot
-# Suite Setup                   Setup Browser
-# Suite Teardown                End suite
+*** Test Cases ***
 
 
-# *** Test Cases ***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Upload PDF file 
 #     Home
