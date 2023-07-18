@@ -47,7 +47,7 @@ Edit CPQ Quote
     ClickItem             Reconfigure Line            #engage icons with associative text
     ClickText             Cancel
 
-    UseFrame              //iframe                    #CPQ tables are embedded in iFrames
+    UseFrame              //iframe                    # some CPQ tables are embedded in iFrames
     VerifyTableCell       Net Unit Price              1                           120.000,00 USD
     ClickText             Save                        anchor=Cancel
     Sleep                 10
