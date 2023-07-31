@@ -8,43 +8,44 @@ Suite Teardown                End suite
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     # ${number}=    Set Variable    1000
     # FOR   ${x}    IN RANGE   1  13
     #    ${number_end}=      Evaluate     ${number}*(${x} + 0.02)
     # END 
     # Log to console     ${number_end}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
