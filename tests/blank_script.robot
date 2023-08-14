@@ -1,8 +1,10 @@
 *** Settings ***
+Documentation               New test suite
 Library                       SeleniumLibrary
 Suite Setup                   Open Browser          about:blank    chrome
 Suite Teardown                Close All Browsers
- 
+Library                     String
+
 *** Test Cases ***
 
 
