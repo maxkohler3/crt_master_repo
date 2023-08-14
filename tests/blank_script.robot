@@ -6,40 +6,40 @@ Suite Teardown                Close All Browsers
 
 *** Test Cases ***
 
-    OpenBrowser    about:blank    firefox
+#     OpenBrowser    about:blank    firefox
 
-    Home
-    UseTable       Subject
-    If             IsText         
+#     Home
+#     UseTable       Subject
+#     If             IsText         
 
-    UseTable    Subject
-    ${row}=     GetTableRow    //last
+#     UseTable    Subject
+#     ${row}=     GetTableRow    //last
 
-    FOR         ${x}      IN RANGE     2  ${row}    
-        ClickCell    r${x}/c8
-        ClickText    Delete     delay=3
-        ClickText    Delete     anchor=Cancel    delay=3
-    END
+#     FOR         ${x}      IN RANGE     2  ${row}    
+#         ClickCell    r${x}/c8
+#         ClickText    Delete     delay=3
+#         ClickText    Delete     anchor=Cancel    delay=3
+#     END
 
-    ${text}=         IsText     Show Actions 
-    WHILE            ${text} == True 
-        ClickText    Show Actions                delay=2
-        ClickText    Delete     delay=2
-        ClickText    Delete     anchor=Cancel    delay=2
-        ${text}=         IsText     Show Actions
-    END
+#     ${text}=         IsText     Show Actions 
+#     WHILE            ${text} == True 
+#         ClickText    Show Actions                delay=2
+#         ClickText    Delete     delay=2
+#         ClickText    Delete     anchor=Cancel    delay=2
+#         ${text}=         IsText     Show Actions
+#     END
 
-    UseTable                    Case Number
-    ${tabRows}                  GetTableRow          //last
-    FOR                         ${X}                 IN RANGE         1           ${tabRows}
-        ClickCell               r1c7                 timeout=5
-        ClickText               Delete
-        ClickText               Delete               anchor=Cancel
-        VerifyText              was deleted
-        Sleep                   2
-    END
+#     UseTable                    Case Number
+#     ${tabRows}                  GetTableRow          //last
+#     FOR                         ${x}                 IN RANGE         1           ${tabRows}
+#         ClickCell               r1c3                 timeout=5
+#         ClickText               Delete
+#         ClickText               Delete               anchor=Cancel
+#         VerifyText              was deleted
+#         Sleep                   2
+#     END
 
-        @{list}     Create List    
+#         @{list}     Create List    
     # WHILE       ${row} != 0 1
 
 
