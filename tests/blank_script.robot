@@ -1,9 +1,8 @@
 *** Settings ***
-Resource                      ../resources/common.robot
-Suite Setup                   Setup Browser
-Suite Teardown                End suite
+Library                       SeleniumLibrary
+Suite Setup                   Open Browser          about:blank    chrome
 
-
+ 
 *** Test Cases ***
 
 
