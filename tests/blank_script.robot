@@ -44,43 +44,11 @@ Suite Teardown                Close All Browsers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     # ${number}=    Set Variable    1000
     # FOR   ${x}    IN RANGE   1  13
     #    ${number_end}=      Evaluate     ${number}*(${x} + 0.02)
     # END 
     # Log to console     ${number_end}
-
-
-
 
 
 # Upload PDF file 
@@ -115,16 +83,6 @@ Suite Teardown                Close All Browsers
 #     FOR    ${item}    IN    @{account_names}
 #         Log to console           ${item}
 #     END
-
-
-
-
-
-
-
-
-
-
 
 
 
