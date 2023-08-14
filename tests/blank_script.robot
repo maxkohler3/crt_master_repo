@@ -6,7 +6,7 @@ Suite Teardown                Close All Browsers
 
 *** Test Cases ***
 
-
+    OpenBrowser    about:blank    firefox
 
 
 
