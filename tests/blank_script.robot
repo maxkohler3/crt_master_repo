@@ -8,7 +8,39 @@ Suite Teardown                Close All Browsers
 
     OpenBrowser    about:blank    firefox
 
+    Home
+    UseTable       Subject
+    If             IsText         
 
+    UseTable    Subject
+    ${row}=     GetTableRow    //last
+
+    FOR         ${x}      IN RANGE     2  ${row}    
+        ClickCell    r${x}/c8
+        ClickText    Delete     delay=3
+        ClickText    Delete     anchor=Cancel    delay=3
+    END
+
+    ${text}=         IsText     Show Actions 
+    WHILE            ${text} == True 
+        ClickText    Show Actions                delay=2
+        ClickText    Delete     delay=2
+        ClickText    Delete     anchor=Cancel    delay=2
+        ${text}=         IsText     Show Actions
+    END
+
+    UseTable                    Case Number
+    ${tabRows}                  GetTableRow          //last
+    FOR                         ${X}                 IN RANGE         1           ${tabRows}
+        ClickCell               r1c7                 timeout=5
+        ClickText               Delete
+        ClickText               Delete               anchor=Cancel
+        VerifyText              was deleted
+        Sleep                   2
+    END
+
+        @{list}     Create List    
+    # WHILE       ${row} != 0 1
 
 
 
