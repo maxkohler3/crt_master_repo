@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation               New test suite
-Library                       SeleniumLibrary2
+Library                       Selenium2Library
 Suite Setup                   Open Browser          about:blank    chrome
 Suite Teardown                Close All Browsers
 
