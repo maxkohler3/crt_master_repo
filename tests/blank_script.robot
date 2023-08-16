@@ -18,7 +18,7 @@ Get Links List
         ClickText               ${url}
         SwitchWindow            NEW
         VerifyNoText            404 error    partial_match=true
-        LogScreenshot
+        LogScreenshot           fullpage=true
         CloseOthers
         GoTo                 https://test.salesforce.com/
     END             
