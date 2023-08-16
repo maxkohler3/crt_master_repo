@@ -1,14 +1,14 @@
 *** Settings ***
-Documentation               New test suite
-Library                       SeleniumLibrary
-Suite Setup                   Open Browser          about:blank    chrome
-Suite Teardown                Close All Browsers
+Resource                      ../resources/common.robot
+Suite Setup                   Setup Browser
+Suite Teardown                End suite
+
 
 *** Test Cases ***
-
-#     OpenBrowser    about:blank    firefox
-
+# Testing 
 #     Home
+#     LaunchApp    Service
+#     ClickText    Cases
 #     UseTable       Subject
 #     If             IsText         
 
@@ -32,7 +32,7 @@ Suite Teardown                Close All Browsers
 #     UseTable                    Case Number
 #     ${tabRows}                  GetTableRow          //last
 #     FOR                         ${x}                 IN RANGE         1           ${tabRows}
-#         ClickCell               r1c3                 timeout=5
+#         ClickCell               r1c8                 timeout=5
 #         ClickText               Delete
 #         ClickText               Delete               anchor=Cancel
 #         VerifyText              was deleted
