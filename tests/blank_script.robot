@@ -6,7 +6,7 @@ Suite Teardown                End suite
 
 *** Test Cases ***
 
-Get Links
+Get Links List
     [Documentation]      Test getting links from a page
     GoTo        https://test.salesforce.com/
     Sleep       2
