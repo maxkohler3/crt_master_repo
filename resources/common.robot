@@ -144,8 +144,8 @@ Get Links
     ${link_elems}=       GetWebElement    //a
 
     FOR    ${link}    IN    @{link_elems}
-        ${link_href}=       Evaluate      $link.href
-        Append To List      ${result}     ${link_href}
+        ${link_text}=       Evaluate      $link.text    
+        Append To List      ${result}     ${link_text}
     END
 
     [return]    ${result}
