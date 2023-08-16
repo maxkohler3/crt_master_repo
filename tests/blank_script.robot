@@ -8,10 +8,29 @@ Suite Teardown                End suite
 
 Get Links List
     [Documentation]      Test getting links from a page
-    GoTo        https://test.salesforce.com/
-    Sleep       2
+    GoTo                 https://test.salesforce.com/
+    Sleep                2
     ${links}=            Get Links
     Log List             ${links}
+    SwitchWindow         NEW
+
+    FOR                         ${url}        IN           @{links}
+        ClickText               ${url}
+        SwitchWindow            NEW
+        VerifyNoText            404 error    partial_match=true
+        LogScreenshot
+        CloseOthers
+        GoTo                 https://test.salesforce.com/
+    END             
+
+    #     IF                      ${verification} == True
+    #         Log                 The current user is an Admin
+    #     ELSE IF                 '${user}' == 'Guest'
+    #         Log 
+    #     END
+    # END
+
+    
 
 
 # Testing 
