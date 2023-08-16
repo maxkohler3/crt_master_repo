@@ -5,6 +5,15 @@ Suite Teardown                End suite
 
 
 *** Test Cases ***
+
+Get Links
+    [Documentation]      Test getting links from a page
+    GoTo        https://test.salesforce.com/
+    Sleep       2
+    ${links}=            Get Links
+    Log List             ${links}
+
+
 # Testing 
 #     Home
 #     LaunchApp    Service
