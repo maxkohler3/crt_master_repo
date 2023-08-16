@@ -133,3 +133,19 @@ Close All Salesforce Tabs
     IF                          ${multiple_tabs}
         ClickText               Close All
     END
+
+
+
+
+Get Links
+    [Documentation]      Gets all links from a page to a list.
+
+    @{result}=           Create List
+    ${link_elems}=       GetWebElement    //a
+
+    FOR    ${link}    IN    @{link_elems}
+        ${link_text}=       Evaluate      $link.text
+        Append To List      ${result}     ${link_text}
+    END
+
+    [return]    ${result}
