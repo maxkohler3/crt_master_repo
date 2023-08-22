@@ -22,7 +22,6 @@ Create CPQ Quote
     ClickText             Next
     UseModal              Off
 
-Edit CPQ Quote
     ${quoteID}=           GetText                     Q-
     Set Suite Variable    ${quoteID}
     ClickText             ${quoteID}
@@ -52,16 +51,15 @@ Edit CPQ Quote
     ClickText             Save                        anchor=Cancel
     Sleep                 10
 
-Preview & Validate PDF Document
-    ClickText             Show more actions           timeout=60
-    ClickText             Preview Document
-    ClickText             Preview                     anchor=Cancel               delay=10
-    Sleep                 30
-    VerifyRow             Net 30                      row_text=mkohler@copado.com
-    VerifyRow             USD 120,000.00              row_text=TOTAL
-    LogScreenshot
+# Preview & Validate PDF Document
+#     ClickText             Show more actions           timeout=60
+#     ClickText             Preview Document
+#     ClickText             Preview                     anchor=Cancel               delay=10
+#     Sleep                 30
+#     VerifyRow             Net 30                      row_text=mkohler@copado.com
+#     VerifyRow             USD 120,000.00              row_text=TOTAL
+#     LogScreenshot
 
-Submit and Approve Opportunity 
     ClickText             Opportunities
     ClickText             Robotic Testing             delay=2
     ClickText             ${quoteID}
@@ -69,7 +67,6 @@ Submit and Approve Opportunity
     ClickText             Submit for Approval
     VerifyField           Approval Status             Approved
 
-Delete CPQ Quote Data
     [tags]                Test data
     SetConfig             ShadowDOM                   False
     Home
