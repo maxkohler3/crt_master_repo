@@ -22,6 +22,7 @@ Create CPQ Quote
     ClickText             Next
     UseModal              Off
 
+Edit CPQ Quote
     ${quoteID}=           GetText                     Q-
     Set Suite Variable    ${quoteID}
     ClickText             ${quoteID}
@@ -51,15 +52,16 @@ Create CPQ Quote
     ClickText             Save                        anchor=Cancel
     Sleep                 10
 
-# Preview & Validate PDF Document
-#     ClickText             Show more actions           timeout=60
-#     ClickText             Preview Document
-#     ClickText             Preview                     anchor=Cancel               delay=10
-#     Sleep                 30
-#     VerifyRow             Net 30                      row_text=mkohler@copado.com
-#     VerifyRow             USD 120,000.00              row_text=TOTAL
-#     LogScreenshot
+Preview & Validate PDF Document
+    ClickText             Show more actions           timeout=60
+    ClickText             Preview Document
+    ClickText             Preview                     anchor=Cancel               delay=10
+    Sleep                 30
+    VerifyRow             Net 30                      row_text=mkohler@copado.com
+    VerifyRow             USD 120,000.00              row_text=TOTAL
+    LogScreenshot
 
+Submit and Approve Opportunity 
     ClickText             Opportunities
     ClickText             Robotic Testing             delay=2
     ClickText             ${quoteID}
@@ -67,6 +69,7 @@ Create CPQ Quote
     ClickText             Submit for Approval
     VerifyField           Approval Status             Approved
 
+Delete CPQ Quote Data
     [tags]                Test data
     SetConfig             ShadowDOM                   False
     Home
@@ -96,12 +99,12 @@ Create CPQ Quote
     VerifyNoText          BigQuery
 
 
-    # Below script shows how to login as a different user to approve a quote, for example
+#     Below script shows how to login as a different user to approve a quote, for example
 
-    # LoginAs Example
-    #                     [Documentation]             Example how to impersonate another user. Note: Admin rights needed
-    #                     ...                         for the user who tries to impersonate another user
-    #                     Home
-    #                     LoginAs                     Evan Bartlik
-    #                     VerifyText                  Evan Bartlik
-    #                     ClickText                   Log out as Evan Bartlik
+#     LoginAs Example
+#                         [Documentation]             Example how to impersonate another user. Note: Admin rights needed
+#                         ...                         for the user who tries to impersonate another user
+#                         Home
+#                         LoginAs                     Evan Bartlik
+#                         VerifyText                  Evan Bartlik
+#                         ClickText                   Log out as Evan Bartlik
