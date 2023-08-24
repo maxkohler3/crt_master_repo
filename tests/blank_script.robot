@@ -41,7 +41,13 @@ Suite Teardown                End suite
 
 
 
-
+# ${text}=         IsText     Show Actions 
+#     WHILE            ${text} == True 
+#         ClickText    Show Actions                delay=2
+#         ClickText    Delete     delay=2
+#         ClickText    Delete     anchor=Cancel    delay=2
+#         ${text}=     IsText     Show Actions
+#     END
 
 
 
