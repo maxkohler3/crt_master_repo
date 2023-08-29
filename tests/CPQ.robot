@@ -55,8 +55,8 @@ Edit CPQ Quote
 Preview & Validate PDF Document
     ClickText             Show more actions           timeout=60
     ClickText             Preview Document
-    ClickText             Preview                     anchor=Cancel               delay=10
-    Sleep                 30
+    ClickText             Preview                     anchor=Cancel               delay=20
+    Sleep                 45
     VerifyRow             Net 30                      row_text=mkohler@copado.com
     VerifyRow             USD 120,000.00              row_text=TOTAL
     LogScreenshot
@@ -101,10 +101,10 @@ Delete CPQ Quote Data
 
 #     Below script shows how to login as a different user to approve a quote, for example
 
-#     LoginAs Example
-#                         [Documentation]             Example how to impersonate another user. Note: Admin rights needed
-#                         ...                         for the user who tries to impersonate another user
-#                         Home
-#                         LoginAs                     Evan Bartlik
-#                         VerifyText                  Evan Bartlik
-#                         ClickText                   Log out as Evan Bartlik
+#      LoginAs Example
+#         [Documentation]             Example how to impersonate another user. Note: Admin rights needed
+#             ...                         for the user who tries to impersonate another user
+#         # Home
+#         # LoginAs                     Evan Bartlik
+#         # VerifyText                  Evan Bartlik
+#         # ClickText                   Log out as Evan Bartlik
