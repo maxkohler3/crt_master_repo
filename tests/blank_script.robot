@@ -33,9 +33,13 @@ Suite Teardown                End suite
 
 
 
-
-
-
+# LoginAs Example
+#     [Documentation]             Example how to impersonate another user. Note: Admin rights needed
+#     ...                         for the user who tries to impersonate another user
+#     Home
+#     LoginAs                     Evan Bartlik
+#     VerifyText                  Evan Bartlik
+#     ClickText                   Log out as Evan Bartlik
 
 
 
