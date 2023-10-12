@@ -26,7 +26,6 @@ Setup Browser
     ...    "credentials_enable_service":false
     ...    "profile.default_content_setting_values.notifications":2
     Open Browser    about:blank    ${BROWSER}    options=--disable-notifications    prefs=${chrome_prefs}
-    # Open Browser          about:blank                 ${BROWSER}
     SetConfig             LineBreak                   ${EMPTY}               #\ue000
     SetConfig             DefaultTimeout              20s                    #sometimes salesforce is slow
 
