@@ -77,6 +77,7 @@ Delete CPQ Quote Data
     ClickText             Quotes
     VerifyText            ${quoteID}                  delay=3
     ClickText             ${quoteID}
+    ClickText             Show more actions
     ClickText             Delete                      Clone
     ClickText             Delete                      Cancel
 
