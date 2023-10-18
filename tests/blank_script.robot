@@ -211,7 +211,7 @@ Suite Teardown                End suite
 
 
 # *** Test Cases ***
-# Test Web Application
+# Axalta Test Script
 #     [Tags]    WebApp
 #     Open Browser    ${url}    chrome
 
