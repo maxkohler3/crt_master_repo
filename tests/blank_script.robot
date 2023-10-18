@@ -39,6 +39,14 @@ Suite Teardown                End suite
 
 
 
+
+
+
+
+
+
+
+
 # LoginAs Example
 #     [Documentation]             Example how to impersonate another user. Note: Admin rights needed
 #     ...                         for the user who tries to impersonate another user
@@ -48,7 +56,8 @@ Suite Teardown                End suite
 #     ClickText                   Log out as Evan Bartlik
 
 
-
+    # ${url}=           GetUrl
+    # ${record_id}=     Evaluate    $url.split("/")[6]
 
 
 # ${text}=         IsText     Show Actions 
