@@ -42,11 +42,6 @@ Suite Teardown                End suite
 
 
 
-#LeftMain
-    # ${str}    Set Variable    Click to dial disabled (480) 123-1234
-    # ${str_strip}              Remove String    ${str}    Click to dial disabled (  )  -  ${SPACE}
-    # Should be equal    ${str_strip}        4801231234       
-
 
 
 
