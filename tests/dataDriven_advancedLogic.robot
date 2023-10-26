@@ -37,6 +37,7 @@ Verify Lead created in SFDC from Copado Website
 
 
 Date Time examples
+    [Documentation]    'Library  DateTime' must be imported in Settings section to use any DateTime keywords
     #Capture today's date in format of 01/01/2000
     ${date}    Get Current Date           result_format=%m/%d/%Y
 
@@ -55,6 +56,7 @@ Date Time examples
 
 
 Table Validations
+    [Documentation]    'Library  QForce' must be imported in Settings section to use LaunchApp keyword
     Home
     LaunchApp          Sales
     ClickText          Accounts
@@ -66,6 +68,7 @@ Table Validations
 
 
 Loop Testing
+    [Documentation]    'Library  Collections' should be imported in Settings section when working with lists and dictionaries of data
     GoTo                        https://qentinelqi.github.io/shop/
     @{animals}                  Create List                 Sacha the Deer              Bumble the Elephant         Gerald the Giraffe
     FOR                         ${item}                     IN                          @{animals}
@@ -79,6 +82,7 @@ Loop Testing
 
 
 Loop Over a List with Nested If Statement
+    [Documentation]    'Library  Collections' should be imported in Settings section when working with lists and dictionaries of data
     @{users}                    Create List                 Guest                       Sales                       Admin
     FOR                         ${user}                     IN                          @{users}
         Log                     This is a success message.
@@ -93,6 +97,7 @@ Loop Over a List with Nested If Statement
 
 
 Mathematical Expressions
+    [Documentation]    'Library  String' must be imported in Settings section to use FormatString keyword
     ${discount_percentage}=     Set Variable                .2
     ${list_price}=              Set Variable                100000
     ${total_cost}=              Set Variable                5000
@@ -108,6 +113,7 @@ Mathematical Expressions
 
 
 Fake Data Generator 
+    [Documentation]    'Library  FakerLibrary'  must be imported in Settings section to use any FakerLibrary keywords
     ${address} =       FakerLibrary.address
     ${country} =       FakerLibrary.country
     ${email} =         FakerLibrary.email
