@@ -157,8 +157,7 @@ Get Links
 
 Declare variables
     ${current_date}           Get Current Date     result_format=%m/%d/%Y %H%M
-    ${account_Name}=    AutoTest_Account ${current_date}
-    ${legal_Business_Name}=    AutoTest_Legalbiz ${current_date} 
-    ${brand_Name}=    AutoTest_Brand ${current_date}
-    ${opportunity_Name}=    AutoTest_Oppname ${current_date}
-    [return]                  ${current_date}   ${opportunity_Name}  ${brand_Name}
+    Set Suite Variable        ${account_Name}           AutoTest_Account ${current_date}
+    Set Suite Variable        ${legal_Business_Name}    AutoTest_Legalbiz ${current_date} 
+    Set Suite Variable        ${brand_Name}             AutoTest_Brand ${current_date}
+    Set Suite Variable        ${opportunity_Name}       AutoTest_Oppname ${current_date}
