@@ -15,7 +15,7 @@ ${username}               crt-short@copado.com
 ${login_url}              https://slockard-dev-ed.lightning.force.com/          
 ${home_url}               ${login_url}/lightning/page/home
 ${api}                    https://slockard-dev-ed.my.salesforce.com/ 
-${account_name}           Account ${current_date}
+${account_name}           Account 
 
 
 *** Keywords ***
@@ -157,3 +157,4 @@ Get Links
 
 Current Date 
     ${current_date}           Get Current Date     result_format=%m/%d/%Y %H%M
+    [return]                  ${current_date}
