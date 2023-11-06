@@ -15,10 +15,10 @@ ${username}               crt-short@copado.com
 ${login_url}              https://slockard-dev-ed.lightning.force.com/          
 ${home_url}               ${login_url}/lightning/page/home
 ${api}                    https://slockard-dev-ed.my.salesforce.com/ 
-${account_name}           Account ${current_name}
 
 
 *** Keywords ***
+
 Setup Browser
     Set Library Search Order                   QWeb    QForce    QVision
     Evaluate              random.seed()
@@ -155,9 +155,11 @@ Get Links
 
     [return]    ${result}
 
+
+*** Keywords ***
 Declare variables
-    ${current_date}           Get Current Date     result_format=%m/%d/%Y %H%M
-    Set Suite Variable        ${account_Name}           AutoTest_Account ${current_date}
-    Set Suite Variable        ${legal_Business_Name}    AutoTest_Legalbiz ${current_date} 
-    Set Suite Variable        ${brand_Name}             AutoTest_Brand ${current_date}
-    Set Suite Variable        ${opportunity_Name}       AutoTest_Oppname ${current_date}
+    ${current_date}           Get Current Date          result_format=%m/%d/%Y-%H%M
+    Set Suite Variable        ${account_Name}           Account ${current_date}
+    Set Suite Variable        ${business_Name}          Business ${current_date} 
+    Set Suite Variable        ${brand_Name}             Brand ${current_date}
+    Set Suite Variable        ${opportunity_Name}       Opp ${current_date}
