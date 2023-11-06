@@ -5,8 +5,8 @@ Suite Teardown                End suite
 
 
 *** Test Cases ***
-
-    Log to console    ${account_name}
+    
+    
 
 
 
