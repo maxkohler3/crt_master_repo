@@ -156,7 +156,7 @@ Get Links
     [return]    ${result}
 
 
-*** Keywords ***
+
 Declare variables
     ${current_date}           Get Current Date          result_format=%m/%d/%Y-%H%M
     Set Suite Variable        ${account_Name}           Account ${current_date}
