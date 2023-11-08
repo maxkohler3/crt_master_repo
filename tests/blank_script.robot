@@ -2,9 +2,30 @@
 Resource                      ../resources/common.robot
 Suite Setup                   Setup Browser
 Suite Teardown                End suite
+Library        QVision
 
 
 *** Test Cases ***
+
+    GoTo    https://docs.google.com/spreadsheets/d/1pXRsCuik6Dz-epcWmevFzJgFgMLS00QYBdaiAkSyJDw/edit?usp=sharing
+    QVision.ClickCell     Account ABC   Record ID    # Account ABC targets row text ; Record ID targets the column header
+    WriteText             218570825760876543134\n    # replace the strong of numbers with the  ${record_id} ; '\n' hits the enter key
+    ClickText             File
+    ExpectFileDownload
+    ClickText             Download
+    ClickText             Microsoft Excel (.xlsx)
+    VerifyFileDownload
+
+    Home
+    ClickText    Accounts
+    ClickText    Account 123 
+    UploadFile    Upload Files    /home/services/Downloads/CRT Demo Sheet.xlsx   anchor=2
+
+    # this path works in live testing
+    # /home/services/Downloads/CRT Demo Sheet.xlsx
+    
+    #  this path works in headless execution 
+    #  /home/executor/Downloads/CRT Demo Sheet.xlsx
     
     
 
