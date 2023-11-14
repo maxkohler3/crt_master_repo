@@ -1,15 +1,14 @@
 *** Settings ***
 Resource                      ../resources/common.robot
 Resource                      ../resources/api.resource  
-Suite Setup                   Run Keywords 
-...                           Setup Browser  
-...                           Authenticate Salesforce API
+Suite Setup                   Setup Browser  
 Suite Teardown                End suite
 Library                       OperatingSystem
 
 
 *** Test Cases ***
 QForce API Examples (Salesforce)
+    Authenticate    ${client_id}   ${client_secret}   ${username}    ${password}
     ${contact}=      Create Record  Contact       FirstName=Jane   LastName=Doe
     ${account}=      Create Record  Account       Name=KindCorp
     
@@ -23,8 +22,14 @@ QForce API Examples (Salesforce)
     Delete Record    Contact        ${contact}
     Delete Record    Account        ${account}
 
+    ${json}=      Import Records   Account    ../files/account.json
+    Home
+    ClickText     Accounts
+
     ListObjects
     Revoke
+
+
 
 # QForce CPQ API Examples 
 #     AddCpqProducts
