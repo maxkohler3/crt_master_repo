@@ -10,7 +10,6 @@ Library                       OperatingSystem
 QForce API Examples (Salesforce)
     Authenticate    ${client_id}   ${client_secret}   ${username}    ${password}
     ${contact}=      Create Record  Contact       FirstName=Jane   LastName=Doe
-    ${account}=      Create Record  Account       Name=KindCorp
     ${account}=      Create Record  Account       Name=KindCorp    Type=Prospect    Industry=Consulting
     
     ${account1}=     Get Record     Account       ${account}
