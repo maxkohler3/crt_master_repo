@@ -47,6 +47,15 @@ Suite Teardown                End suite
 
 
 
+Email
+    GoTo         https://mail.tm
+    ${temp_em}   GetText    //*[@title\="Your temporary Email address, click to copy to clipboard!"]
+    Log To Console          ${temp_em}
+    GoTo                    https://copado.com
+    ClickText    Talk to Sales   
+    TypeText                Business Email    ${temp_em}
+
+   
 
 
 
@@ -83,7 +92,7 @@ Suite Teardown                End suite
 #     [Documentation]      Test getting links from a page
 #     GoTo                 https://test.salesforce.com/
 #     Sleep                2
-#     ${links}=            Get Links
+    # ${links}=            Get Links
 #     Log List             ${links}
 #     SwitchWindow         NEW
 
@@ -103,7 +112,19 @@ Suite Teardown                End suite
     #     END
     # END
 
-    
+
+# Validate Table Cell 
+#     ${opp_name}=                Set Variable       Robotic Testing
+#     ${opp_name_visible}=        IsText                    ${opp_name}
+
+#     IF                         ${opp_name_visible}
+#         UseTable               Opportunity Name     #target a table using unique text
+#         VerifyTable            r?${opp_name}/c?Stage      Qualification 
+#     END  
+
+# Click Next Page in Table 
+#     ClickText    Next Page
+
 
 
 # Testing 
@@ -226,84 +247,3 @@ Suite Teardown                End suite
     
 
 
-
-
-# *** Test Cases ***
-# Axalta Test Script
-#     [Tags]    WebApp
-#     Open Browser    ${url}    chrome
-
-#     # Select a catalog and verify the label text changes from gray to black
-#     Click Text    Catalog
-#     Verify Element Text    Catalog    black
-
-#     # Click the label a second time to unselect it
-#     Click Text    Catalog
-#     Verify Element Text    Catalog    gray
-
-#     # Select a catalog and verify the results list is refreshed
-#     Click Text    Catalog
-#     Verify Text    Results updated
-
-#     # Select a category and subcategory
-#     Click Text    Category
-#     Click Text    Subcategory
-#     Verify Text    Subcategory selected
-
-#     # Change quantity of an item
-#     Type Text    Quantity    1
-#     Verify Input Value    Quantity    1
-
-#     # Select a catalog and verify 'Clear all Filters' link is displayed
-#     Click Text    Catalog
-#     Verify Text    Clear all Filters
-
-#     # Click 'Clear all Filters' and verify all filters are deselected
-#     Click Text    Clear all Filters
-#     Verify No Text    Catalog selected
-
-#     # Mouseover a row and verify the color changes
-#     Hover Element    Row
-#     Verify Element Text    Row    light gray
-
-#     # Move mouse away and verify the color changes back to white
-#     Hover Element    Header
-#     Verify Element Text    Row    white
-
-#     # Change quantity and attempt to leave the page
-#     Type Text    Quantity    1
-#     Click Text    Leave Page
-#     Verify Text    Are you sure you want to leave this page?
-
-#     # Stay on the page
-#     Click Text    Stay on this page
-#     Verify Text    You are still on this page
-
-#     # Search for 'red' and verify results are filtered
-#     Type Text    Search    red
-#     Press Key    Search    ENTER
-#     Verify Text    Results for 'red'
-
-#     # Add a second search term 'oxide' and verify results are filtered
-#     Type Text    Search    oxide
-#     Press Key    Search    ENTER
-#     Verify Text    Results for 'red oxide'
-
-#     # Select a manufacturer and verify results are filtered
-#     Click Text    Manufacturer
-#     Click Text    ADT Tools
-#     Verify Text    Results for ADT Tools
-
-#     # Scroll to Category, select a category and subcategory, and verify results are filtered
-#     Scroll    Category    down
-#     Click Text    Category
-#     Click Text    Paint
-#     Click Text    Activator/Hardener
-#     Verify Text    Results for Paint - Activator/Hardener
-
-#     # Verify 'No results were found for that search.' appears for a search with no results
-#     Type Text    Search    No results
-#     Press Key    Search    ENTER
-#     Verify Text    No results were found for that search.
-
-#     Close Browser
