@@ -22,9 +22,9 @@ QForce API Examples (Salesforce)
     Delete Record    Contact        ${contact}
     Delete Record    Account        ${account}
 
-    ${json}=      Import Records   Account    ../files/account.json
-    Home
-    ClickText     Accounts
+    # ${json}=      Import Records   Account    ../files/account.json
+    # Home
+    # ClickText     Accounts
 
     ListObjects
     Revoke
