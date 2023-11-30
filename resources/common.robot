@@ -120,17 +120,6 @@ DeleteLeads
     ClickText             Leads                    partial_match=False
 
     
-# Validate Table Cell 
-#     ${opp_name}=                Set Variable       Robotic Testing
-#     ${opp_name_visible}=        IsText                    ${opp_name}
-
-#     IF                         ${opp_name_visible}
-#         UseTable               Opportunity Name     #target a table using unique text
-#         VerifyTable            r?${opp_name}/c?Stage      Qualification 
-#     END  
-
-# Click Next Page in Table 
-#     ClickText    Next Page
 
 Close All Salesforce Tabs
     HotKey                      shift                       w
