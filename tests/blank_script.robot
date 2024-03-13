@@ -47,23 +47,15 @@ Suite Teardown                End suite
 
 
 
-Email
-    GoTo         https://mail.tm
-    ${temp_em}   GetText    //*[@title\="Your temporary Email address, click to copy to clipboard!"]
-    Log To Console          ${temp_em}
-    GoTo                    https://copado.com
-    ClickText    Talk to Sales   
-    TypeText                Business Email    ${temp_em}
+# Email
+#     GoTo         https://mail.tm
+#     ${temp_em}   GetText    //*[@title\="Your temporary Email address, click to copy to clipboard!"]
+#     Log To Console          ${temp_em}
+#     GoTo                    https://copado.com
+#     ClickText    Talk to Sales   
+#     TypeText                Business Email    ${temp_em}
 
    
-
-
-
-
-
-
-
-
 
 # LoginAs Example
 #     [Documentation]             Example how to impersonate another user. Note: Admin rights needed
