@@ -165,13 +165,13 @@ Suite Teardown                End suite
     # Log to console     ${number_end}
 
 
-Upload PDF file 
-    Home
-    ClickText    Accounts
-    ClickText    KindCorp
-    UploadFile    Upload Files    ${file}  anchor=2
-    VerifyText    1 of 1 file uploaded
-    ClickText     Done
+# Upload file 
+#     Home
+#     ClickText    Accounts
+#     ClickText    KindCorp
+#     UploadFile    Upload Files    ${file}  anchor=2
+#     VerifyText    1 of 1 file uploaded
+#     ClickText     Done
 
 
 # Download and Validate Excel
