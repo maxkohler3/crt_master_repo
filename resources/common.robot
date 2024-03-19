@@ -15,6 +15,7 @@ ${username}               crt-short@copado.com
 ${login_url}              https://slockard-dev-ed.lightning.force.com/          
 ${home_url}               ${login_url}/lightning/page/home
 ${api}                    https://slockard-dev-ed.my.salesforce.com/ 
+${file}                   ../files/account.json 
 
 
 *** Keywords ***
