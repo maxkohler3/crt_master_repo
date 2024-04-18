@@ -36,7 +36,6 @@ Create 3 records with random data via API
         ${Phone}          Phone Number
         ${Company}        Company
         ${FirstName}      First Name
-        ${compTrunc}      Remove String      ${Company}   ${SPACE}  ,  -  .
         ${Email}          Email
         ${Salutation}     Set Variable       Mr.
         ${Title}          Set Variable       Engineer
