@@ -30,22 +30,27 @@ QForce API Examples (Salesforce)
     Revoke
 
 Create 3 records with random data via API
+    Authenticate    ${client_id}   ${client_secret}   ${username}    ${password}
     FOR     ${I}    IN RANGE                 3
         ${LastName}       Last Name
         ${Phone}          Phone Number
         ${Company}        Company
         ${FirstName}      First Name
         ${compTrunc}      Remove String      ${Company}   ${SPACE}  ,  -  .
-        ${Email}          Set Variable       ${FirstName}.${LastName}@${compTrunc}.com
+        ${Email}          Email
         ${Salutation}     Set Variable       Mr.
-        ${Title}          Set Variable        Engineer
-        ${oid}=            Create Record    Lead    LastName=${LastName}    Phone=${Phone}    Company=${Company}
-        ...                FirstName=${FirstName}    Email=${Email}    Salutation=${Salutation}    Title=${Title}
-        Log                Lead record created with ID: ${oid}
-        DeleteRecord       Lead                      ${oid}
+        ${Title}          Set Variable       Engineer
+        ${oid}=           Create Record      Lead    LastName=${LastName}    Phone=${Phone}    Company=${Company}
+        ...               FirstName=${FirstName}    Email=${Email}    Salutation=${Salutation}    Title=${Title}
+        Log               Lead record created with ID: ${oid}
+        # DeleteRecord       Lead                      ${oid}
     END
+    
 
 
+
+        # Create List    @{records}
+        # Append To List     ${oid}                    @{records}
 # QForce CPQ API Examples 
 #     AddCpqProducts
 #     SaveCpqQuote
