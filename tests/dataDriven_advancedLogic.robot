@@ -67,6 +67,15 @@ Table Validations
     ${account_phone}=  GetCellText              r?Robots, Inc./c?Phone
 
 
+Loop If Condition Not Met
+    GoTo    https://copado.com
+    FOR     ${i}    IN RANGE    3
+            ${var}=      Run Keyword And Return Status    VerifyNoText        Products   timeout=2
+            IF           ${var}                        BREAK
+            RefreshPage
+    END
+    Should Be True         ${var}
+
 Loop Testing
     [Documentation]    'Library  Collections' should be imported in Settings section when working with lists and dictionaries of data
     GoTo                        https://qentinelqi.github.io/shop/
