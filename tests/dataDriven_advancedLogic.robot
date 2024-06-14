@@ -123,12 +123,12 @@ Mathematical Expressions
 
 Fake Data Generator 
     [Documentation]    'Library  FakerLibrary'  must be imported in Settings section to use any FakerLibrary keywords
-    ${address} =       FakerLibrary.address
-    ${country} =       FakerLibrary.country
-    ${email} =         FakerLibrary.email
-    ${first_name} =    FakerLibrary.first_name
-    ${last_name} =     FakerLibrary.last_name
-    ${phone_number} =  FakerLibrary.phone_number
+    ${address} =       Address
+    ${country} =       Country
+    ${email} =         Email
+    ${first_name} =    First Name
+    ${last_name} =     Last Name
+    ${phone_number} =  Phone Number
     Log               ${address} ${country} ${email} ${first_name} ${last_name} ${phone_number}   
 
 
