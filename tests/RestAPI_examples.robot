@@ -7,6 +7,43 @@ Library                       OperatingSystem
 
 
 *** Test Cases ***
+
+Create Lead via UI then delete via API
+    [tags]                    Lead
+    Home
+    LaunchApp                 Sales
+    ClickText                 Leads
+    VerifyText                Change Owner
+    ClickText                 New
+    VerifyText                Lead Information
+    UseModal                  On                          # Only find fields from open modal dialog
+
+    Picklist                  Salutation                  Ms.
+    TypeText                  First Name                  Tina
+    TypeText                  Last Name                   Smith
+    PickList                  Lead Status                 Open - Not Contacted
+    TypeText                  Phone                       +12234567858449             
+    TypeText                  Company                     Growmore                    
+    TypeText                  Title                       Manager                     
+    TypeText                  Email                       tina.smith@gmail.com        
+    TypeText                  Website                     https://www.growmore.com/
+
+    ClickText                 Save                        partial_match=False
+    UseModal                  Off
+    Sleep                     1
+
+    ${leadRecord}             Get Record ID
+
+    ClickText       Leads
+    VerifyText      Tina Smith
+    
+    Authenticate    ${client_id}   ${client_secret}   ${username}    ${password}
+    Delete Record   Lead       ${leadRecord}
+    
+    RefreshPage
+    VerifyNoText    Tina Smith
+
+
 QForce API Examples (Salesforce)
     Authenticate    ${client_id}   ${client_secret}   ${username}    ${password}
     ${contact}=      Create Record  Contact       FirstName=Jane   LastName=Doe
