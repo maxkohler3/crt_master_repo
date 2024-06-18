@@ -153,3 +153,8 @@ Declare variables
     Set Suite Variable        ${business_Name}          Business ${current_date} 
     Set Suite Variable        ${brand_Name}             Brand ${current_date}
     Set Suite Variable        ${opportunity_Name}       Opp ${current_date}
+
+Get Record ID 
+    ${url}=           GetUrl
+    ${record_id}=     Evaluate    $url.split("/")[6]
+    [Return]          ${record_id}
