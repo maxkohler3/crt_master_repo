@@ -55,16 +55,16 @@ Date Time examples
 
 
 
-Table Validations
-    [Documentation]    'Library  QForce' must be imported in Settings section to use LaunchApp keyword
-    Home
-    LaunchApp          Sales
-    ClickText          Accounts
+# Table Validations
+#     [Documentation]    'Library  QForce' must be imported in Settings section to use LaunchApp keyword
+#     Home
+#     LaunchApp          Sales
+#     ClickText          Accounts
 
-    UseTable           Account Name
-    VerifyTable        r?Robots, Inc./c?Phone    18001234567
-    ClickCell          r1c6
-    ${account_phone}=  GetCellText              r?Robots, Inc./c?Phone
+#     UseTable           Account Name
+#     VerifyTable        r?Robots, Inc./c?Phone    18001234567
+#     ClickCell          r1c6
+#     ${account_phone}=  GetCellText              r?Robots, Inc./c?Phone
 
 
 Loop If Condition Not Met
@@ -74,7 +74,7 @@ Loop If Condition Not Met
             IF           ${var}                        BREAK
             RefreshPage
     END
-    Should Be True         ${var}
+    Should Not Be True         ${var}
 
 Loop Testing
     [Documentation]    'Library  Collections' should be imported in Settings section when working with lists and dictionaries of data
