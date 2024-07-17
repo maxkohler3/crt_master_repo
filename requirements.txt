@@ -1,2 +1,2 @@
 robotframework-excellib
-install    pendulum
+pendulum
