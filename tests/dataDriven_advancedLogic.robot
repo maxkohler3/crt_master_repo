@@ -2,6 +2,8 @@
 Resource                 ../resources/common.robot
 Suite Setup              Setup Browser
 Suite Teardown           End suite
+Library                  pendulum   #https://pendulum.eustace.io/docs/
+
 
 
 *** Test Cases ***
