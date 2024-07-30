@@ -53,7 +53,9 @@ Date Time examples
     #Subtract 45 days from today's date
     ${plus45_date}    Subtract Time From Date      ${date}          45 days       date_format=%m/%d/%Y     result_format=%m/%d/%Y
 
-
+    #Different timezones using pendulum lib
+    ${parisTime}    Evaluate  pendulum.now("Europe/Paris")
+    ${torontoTime}   Evaluate  $now.in_timezone("America/Toronto")
 
 # Table Validations
 #     [Documentation]    'Library  QForce' must be imported in Settings section to use LaunchApp keyword
