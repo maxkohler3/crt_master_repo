@@ -55,9 +55,23 @@ Date Time examples
     #Subtract 45 days from today's date
     ${plus45_date}    Subtract Time From Date      ${date}          45 days       date_format=%m/%d/%Y     result_format=%m/%d/%Y
 
-    #Different timezones using pendulum lib
-    ${parisTime}    Evaluate  pendulum.now("Europe/Paris")
-    ${torontoTime}   Evaluate  $now.in_timezone("America/Toronto")
+    #Examples using pendulum lib
+    ${now}           pendulum.now
+    ${torontoDate}   Evaluate     $now.in_timezone("America/Toronto")
+    ${formatDate}    Evaluate     $now.format('dddd DD MMMM YYYY')
+    ${formatDate2}   Evaluate     $now.format('MM/DD/YYYY')
+    ${year}          Evaluate     $now.year
+    ${month}         Evaluate     $now.month 
+    ${day}           Evaluate     $now.day 
+    ${hour}          Evaluate     $now.hour 
+    ${minute}        Evaluate     $now.minute 
+    ${second}        Evaluate     $now.second
+    
+
+
+    ${input_elems}=   GetWebelement    //span[contains(@title, "${Relative}")]/../../../../../section//input[contains(@value, ",mobile")]
+    ${phone_number}=    Evaluate    $input_elems[0].get_attribute("value").replace(",mobile", "")
+
 
 # Table Validations
 #     [Documentation]    'Library  QForce' must be imported in Settings section to use LaunchApp keyword
