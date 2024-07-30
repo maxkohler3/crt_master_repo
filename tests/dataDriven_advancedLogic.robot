@@ -66,6 +66,8 @@ Date Time examples
     ${hour}          Evaluate     $now.hour 
     ${minute}        Evaluate     $now.minute 
     ${second}        Evaluate     $now.second
+    ${convertDate}  Convert Date  ${torontoDate}  date_format=%m/%d/%Y   result_format=%-m/%-d/%Y
+    
     
 
 
