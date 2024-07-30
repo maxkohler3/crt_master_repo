@@ -1,4 +1,2 @@
 robotframework-excellib
 pendulum
-datetime
-pytz
