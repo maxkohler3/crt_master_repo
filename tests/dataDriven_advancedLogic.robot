@@ -41,7 +41,9 @@ Verify Lead created in SFDC from Copado Website
 Date Time examples
     [Documentation]    'Library  DateTime' must be imported in Settings section to use any DateTime keywords
     #Capture today's date in format of 01/01/2000
-    ${date}    Get Current Date           result_format=%m/%d/%Y
+    ${date}    Get Current Date           result_format=%m/%d/%Y %HH:%MM
+    ${plus1hour}    Add Time To Date      ${date}          1 hour      date_format=%m/%d/%Y %HH:%MM   result_format=%m/%d/%Y %HH:%MM
+
 
     #Capture today's date in format of 1/1/2000 by including a minus symbol before "m" and "d" in result_format parameter
     ${date_without_zeros}    Get Current Date           result_format=%-m/%-d/%Y
@@ -54,6 +56,33 @@ Date Time examples
     
     #Subtract 45 days from today's date
     ${plus45_date}    Subtract Time From Date      ${date}          45 days       date_format=%m/%d/%Y     result_format=%m/%d/%Y
+
+
+
+
+
+
+
+
+
+
+
+
+    Get Date and Change Times                      2 hour
+
+
+
+
+
+
+    ${dateUTC}     Get Current Date        UTC   result_format=%m/%d/%Y %HH:%MM
+
+
+    ${date}    Get Current Date           result_format=%m/%d/%Y %HH:%MM
+    ${plus1hour}    Add Time To Date      ${date}          1 hour      date_format=%m/%d/%Y %HH:%MM   result_format=%m/%d/%Y %HH:%MM
+
+
+
 
     #Examples using pendulum lib
     ${now}           pendulum.now
@@ -69,6 +98,24 @@ Date Time examples
     ${convertDate}  Convert Date  ${torontoDate}  date_format=%m/%d/%Y   result_format=%-m/%-d/%Y
     
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     ${input_elems}=   GetWebelement    //span[contains(@title, "${Relative}")]/../../../../../section//input[contains(@value, ",mobile")]
@@ -150,6 +197,24 @@ Fake Data Generator
     ${last_name} =     Last Name
     ${phone_number} =  Phone Number
     Log               ${address} ${country} ${email} ${first_name} ${last_name} ${phone_number}   
+
+# Unzip File  #Import OperatingSystem lib
+#     ExpectFileDownload
+#     ClickText               Download Related Files
+#     ${zip_file}             VerifyFileDownload   
+
+#     IF    "${EXECDIR}" == "/home/executor/execution"    # normal test run environment
+#         ${downloads_folder}=    Set Variable    /home/executor/Downloads
+#     ELSE    # Live Testing environment
+#         ${downloads_folder}=    Set Variable    /home/services/Downloads
+#     END
+ 
+#     Run    unzip ${zip_file} -d ${downloads_folder}
+  
+#      #Get file name from download folder
+#     @{downloads}=               List Files In Directory    ${downloads_folder}
+#     ${unzipped_file}=           Get From List              ${downloads}             0
+#     Log                         Unzipped File Name: ${unzipped_file}
 
 
 # Lightning Web Component Test
