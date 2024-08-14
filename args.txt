@@ -1,9 +1,2 @@
---name Tests
-tests/salesforceDemo.robot
-tests/CPQ.robot
-tests/RestAPI_examples.robot
-tests/API_UI_Email.robot
-tests/dataDriven_advancedLogic.robot
-tests/data_driven_template.robot
-tests/screenshot_compare.robot
-tests/sfdc_clouds.robot
+robot --randomize suites
+
