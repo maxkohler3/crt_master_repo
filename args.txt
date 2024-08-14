@@ -1,2 +1,8 @@
---name  salesforceDemo.robot
-
+--test salesforceDemo
+--test CPQ
+--test RestAPI_examples
+--test API_UI_Email
+--test dataDriven_advancedLogic
+--test data_driven_template
+--test sfdc_clouds
+--test screenshot_compare
