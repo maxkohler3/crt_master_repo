@@ -1,5 +1,5 @@
 *** Settings ***
-Resource                      ../resources/common.robot
+Resource                      ../../resources/common.robot
 Suite Setup                   Setup Browser
 Suite Teardown                End suite
 
