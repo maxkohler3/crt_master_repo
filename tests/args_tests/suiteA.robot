@@ -6,8 +6,8 @@ Suite Teardown                End suite
 
 *** Test Cases ***
 
-TC1 in Suite A 
+TC1A
     Log    1A
 
-TC2 in Suite A 
+TC2A
     Log    2A
