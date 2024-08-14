@@ -86,3 +86,8 @@ Delete Test Data
     Set Suite Variable        ${data}                     John Doe
     RunBlock                  NoData                      timeout=180s                exp_handler=DeleteLeads
     
+Fail 1 
+    Log    Failure 1
+
+Fail 2
+    Log    Failure 2
