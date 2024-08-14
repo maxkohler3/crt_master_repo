@@ -1,5 +1,5 @@
--t  suiteA.TC1B
--t  suiteA.TC1A
--t  suiteB.TC2A
--t  suiteB.TC2B
+-t  TC1B
+-t  TC1A
+-t  TC2A
+-t  TC2B
 
