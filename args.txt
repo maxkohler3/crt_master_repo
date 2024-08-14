@@ -1,1 +1,3 @@
--s  salesforceDemo
+--suite  salesforceDemo
+--suite  CPQ
+
