@@ -1,9 +1,9 @@
 --name Tests
-tests/salesforceDemo
-tests/CPQ
-tests/RestAPI_examples
-tests/API_UI_Email
-tests/dataDriven_advancedLogic
-tests/data_driven_template
-tests/screenshot_compare
-tests/sfdc_clouds
+tests/salesforceDemo.robot
+tests/CPQ.robot
+tests/RestAPI_examples.robot
+tests/API_UI_Email.robot
+tests/dataDriven_advancedLogic.robot
+tests/data_driven_template.robot
+tests/screenshot_compare.robot
+tests/sfdc_clouds.robot
