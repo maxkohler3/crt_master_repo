@@ -1,6 +1,9 @@
 --name Tests
-tests/Entering A Lead
-tests/Converting A Lead To Opportunity
-tests/Delete Test Data
-tests/Fail 2
-tests/Fail 1
+tests/salesforceDemo
+tests/CPQ
+tests/RestAPI_examples
+tests/API_UI_Email
+tests/dataDriven_advancedLogic
+tests/data_driven_template
+tests/screenshot_compare
+tests/sfdc_clouds
