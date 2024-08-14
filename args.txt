@@ -1,8 +1,1 @@
 -s  salesforceDemo
--s  CPQ
--s  RestAPI_examples
--s  API_UI_Email
--s  dataDriven_advancedLogic
--s  data_driven_template
--s  sfdc_clouds
--s  screenshot_compare
