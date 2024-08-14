@@ -1,2 +1,2 @@
-robot --randomize suites
+--name  salesforceDemo.robot
 
