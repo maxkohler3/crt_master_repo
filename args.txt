@@ -1,3 +1,5 @@
---suite  salesforceDemo
---suite  CPQ
+-t  suiteA.TC1B
+-t  suiteA.TC1A
+-t  suiteB.TC2A
+-t  suiteB.TC2B
 
