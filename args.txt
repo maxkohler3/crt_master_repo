@@ -1,8 +1,8 @@
---suite ../tests/salesforceDemo.robot
---suite ../tests/CPQ.robot
---suite ../tests/RestAPI_examples.robot
---suite ../tests/API_UI_Email.robot
---suite ../tests/dataDriven_advancedLogic.robot
---suite ../tests/data_driven_template.robot
---suite ../tests/sfdc_clouds.robot
---suite ../tests/screenshot_compare.robot
+--name salesforceDemo
+--name CPQ
+--name RestAPI_examples
+--name API_UI_Email
+--name dataDriven_advancedLogic
+--name data_driven_template
+--name sfdc_clouds
+--name screenshot_compare
