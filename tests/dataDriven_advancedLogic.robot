@@ -198,6 +198,34 @@ Fake Data Generator
     ${phone_number} =  Phone Number
     Log               ${address} ${country} ${email} ${first_name} ${last_name} ${phone_number}   
 
+
+Table Interaction
+    Home 
+    ClickText   Leads
+    UseTable    Name  
+    ${rows}=    GetTableRow    //last
+    
+    ${names}=      Create List
+    ${companies}=  Create List  
+    ${phones}=     Create List
+    FOR  ${i}  IN RANGE  2  ${rows}+1
+        ${name}     GetCellText  r${i}/c?Name    tag=a
+        ${company}  GetCellText  r${i}/c?Company   
+        ${phone}    GetCellText  r${i}/c?Phone
+        Append to List   ${names}       ${name}
+        Append To List   ${companies}   ${company}
+        Append To List   ${phones}      ${phone}
+    END
+
+    Log To Console      ${names}
+    Log to console      ${companies}
+    Log to console      ${phones}
+
+
+
+
+
+
 # Unzip File  #Import OperatingSystem lib
 #     ExpectFileDownload
 #     ClickText               Download Related Files
