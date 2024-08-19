@@ -159,3 +159,22 @@ Get Record ID
     ${url}=           GetUrl
     ${record_id}=     Evaluate    $url.split("/")[6]
     [Return]          ${record_id}
+
+
+Pick Many
+    [Documentation]         Opens the selector for provided label and selects multiple options
+    ...                     Works with Purpose of Call multipicklist in the Intake page.
+    ...                     Example usage:
+    ...                     @{options}=                 Create List               General questions
+    ...                     Pick Many                   Purpose of Call           @{options}
+    [Arguments]             ${label}                    @{values}
+    ${prev}=                SetConfig                   IsModalXPath              //label[text()\='${label}']/../div
+    ClickElement            //span[@title\='Click to open the dropdown']/../input
+    SetConfig               IsModalXPath                ${prev}
+    FOR                     ${value}                    IN                        @{values}
+        VerifyText          ${value}                    delay=1s
+        ClickText           ${value}                    delay=1s
+    END
+    # Test steps
+    #@{options}=                 Create List                 Seeking In Person Care      General questions
+    #Pick Many                   Purpose of Call             @{options}
