@@ -58,30 +58,13 @@ Date Time examples
     ${plus45_date}    Subtract Time From Date      ${date}          45 days       date_format=%m/%d/%Y     result_format=%m/%d/%Y
 
 
-
-
-
-
-
-
-
-
-
-
     Get Date and Change Times                      2 hour
-
-
-
-
-
 
     ${dateUTC}     Get Current Date        UTC   result_format=%m/%d/%Y %HH:%MM
 
 
     ${date}    Get Current Date           result_format=%m/%d/%Y %HH:%MM
     ${plus1hour}    Add Time To Date      ${date}          1 hour      date_format=%m/%d/%Y %HH:%MM   result_format=%m/%d/%Y %HH:%MM
-
-
 
 
     #Examples using pendulum lib
@@ -97,42 +80,6 @@ Date Time examples
     ${second}        Evaluate     $now.second
     ${convertDate}  Convert Date  ${torontoDate}  date_format=%m/%d/%Y   result_format=%-m/%-d/%Y
     
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ${input_elems}=   GetWebelement    //span[contains(@title, "${Relative}")]/../../../../../section//input[contains(@value, ",mobile")]
-    ${phone_number}=    Evaluate    $input_elems[0].get_attribute("value").replace(",mobile", "")
-
-
-# Table Validations
-#     [Documentation]    'Library  QForce' must be imported in Settings section to use LaunchApp keyword
-#     Home
-#     LaunchApp          Sales
-#     ClickText          Accounts
-
-#     UseTable           Account Name
-#     VerifyTable        r?Robots, Inc./c?Phone    18001234567
-#     ClickCell          r1c6
-#     ${account_phone}=  GetCellText              r?Robots, Inc./c?Phone
-
 
 Loop If Condition Not Met
     GoTo    https://copado.com
@@ -265,3 +212,16 @@ Table Interaction
 #     ClickCell    r1c5
 #     ClickText    Delete
 #     ClickText    Delete                 anchor=Cancel
+
+
+
+# Table Validations
+#     [Documentation]    'Library  QForce' must be imported in Settings section to use LaunchApp keyword
+#     Home
+#     LaunchApp          Sales
+#     ClickText          Accounts
+
+#     UseTable           Account Name
+#     VerifyTable        r?Robots, Inc./c?Phone    18001234567
+#     ClickCell          r1c6
+#     ${account_phone}=  GetCellText              r?Robots, Inc./c?Phone
