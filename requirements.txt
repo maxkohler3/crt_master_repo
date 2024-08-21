@@ -1,2 +1,4 @@
 robotframework-excellib
 pendulum
+python-Levenshtein
+fuzzywuzzy
