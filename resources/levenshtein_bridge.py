@@ -5,4 +5,4 @@ class levenshtein_bridge:
         pass
 
     def get_levenshtein_distance(self, incoming_text, master_text):
-        return    levenshtein_distance_weighted(incoming_text,master_text)
+        return levenshtein_distance_weighted(incoming_text,master_text)
