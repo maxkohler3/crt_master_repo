@@ -1,4 +1,4 @@
-from Levenshtein import distance
+from Levenshtein import levenshtein_distance_weighted
 
 def calculate_levenshtein_distance(string1, string2):
     """
