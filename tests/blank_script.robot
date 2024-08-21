@@ -16,7 +16,7 @@ TC01
     Get Library Instance                        levenshtein_bridge.py
     Get Levenshtein Distance                       Example1    Example2
     logging in to System Admin
-   ${levi_result}=    Get_Levenshtein_Distance    incoming_text=Example1    master_text=Example2
+   ${levi_result}=    Get Levenshtein Distance    Example1  Example2
    Log                ${levi_result}
 
 
