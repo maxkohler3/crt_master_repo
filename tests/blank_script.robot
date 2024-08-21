@@ -1,13 +1,12 @@
 *** Settings ***
 # Resource               ../resources/common.robot
-Library                QWeb
+Library                QForce
 Library                String
 Library                DateTime
-Library                ExcelLibrary
 Library                ../resources/levenshtein_bridge.py
 
-Suite Setup            Setup Browser
-Suite Teardown         End suite
+Suite Setup            OpenBrowser  about:blank  chrome
+Suite Teardown         CloseAllBrowsers
 
 *** Test Cases ***
 TC01
