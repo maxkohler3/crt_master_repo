@@ -1,15 +1,23 @@
 *** Settings ***
-Resource                      ../resources/common.robot
-Suite Setup                   Setup Browser
-Suite Teardown                End suite
-Library                       pendulum
+Resource               ../resources/common.robot
+Library                QWeb
+Library                String
+Library                DateTime
+Library                ExcelLibrary
+Library                ../resources/levenshtein_bridge.py
 
+Suite Setup            Setup Browser
+Suite Teardown         End suite
 
 *** Test Cases ***
-
-
-    
-
+TC01
+    [Tags]             TC01                        BEAU_Order_POC
+    [Documentation]    BEAU Testing POC
+    Get Library Instance                        levenshtein_bridge.py
+    Get Levenshtein Distance                       Example1    Example2
+    #logging in to System Admin
+#    ${levi_result}=    Get_Levenshtein_Distance    incoming_text=Example1    master_text=Example2
+#    Log                ${levi_result}
 
 
 
