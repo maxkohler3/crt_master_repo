@@ -15,8 +15,8 @@ TC01
     Get Library Instance                        levenshtein_bridge.py
     Get Levenshtein Distance                       Example1    Example2
     logging in to System Admin
-   ${levi_result}=    Get Levenshtein Distance    Srijan  Vishisth
-   Log                ${levi_result}
+    ${levi_result}=    Get Levenshtein Distance    Srijan  Vishisth
+    Log                ${levi_result}
 
 
 
