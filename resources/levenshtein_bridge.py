@@ -1,4 +1,4 @@
-from levenshtein import levenshtein_distance_weighted
+from Levenshtein import levenshtein_distance_weighted
 
 class levenshtein_bridge:
     def __init__(self):
