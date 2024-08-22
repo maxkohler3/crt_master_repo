@@ -10,11 +10,7 @@ Suite Teardown         CloseAllBrowsers
 
 *** Test Cases ***
 TC01
-    [Tags]             TC01                        BEAU_Order_POC
-    [Documentation]    BEAU Testing POC
-    Get Library Instance                        levenshtein_bridge.py
-    Get Levenshtein Distance                       Example1    Example2
-    logging in to System Admin
+    Get Levenshtein Distance                       Example1   Example2
     ${levi_result}=    Get Levenshtein Distance    Srijan  Vishisth
     Log                ${levi_result}
 
