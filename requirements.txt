@@ -3,3 +3,5 @@ pendulum
 python-Levenshtein
 fuzzywuzzy
 gitpython
+typing
+openpyxl
