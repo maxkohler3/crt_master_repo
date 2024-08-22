@@ -7,7 +7,7 @@ Library                   Collections
 Library                   RequestsLibrary
 Library                   FakerLibrary
 Library                   ExcelLibrary
-
+Library                 ../libraries/gitOperations.py
 
 
 *** Variables ***
