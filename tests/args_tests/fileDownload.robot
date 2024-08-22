@@ -4,8 +4,8 @@ Library         Collections
 Library         RequestsLibrary
 Library         GitLibrary
 Resource        ../resources/common.robot
-Suite Setup     Setup Browser
-Suite Teardown  End suite
+Suite Setup     OpenBrowser  about:blank  chrome
+Suite Teardown  CloseAllBrowsers
 
 *** Variables ***
 ${REPO_PATH}      /path/to/your/repo
