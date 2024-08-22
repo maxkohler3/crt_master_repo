@@ -8,7 +8,7 @@ Suite Setup     OpenBrowser  about:blank  chrome
 Suite Teardown  CloseAllBrowsers
 
 *** Variables ***
-${REPO_PATH}      /path/to/your/repo
+${REPO_PATH}      /home/services/suite/files
 ${GIT_URL}        https://your-git-repo-url.git
 ${FILE_URL}       https://example.com/file-to-download.txt
 ${FILE_NAME}      file-to-download.txt
