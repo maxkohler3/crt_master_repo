@@ -5,7 +5,7 @@ Library         RequestsLibrary
 Library         GitLibrary
 Resource        ../resources/common.robot
 Suite Setup     Setup Browser
-Suite Teardown  End Suite
+Suite Teardown  End suite
 
 *** Variables ***
 ${REPO_PATH}      /path/to/your/repo
