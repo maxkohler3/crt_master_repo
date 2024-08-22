@@ -14,7 +14,7 @@ class GitOperations(object):
 
         # SCRIPTS env variable contains the suite name (except locally)
         if self._project_name != "None":
-            if self._project_path == "/home/services/suite/Tests/Accounts":
+            if self._project_path == "/home/services/suite/files":
                 # We are in live testing and project name is not in project path
                 self._project_path = os.path.join("/home/services/suite/")
             else:
