@@ -3,6 +3,7 @@ Library    OperatingSystem
 Library    Collections
 Library    RequestsLibrary
 Library    GitLibrary
+Resource    ../resources/common.robot
 
 *** Variables ***
 ${REPO_PATH}      /path/to/your/repo
