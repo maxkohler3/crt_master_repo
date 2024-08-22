@@ -1,9 +1,11 @@
 *** Settings ***
-Library    OperatingSystem
-Library    Collections
-Library    RequestsLibrary
-Library    GitLibrary
-Resource    ../resources/common.robot
+Library         OperatingSystem
+Library         Collections
+Library         RequestsLibrary
+Library         GitLibrary
+Resource        ../resources/common.robot
+Suite Setup     Setup Browser
+Suite Teardown  End Suite
 
 *** Variables ***
 ${REPO_PATH}      /path/to/your/repo
