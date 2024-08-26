@@ -163,20 +163,20 @@ TC01 Test Case One
     # Log to console     ${number_end}
 
 
-# Upload file 
-#     Home
-#     ClickText    Accounts
-#     ClickText    KindCorp
-#     ScrollTo     Upload Files
-#     UploadFile    Upload Files    ${CURDIR}/../files/dummy.png   anchor=2
-#     VerifyText    1 of 1 file uploaded
-#     ClickText     Done
-#     ClickText    Image file
-#     ClickText    Show More    partial_match=False
-#     ClickText    Delete    
-#     UseModal    On
-#     ClickText    Delete
-#     UseModal    Off
+Upload file 
+    Home
+    ClickText    Accounts
+    ClickText    KindCorp
+    ScrollTo     Upload Files
+    UploadFile    Upload Files    ../files/dummy.png   anchor=2
+    VerifyText    1 of 1 file uploaded
+    ClickText     Done
+    ClickText    Image file
+    ClickText    Show More    partial_match=False
+    ClickText    Delete    
+    UseModal    On
+    ClickText    Delete
+    UseModal    Off
 
 
 # Download and Validate Excel
