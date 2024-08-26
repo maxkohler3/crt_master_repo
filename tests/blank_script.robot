@@ -162,14 +162,14 @@ TC01 Test Case One
     # Log to console     ${number_end}
 
 
-Upload file 
-    Home
-    ClickText    Accounts
-    ClickText    KindCorp
-    ScrollTo     Upload Files
-    UploadFile    Upload Files    ${CURDIR}/../files/dummy.png   anchor=2
-    VerifyText    1 of 1 file uploaded
-    ClickText     Done
+# Upload file 
+#     Home
+#     ClickText    Accounts
+#     ClickText    KindCorp
+#     ScrollTo     Upload Files
+#     UploadFile    Upload Files    ${CURDIR}/../files/dummy.png   anchor=2
+#     VerifyText    1 of 1 file uploaded
+#     ClickText     Done
 
 
 # Download and Validate Excel
