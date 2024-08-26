@@ -1,4 +1,5 @@
 *** Settings ***
+Library    QForce
 Resource                      ../resources/common.robot
 Suite Setup                   Setup Browser
 Suite Teardown                End suite
@@ -170,6 +171,12 @@ TC01 Test Case One
 #     UploadFile    Upload Files    ${CURDIR}/../files/dummy.png   anchor=2
 #     VerifyText    1 of 1 file uploaded
 #     ClickText     Done
+#     ClickText    Image file
+#     ClickText    Show More    partial_match=False
+#     ClickText    Delete    
+#     UseModal    On
+#     ClickText    Delete
+#     UseModal    Off
 
 
 # Download and Validate Excel
@@ -238,5 +245,7 @@ TC01 Test Case One
 #     ${20yo_date}=  Subtract Time From Date    ${date}          7300 days     date_format=%-m/%-d/%Y    result_format=%m/%d/%Y
 #     ${50yo_date}=  Subtract Time From Date    ${date}          18263 days     date_format=%m/%d/%Y    result_format=%m/%d/%Y
     
+
+
 
 
