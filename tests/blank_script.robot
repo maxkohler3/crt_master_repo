@@ -166,6 +166,7 @@ Upload file
     Home
     ClickText    Accounts
     ClickText    KindCorp
+    ScrollTo     Upload Files
     UploadFile    Upload Files    ${CURDIR}/../files/dummy.png   anchor=2
     VerifyText    1 of 1 file uploaded
     ClickText     Done
