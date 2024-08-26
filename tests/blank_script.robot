@@ -1,19 +1,12 @@
 *** Settings ***
-Resource               ../resources/common.robot
-Library                QForce
-Library                String
-Library                DateTime
-Library                ../resources/levenshtein_bridge.py
-
-Suite Setup            OpenBrowser  about:blank  chrome
-Suite Teardown         CloseAllBrowsers
+Resource                      ../resources/common.robot
+Suite Setup                   Setup Browser
+Suite Teardown                End suite
 
 *** Test Cases ***
-TC01
-    Get Levenshtein Distance                       Example1   Example2
-    ${levi_result}=    Get Levenshtein Distance    Srijan  Vishisth
-    Log                ${levi_result}
-
+TC01 Test Case One 
+    Home
+ 
 
 
 
