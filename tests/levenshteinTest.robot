@@ -10,12 +10,13 @@ Suite Teardown         CloseAllBrowsers
 Calculate Levenshtein Distance Between Two Strings
     ${distance}=    Get Levenshtein Distance    Srijan  Vishisth
     
+    
     Log             The Levenshtein distance is ${distance}
 
-# TC01
-#     Get Levenshtein Distance                       Example1   Example2
-#     ${levi_result}=    Get Levenshtein Distance    Srijan  Vishisth
-#     Log                ${levi_result}
+TC01
+    Get Levenshtein Distance                       Example1   Example2
+    ${levi_result}=    Get Levenshtein Distance    Srijan  Vishisth
+    Log                ${levi_result}
 
 
 Days of Month Examples
