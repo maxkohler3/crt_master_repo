@@ -1,8 +1,8 @@
 *** Settings ***
 Resource    ../resources/common.robot
-Library           ../resources/levenshtein_sample.py
+Library           ../resources/levenshtein.py
 # Library           ../resources/levenshtein_bridge.py
-Library                     ../libraries/date.py
+# Library                     ../libraries/date.py
 
 Suite Setup            OpenBrowser  about:blank  chrome
 Suite Teardown         CloseAllBrowsers
