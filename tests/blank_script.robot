@@ -9,17 +9,13 @@ TC01 Test Case One
     Home
  
 
+Days of Month Examples
+    ${current_date}=          Get Current Date    exclude_millis=true    result_format=%m/%d/%Y
 
-
-
-
-
-
-
-
-
-
-
+    ${invoice_start_date}=    Nth Day of Month    ${current_date}     nth_day=1                 date_format=%m/%d/%Y  result_format=%-m/%-d/%Y
+    ${start_date}=            Nth Day of Month    ${current_date}     nth_day=1    months=-1    date_format=%m/%d/%Y  result_format=%-m/%-d/%Y
+    ${end_date}=              Nth Day of Month    ${current_date}     nth_day=-1   months=23    date_format=%m/%d/%Y  result_format=%-m/%-d/%Y
+    ${last_invoice_date}=     Nth Day of Month    ${current_date}     nth_day=-1   months=-1    date_format=%m/%d/%Y  result_format=%-m/%-d/%Y
 
 
 
