@@ -1,8 +1,8 @@
 *** Settings ***
-Library    QForce
-Resource                      ../resources/common.robot
+# Resource                      ../resources/common.robot
 Suite Setup                   Setup Browser
 Suite Teardown                End suite
+Library                 ../libraries/date.py
 
 *** Test Cases ***
 TC01 Test Case One 
@@ -11,6 +11,7 @@ TC01 Test Case One
 
 Days of Month Examples
     ${current_date}=          Get Current Date    exclude_millis=true    result_format=%m/%d/%Y
+    ${first_day_of_month}=    Nth Day of Month     
 
     ${invoice_start_date}=    Nth Day of Month    ${current_date}     nth_day=1                 date_format=%m/%d/%Y  result_format=%-m/%-d/%Y
     ${start_date}=            Nth Day of Month    ${current_date}     nth_day=1    months=-1    date_format=%m/%d/%Y  result_format=%-m/%-d/%Y
