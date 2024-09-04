@@ -8,6 +8,7 @@ Library                   RequestsLibrary
 Library                   FakerLibrary
 Library                   ExcelLibrary
 Library                 ../libraries/gitOperations.py
+Library                 ../libraries/date.py
 
 
 *** Variables ***
