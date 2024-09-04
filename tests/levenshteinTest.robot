@@ -1,12 +1,23 @@
 *** Settings ***
-Resource    ../resources/common.robot
-Library           ../resources/levenshtein.py
-# Library           ../resources/levenshtein_bridge.py
-# Library                     ../libraries/date.py
-
+#Resource               ../resources/common.robot
+#Resource               ../resources/locator.robot
+Library                ../resources/levenshtein_bridge.py
+Library                ../libraries/date.py
+Library                QForce
 Suite Setup            OpenBrowser  about:blank  chrome
+Library                String
+Library                DateTime
 Suite Teardown         CloseAllBrowsers
 
+ 
+*** Test Cases ***
+
+TC02  
+    [Tags]             TC02                        BEAU_Order_POC
+    [Documentation]    BEAU Testing POC
+
+    #logging in to System Admin
+    ${levi_result}=    Get Levenshtein Distance    Srijan  Vishisth
 *** Test Cases ***
 Calculate Levenshtein Distance Between Two Strings
     ${distance}=    Get Levenshtein Distance    Srijan  Vishisth
