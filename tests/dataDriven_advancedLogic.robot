@@ -128,6 +128,7 @@ Mathematical Expressions
 
         #Calculate Net Price at 20% discount of List Price
     ${net_price}=               Evaluate                    int(${list_price}-(${list_price}*${discount_percentage}))
+    ${reducedays}=              Evaluate                    int(${1095}-${curday+})
     Should Be Equal As Integers                             ${net_price}                80000
 
         #Convert 80000 to USD 80,000
