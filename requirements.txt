@@ -6,3 +6,4 @@ gitpython
 typing
 openpyxl
 python-dateutil
+python-datetime
