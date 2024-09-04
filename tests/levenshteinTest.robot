@@ -13,12 +13,9 @@ Suite Teardown         CloseAllBrowsers
 *** Test Cases ***
 
 TC02  
-    [Tags]             TC02                        BEAU_Order_POC
-    [Documentation]    BEAU Testing POC
 
-    #logging in to System Admin
     ${levi_result}=    Get Levenshtein Distance    Srijan  Vishisth
-*** Test Cases ***
+
 Calculate Levenshtein Distance Between Two Strings
     ${distance}=    Get Levenshtein Distance    Srijan  Vishisth
     
