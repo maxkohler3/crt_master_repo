@@ -59,11 +59,12 @@ Create User Stories using Data Loader
     ClickText                 Launch Wizard!
     # ClickText                 Custom Objects   
     # ClickText                 User Stories  
-    ClickText                 Accounts and Contacts 
+    ClickText                 Leads
     ClickText                 Add new records
     ClickText                 CSV    partial_match=false
     QVision.ClickText         Choose File    tol=.5
-
+    QVision.DoubleClick       suite
+    QVision.DoubleClick       files
 
 
 *** Variables ***
