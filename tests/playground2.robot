@@ -65,6 +65,24 @@ Create User Stories using Data Loader
     QVision.ClickText         Choose File    tol=.5
     QVision.DoubleClick       suite
     QVision.DoubleClick       files
+    QVision.DoubleClick       Leads.csv
+    ClickText                 Next
+    ClickText                 Next
+    ClickText                 Start Import 
+    ClickText                 OK
+    UseTable                  Job ID
+    ${jobID}                  GetCellText  r1/c2
+    GoTo                      ${sf_url}
+    LaunchApp                 Leads
+    VerifyText                Eleanor Camish
+    VerifyText                Monty Maguire 
+    VerifyText                Magnolia Blossom
+    ClickText                 Magnolia Blossom 
+    ClickText                 Details 
+    VerifyField               Company    Flowery  
+    #verify all fields imported correctly
+
+
 
 
 *** Variables ***
