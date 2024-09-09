@@ -2,6 +2,7 @@
 Resource                      ../resources/common.robot
 Suite Setup                   Setup Browser
 Suite Teardown                End suite
+Library                       QVision
 
 *** Test Cases ***
 
@@ -59,6 +60,8 @@ Create User Stories using Data Loader
     ClickText                 Custom Objects   
     ClickText                 User Stories   
     ClickText                 Add new records
+    ClickText                 CSV    partial_match=false
+    QVision.ClickText         Choose File    tol=.5
 
 
 
