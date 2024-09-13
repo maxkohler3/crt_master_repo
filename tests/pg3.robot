@@ -3,6 +3,7 @@ Resource          ../resources/common.robot
 Suite Setup       Setup Browser
 Suite Teardown    End suite
 Library           QVision
+Library           ExcelLibrary
 
 
 *** Test Cases ***
@@ -37,14 +38,28 @@ Create User Stories using Data Loader
     ClickText                 Custom Objects   
     ClickText                 User Stories  
     ClickText                 Add new records
+    DropDown                  798:0    Project Name
+    DropDown                  1110:0    User Story
     ClickText                 CSV    partial_match=false
     QVision.ClickText         Choose File    tol=.5
     QVision.DoubleClick       suite
     QVision.DoubleClick       files
     QVision.DoubleClick       user_story.csv
-    # Select Project Field -Project Name
-    # Select Record Type - US
     ClickText                 Next
+
+    ${document}=        Open Excel Document    ${CURDIR}../files/user_story.csv    user stories
+    ${api_label}=      Read Excel Row         max_num=7  row_num=1   sheet_name=user_story
+    ${sf_object}=      Set Variable   Title  Project  Functional Specifications  Technical Specifications  As a...  Want to...  So that...              
+
+    # FOR   ${label}   IN   @{api_labels} 
+
+    FOR    ${x}   IN RANGE  0  6   
+        UseTable                  Map        
+        ClickCell                 r?${api_label}[${x}/c1   
+        ClickText                 ${sf_object}[${x}]        
+        ClickText                 Map            Cancel
+    END
+
     ClickText                 Next
     ClickText                 Start Import 
     ClickText                 OK
@@ -108,3 +123,6 @@ Login Playground
     TypeText     Username        ${user}
     TypeText     Password        ${pass}
     ClickText    Log In
+
+    DropDown    798:0    Project Name
+    DropDown    1110:0    User Story
