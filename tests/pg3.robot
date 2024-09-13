@@ -42,8 +42,7 @@ Create User Stories using Data Loader
     ClickText                 Next
     ClickText                 Start Import 
     ClickText                 OK
-    UseTable                  Job ID
-    ${jobID}                  GetCellText  r1/c2
+
     GoTo                      ${sf_url}
     LaunchApp                 User Stories
     VerifyText                ${us_data}[0]
@@ -54,20 +53,8 @@ Create User Stories using Data Loader
 
     # ClickCell                 r?${us_data}[0]/c?User Story Reference
     # verify all fields imported correctly
+
  
-
-
-
-Create US
-    Authenticate   ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
-    ${response}=   Create Record   copado__User_Story__c         copado__User_Story_Title__c=${Title}       
-    ...            RecordTypeId=012am000000jAeZAAU               copado__Project__c=a15am000000pvwGAAQ
-    ...            copado__Acceptance_Criteria__c=${Acceptance Criteria}   copado__Functional_Specifications__c=${Functional Specifications}   
-    ...            copado__userStory_Role__c=${As a}             copado__userStory_need__c=${Want to}                 
-    ...            copado__userStory_reason__c=${So that}        copado__Technical_Specifications__c=${Technical Specifications} 
-    Delete Record   copado__User_Story__c      ${response}
-
-
 
 *** Variables ***
 
@@ -86,22 +73,43 @@ Login Playground
     ClickText    Log In
 
 
+
+
+
+
+# Create 3 User Stories via API          
+#     ${document}=       Open Excel Document    ${excel_worksheet}   user_story
+#     ${api_label}=      Read Excel Row         max_num=7  row_num=1   sheet_name=user_story (1)
+#     ${us_data}=        Read Excel Row         max_num=7  row_num=2   sheet_name=user_story (1)
+#     @{ids}                      Create List 
+#     Authenticate                ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
+#     FOR                         ${i}                        IN       @{api_label}
+#         ${response}=   Create Record   copado__User_Story__c         
+#         ...            ${api_label}=${us_data}[${i}]       
+#         ...            RecordTypeId=012am000000jAeZAAU               
+#         ...            copado__Project__c=a15am000000pvwGAAQ
+#         Append To List          ${ids}                      ${response}
+#     END
+
+#     FOR                 ${id}      IN       @{ids}
+#         Delete Record   copado__User_Story__c      ${id}
+#     END
+
+
 # Create 3 User Stories via API          
 #     @{ids}                      Create List 
 #     Authenticate                ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
-#     FOR                         ${i}                        IN RANGE                    3
-#         ${LastName}             Last Name
-#         ${Phone}                Phone Number
-#         ${Company}              Company
-#         ${FirstName}            First Name
-#         ${Email}                Email
-#         ${Salutation}           Set Variable          Mr.
-#         ${Title}                Set Variable          Engineer
-#         ${response}=            Create Record   copado__User_Story__c        copado__User_Story_Title__c=CRT via API      
-#         ...                     copado__Acceptance_Criteria__c=${LastName}   copado__Functional_Specifications__c=${Phone}     
-#         ...                     copado__userStory_Role__c=${FirstName}       copado__userStory_need__c=${Email}                  
-#         ...                     copado__userStory_reason__c=${Salutation}    copado__Technical_Specifications__c=${Company}
-#         ...                     RecordTypeId=012am000000jAeZAAU              copado__Project__c=a15am000000pvwGAAQ
+#     FOR                         ${i}                        IN       @{api_label}
+#         ${response}=   Create Record   copado__User_Story__c         
+#         ...            copado__User_Story_Title__c=${Title}[${i}]       
+#         ...            RecordTypeId=012am000000jAeZAAU               
+#         ...            copado__Project__c=a15am000000pvwGAAQ
+#         ...            copado__Acceptance_Criteria__c=${Acceptance_Criteria}[${i}]   
+#         ...            copado__Functional_Specifications__c=${Functional_Specifications}[${i}]   
+#         ...            copado__userStory_Role__c=${As_a}[${i}]             
+#         ...            copado__userStory_need__c=${Want_to}[${i}]                 
+#         ...            copado__userStory_reason__c=${So_that}[${i}]        
+#         ...            copado__Technical_Specifications__c=${Technical_Specifications}[${i}] 
 #         Append To List          ${ids}                      ${response}
 #     END
 
