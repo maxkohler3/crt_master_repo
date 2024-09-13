@@ -1,33 +1,16 @@
 *** Settings ***
-Resource                      ../resources/common.robot
-Suite Setup                   Setup Browser
-Suite Teardown                End suite
-Library                       QVision
+Resource          ../resources/common.robot
+Suite Setup       Setup Browser
+Suite Teardown    End suite
+Library           QVision
+# Library           DataDriver    reader_class=TestDataApi    name=#csv
+# Test Template     Create US
 
 *** Test Cases ***
 
-Create 3 User Stories via API          
-    @{ids}                      Create List 
-    Authenticate                ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
-    FOR                         ${i}                        IN RANGE                    3
-        ${LastName}             Last Name
-        ${Phone}                Phone Number
-        ${Company}              Company
-        ${FirstName}            First Name
-        ${Email}                Email
-        ${Salutation}           Set Variable          Mr.
-        ${Title}                Set Variable          Engineer
-        ${response}=            Create Record   copado__User_Story__c       copado__User_Story_Title__c=CRT via API      RecordTypeId=012am000000jAeZAAU    copado__Project__c=a15am000000pvwGAAQ
-        ...                     copado__Acceptance_Criteria__c=${LastName}    copado__Functional_Specifications__c=${Phone}     
-        ...                     copado__userStory_Role__c=${FirstName}        copado__userStory_need__c=${Email}                  
-        ...                     copado__userStory_reason__c=${Salutation}     copado__Technical_Specifications__c=${Company}
-        Append To List          ${ids}                      ${response}
-    END
-
-    FOR                 ${id}      IN       @{ids}
-        Delete Record   copado__User_Story__c      ${id}
-    END
-    Login Playground
+# Create User Story ${title}
+#     [Documentation]    Creating User Stories from csv file using data driver lib
+#     [Tags]        data 
     
 
 Create User Stories in Copado 
@@ -50,10 +33,12 @@ Create User Stories in Copado
     WriteText            Spec D, E, F                      #${tech_specs}
     ClickText            Cancel    #Save
 
+    VerifyField          Status           Draft
+
 
 Create User Stories using Data Loader 
     Login Playground
-    GoTo    ${sf_url}/lightning/setup/SetupOneHome/home
+    GoTo        ${sf_url}/lightning/setup/SetupOneHome/home
     TypeText    Quick Find    Data import
     ClickText                 Data Import Wizard
     ClickText                 Launch Wizard!
@@ -82,6 +67,29 @@ Create User Stories using Data Loader
     VerifyField               Company    Flowery  
     #verify all fields imported correctly
 
+Create 3 User Stories via API          
+    @{ids}                      Create List 
+    Authenticate                ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
+    FOR                         ${i}                        IN RANGE                    3
+        ${LastName}             Last Name
+        ${Phone}                Phone Number
+        ${Company}              Company
+        ${FirstName}            First Name
+        ${Email}                Email
+        ${Salutation}           Set Variable          Mr.
+        ${Title}                Set Variable          Engineer
+        ${response}=            Create Record   copado__User_Story__c        copado__User_Story_Title__c=CRT via API      
+        ...                     copado__Acceptance_Criteria__c=${LastName}   copado__Functional_Specifications__c=${Phone}     
+        ...                     copado__userStory_Role__c=${FirstName}       copado__userStory_need__c=${Email}                  
+        ...                     copado__userStory_reason__c=${Salutation}    copado__Technical_Specifications__c=${Company}
+        ...                     RecordTypeId=012am000000jAeZAAU              copado__Project__c=a15am000000pvwGAAQ
+        Append To List          ${ids}                      ${response}
+    END
+
+    FOR                 ${id}      IN       @{ids}
+        Delete Record   copado__User_Story__c      ${id}
+    END
+    Login Playground
 
 
 
@@ -100,3 +108,20 @@ Login Playground
     TypeText     Password        ${pass}
     ClickText    Log In
 
+Create US
+    Authenticate            ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
+    ${LastName}             Last Name
+    ${Phone}                Phone Number
+    ${Company}              Company
+    ${FirstName}            First Name
+    ${Email}                Email
+    ${Salutation}           Set Variable          Mr.
+    ${Title}                Set Variable          Engineer
+    ${response}=            Create Record   copado__User_Story__c       copado__User_Story_Title__c=CRT via API      RecordTypeId=012am000000jAeZAAU    copado__Project__c=a15am000000pvwGAAQ
+    ...                     copado__Acceptance_Criteria__c=${LastName}    copado__Functional_Specifications__c=${Phone}     
+    ...                     copado__userStory_Role__c=${FirstName}        copado__userStory_need__c=${Email}                  
+    ...                     copado__userStory_reason__c=${Salutation}     copado__Technical_Specifications__c=${Company}
+    
+    Login Playground
+    GoTo            ${sf_url}/${response}
+    Delete Record   copado__User_Story__c      ${response}
