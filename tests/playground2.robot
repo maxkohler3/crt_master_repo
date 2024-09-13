@@ -3,69 +3,69 @@ Resource          ../resources/common.robot
 Suite Setup       Setup Browser
 Suite Teardown    End suite
 Library           QVision
-# Library           DataDriver    reader_class=TestDataApi    name=organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
-# Test Template     Create US
+Library           DataDriver    reader_class=TestDataApi    name=organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
+Test Template     Create US
 
 *** Test Cases ***
 
-# Create User Story ${title}
-#     [Documentation]    Creating User Stories from csv file using data driver lib
-#     [Tags]        data 
+Create User Story ${title}
+    [Documentation]    Creating User Stories from csv file using data driver lib
+    [Tags]        data 
     
 
-Create User Stories in Copado 
-    Login Playground
-    LaunchApp    User Stories
-    ClickText    New 
-    ClickText    User Story 
-    ClickText    Next
-    UseModal
-    TypeText     Title                        Test US  #${title}
-    TypeText     As a...                      Tester   #${role}
-    TypeText     Want to...                   Test Something  #${action}
-    TypeText     So that...                   It Works        #${result}
-    TypeText     Acceptance Criteria          Nothing breaks  #${acc_crit}
+# Create User Stories in Copado 
+#     Login Playground
+#     LaunchApp    User Stories
+#     ClickText    New 
+#     ClickText    User Story 
+#     ClickText    Next
+#     UseModal
+#     TypeText     Title                        Test US  #${title}
+#     TypeText     As a...                      Tester   #${role}
+#     TypeText     Want to...                   Test Something  #${action}
+#     TypeText     So that...                   It Works        #${result}
+#     TypeText     Acceptance Criteria          Nothing breaks  #${acc_crit}
 
-    ScrollTo     Functional Specifications
-    QVision.ClickText    Functional Specifications         below=10
-    WriteText            Spec A, B, C                      #${func_specs}
-    QVision.ClickText    Technicnal Specifications         below=10   
-    WriteText            Spec D, E, F                      #${tech_specs}
-    ClickText            Cancel    #Save
+#     ScrollTo     Functional Specifications
+#     QVision.ClickText    Functional Specifications         below=10
+#     WriteText            Spec A, B, C                      #${func_specs}
+#     QVision.ClickText    Technicnal Specifications         below=10   
+#     WriteText            Spec D, E, F                      #${tech_specs}
+#     ClickText            Cancel    #Save
 
-    VerifyField          Status           Draft
+#     VerifyField          Status           Draft
 
 
-Create User Stories using Data Loader 
-    Login Playground
-    GoTo        ${sf_url}/lightning/setup/SetupOneHome/home
-    TypeText    Quick Find    Data import
-    ClickText                 Data Import Wizard
-    ClickText                 Launch Wizard!
-    # ClickText                 Custom Objects   
-    # ClickText                 User Stories  
-    ClickText                 Leads
-    ClickText                 Add new records
-    ClickText                 CSV    partial_match=false
-    QVision.ClickText         Choose File    tol=.5
-    QVision.DoubleClick       suite
-    QVision.DoubleClick       files
-    QVision.DoubleClick       Leads.csv
-    ClickText                 Next
-    ClickText                 Next
-    ClickText                 Start Import 
-    ClickText                 OK
-    UseTable                  Job ID
-    ${jobID}                  GetCellText  r1/c2
-    GoTo                      ${sf_url}
-    LaunchApp                 Leads
-    VerifyText                Eleanor Camish
-    VerifyText                Monty Maguire 
-    VerifyText                Magnolia Blossom
-    ClickText                 Magnolia Blossom 
-    ClickText                 Details 
-    VerifyField               Company    Flowery  
-    #verify all fields imported correctly
+# Create User Stories using Data Loader 
+#     Login Playground
+#     GoTo        ${sf_url}/lightning/setup/SetupOneHome/home
+#     TypeText    Quick Find    Data import
+#     ClickText                 Data Import Wizard
+#     ClickText                 Launch Wizard!
+#     # ClickText                 Custom Objects   
+#     # ClickText                 User Stories  
+#     ClickText                 Leads
+#     ClickText                 Add new records
+#     ClickText                 CSV    partial_match=false
+#     QVision.ClickText         Choose File    tol=.5
+#     QVision.DoubleClick       suite
+#     QVision.DoubleClick       files
+#     QVision.DoubleClick       Leads.csv
+#     ClickText                 Next
+#     ClickText                 Next
+#     ClickText                 Start Import 
+#     ClickText                 OK
+#     UseTable                  Job ID
+#     ${jobID}                  GetCellText  r1/c2
+#     GoTo                      ${sf_url}
+#     LaunchApp                 Leads
+#     VerifyText                Eleanor Camish
+#     VerifyText                Monty Maguire 
+#     VerifyText                Magnolia Blossom
+#     ClickText                 Magnolia Blossom 
+#     ClickText                 Details 
+#     VerifyField               Company    Flowery  
+#     #verify all fields imported correctly
 
 Create 3 User Stories via API          
     @{ids}                      Create List 
