@@ -31,18 +31,19 @@ Login Playground
     ClickText    Log In
 
 Create US via API
-    [Arguments]    ${User Story Number}    ${Title}    ${As a}    ${Want to}    ${So that}    ${Functional Specifications}    ${Technical Specifications}    ${Acceptance Criteria}    ${Object}    ${Field API Name}    ${Data Type}    ${Development Steps}
+    [Arguments]    ${User Story Number}    ${Title}    ${As_a}    ${Want_to}    ${So_that}    
+    ...            ${Functional_Specifications}    ${Technical_Specifications}    ${Acceptance_Criteria}    ${Object}    ${Field API Name}    ${Data Type}    ${Development Steps}
     Authenticate   ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
     ${response}=   Create Record   copado__User_Story__c         
     ...            copado__User_Story_Title__c=${Title}       
     ...            RecordTypeId=012am000000jAeZAAU               
     ...            copado__Project__c=a15am000000pvwGAAQ
-    ...            copado__Acceptance_Criteria__c=${Acceptance Criteria}   
-    ...            copado__Functional_Specifications__c=${Functional Specifications}   
-    ...            copado__userStory_Role__c=${As a}             
-    ...            copado__userStory_need__c=${Want to}                 
-    ...            copado__userStory_reason__c=${So that}        
-    ...            copado__Technical_Specifications__c=${Technical Specifications} 
+    ...            copado__Acceptance_Criteria__c=${Acceptance_Criteria}   
+    ...            copado__Functional_Specifications__c=${Functional_Specifications}   
+    ...            copado__userStory_Role__c=${As_a}             
+    ...            copado__userStory_need__c=${Want_to}                 
+    ...            copado__userStory_reason__c=${So_that}        
+    ...            copado__Technical_Specifications__c=${Technical_Specifications} 
     Delete Record   copado__User_Story__c      ${response}
 
 Create US via UI
@@ -53,16 +54,16 @@ Create US via UI
     ClickText    User Story     Investigation 
     ClickText    Next
     TypeText     Title                        ${Title}
-    TypeText     As a...                      ${As a}
-    TypeText     Want to...                   ${Want to} 
-    TypeText     So that...                   ${So that} 
-    TypeText     Acceptance Criteria          ${Acceptance Criteria}
+    TypeText     As a...                      ${As_a}
+    TypeText     Want to...                   ${Want_to} 
+    TypeText     So that...                   ${So_that} 
+    TypeText     Acceptance Criteria          ${Acceptance_Criteria}
 
     ScrollTo     Functional Specifications
     QVision.ClickText    Functional Specifications         below=10
-    WriteText            ${Functional Specifications}  
+    WriteText            ${Functional_Specifications}  
     QVision.ClickText    Technicnal Specifications         below=10   
-    WriteText            ${Technical Specifications} 
+    WriteText            ${Technical_Specifications} 
     ClickText            Cancel    
 
  
