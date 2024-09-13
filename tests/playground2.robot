@@ -3,8 +3,8 @@ Resource          ../resources/common.robot
 Suite Setup       Setup Browser
 Suite Teardown    End suite
 Library           QVision
-Library           DataDriver    reader_class=TestDataApi    name=organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
-Test Template     Create US
+# Library           DataDriver    reader_class=TestDataApi    name=organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
+# Test Template     Create US
 
 *** Test Cases ***
 
@@ -14,7 +14,7 @@ Create User Story ${Title}
     
 
 # Create User Stories in Copado 
-#     Login Playground
+      Login Playground
 #     LaunchApp    User Stories
 #     ClickText    New 
 #     ClickText    User Story 
