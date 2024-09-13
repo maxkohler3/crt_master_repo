@@ -7,7 +7,7 @@ Test Template     Create US via UI
 
 *** Test Cases ***
 
-Create User Story ${Title}
+User Story: ${Title}
     [Documentation]    Creating User Stories from csv file using data driver lib
     [Tags]        data 
     
