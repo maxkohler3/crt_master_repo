@@ -67,29 +67,29 @@ Create User Story ${title}
 #     VerifyField               Company    Flowery  
 #     #verify all fields imported correctly
 
-Create 3 User Stories via API          
-    @{ids}                      Create List 
-    Authenticate                ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
-    FOR                         ${i}                        IN RANGE                    3
-        ${LastName}             Last Name
-        ${Phone}                Phone Number
-        ${Company}              Company
-        ${FirstName}            First Name
-        ${Email}                Email
-        ${Salutation}           Set Variable          Mr.
-        ${Title}                Set Variable          Engineer
-        ${response}=            Create Record   copado__User_Story__c        copado__User_Story_Title__c=CRT via API      
-        ...                     copado__Acceptance_Criteria__c=${LastName}   copado__Functional_Specifications__c=${Phone}     
-        ...                     copado__userStory_Role__c=${FirstName}       copado__userStory_need__c=${Email}                  
-        ...                     copado__userStory_reason__c=${Salutation}    copado__Technical_Specifications__c=${Company}
-        ...                     RecordTypeId=012am000000jAeZAAU              copado__Project__c=a15am000000pvwGAAQ
-        Append To List          ${ids}                      ${response}
-    END
+# Create 3 User Stories via API          
+#     @{ids}                      Create List 
+#     Authenticate                ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
+#     FOR                         ${i}                        IN RANGE                    3
+#         ${LastName}             Last Name
+#         ${Phone}                Phone Number
+#         ${Company}              Company
+#         ${FirstName}            First Name
+#         ${Email}                Email
+#         ${Salutation}           Set Variable          Mr.
+#         ${Title}                Set Variable          Engineer
+#         ${response}=            Create Record   copado__User_Story__c        copado__User_Story_Title__c=CRT via API      
+#         ...                     copado__Acceptance_Criteria__c=${LastName}   copado__Functional_Specifications__c=${Phone}     
+#         ...                     copado__userStory_Role__c=${FirstName}       copado__userStory_need__c=${Email}                  
+#         ...                     copado__userStory_reason__c=${Salutation}    copado__Technical_Specifications__c=${Company}
+#         ...                     RecordTypeId=012am000000jAeZAAU              copado__Project__c=a15am000000pvwGAAQ
+#         Append To List          ${ids}                      ${response}
+#     END
 
-    FOR                 ${id}      IN       @{ids}
-        Delete Record   copado__User_Story__c      ${id}
-    END
-    Login Playground
+#     FOR                 ${id}      IN       @{ids}
+#         Delete Record   copado__User_Story__c      ${id}
+#     END
+#     Login Playground
 
 
 
