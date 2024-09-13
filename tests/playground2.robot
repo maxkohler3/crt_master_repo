@@ -44,7 +44,7 @@ Create US via API
     ...            copado__userStory_need__c=${Want_to}                 
     ...            copado__userStory_reason__c=${So_that}        
     ...            copado__Technical_Specifications__c=${Technical_Specifications} 
-    Delete Record   copado__User_Story__c      ${response}
+    # Delete Record   copado__User_Story__c      ${response}
 
 Create US via UI
     Login Playground
@@ -64,7 +64,7 @@ Create US via UI
     WriteText            ${Functional_Specifications}  
     QVision.ClickText    Technicnal Specifications         below=10   
     WriteText            ${Technical_Specifications} 
-    ClickText            Cancel    
+    ClickText            Save    
 
 
   
