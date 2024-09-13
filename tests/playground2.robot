@@ -12,6 +12,13 @@ User Story: ${Title}
     [Documentation]    Creating User Stories from csv file using data driver lib
     [Tags]        data 
     
+*** Variables ***
+
+${user}    mkohler@copado.com.one
+${pass}    Copado1234%
+${sf_url}    https://copadotrial134754419.my.salesforce.com/
+${consumer_key}    3MVG9bYGb9rFSjxRsBkkBHkPT95eY_PdmOQS.4E_iewov_A1.nLNP6oqJTIz9NMvuwR80lH9YgJ74BuxuQHGq
+${consumer_secret}    908B451920D457EFCC4885885DACAFC90A96C9287FE249CC4AEE1D4F2D631440
 
 *** Keywords ***
 
@@ -59,10 +66,3 @@ Create US via UI
 
 
   
-*** Variables ***
-
-${user}    mkohler@copado.com.one
-${pass}    Copado1234%
-${sf_url}    https://copadotrial134754419.my.salesforce.com/
-${consumer_key}    3MVG9bYGb9rFSjxRsBkkBHkPT95eY_PdmOQS.4E_iewov_A1.nLNP6oqJTIz9NMvuwR80lH9YgJ74BuxuQHGq
-${consumer_secret}    908B451920D457EFCC4885885DACAFC90A96C9287FE249CC4AEE1D4F2D631440
