@@ -110,6 +110,7 @@ Login Playground
 
 Create US
     [Arguments]    ${User Story Number}    ${Title}    ${As a}    ${Want to}    ${So that}    ${Functional Specifications}    ${Technical Specifications}    ${Acceptance Criteria}    ${Object}    ${Field API Name}    ${Data Type}    ${Development Steps}
+    Authenticate            ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
     ${response}=            Create Record   copado__User_Story__c         copado__User_Story_Title__c=${Title}       
     ...                     RecordTypeId=012am000000jAeZAAU               copado__Project__c=a15am000000pvwGAAQ
     ...                     copado__Acceptance_Criteria__c=${Acceptance Criteria}   copado__Functional_Specifications__c=${Functional Specifications}   
