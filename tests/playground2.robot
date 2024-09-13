@@ -3,7 +3,7 @@ Resource          ../resources/common.robot
 Suite Setup       Setup Browser
 Suite Teardown    End suite
 Library           DataDriver    reader_class=TestDataApi    name=organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
-Test Template     Create US
+Test Template     Create US via UI
 
 *** Test Cases ***
 
@@ -12,7 +12,9 @@ Create User Story ${Title}
     [Tags]        data 
     
 
+
 *** Variables ***
+
 ${user}    mkohler@copado.com.one
 ${pass}    Copado1234%
 ${sf_url}    https://copadotrial134754419.my.salesforce.com/
@@ -27,15 +29,39 @@ Login Playground
     TypeText     Password        ${pass}
     ClickText    Log In
 
-Create US
+Create US via API
     [Arguments]    ${User Story Number}    ${Title}    ${As a}    ${Want to}    ${So that}    ${Functional Specifications}    ${Technical Specifications}    ${Acceptance Criteria}    ${Object}    ${Field API Name}    ${Data Type}    ${Development Steps}
     Authenticate   ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
-    ${response}=   Create Record   copado__User_Story__c         copado__User_Story_Title__c=${Title}       
-    ...            RecordTypeId=012am000000jAeZAAU               copado__Project__c=a15am000000pvwGAAQ
-    ...            copado__Acceptance_Criteria__c=${Acceptance Criteria}   copado__Functional_Specifications__c=${Functional Specifications}   
-    ...            copado__userStory_Role__c=${As a}             copado__userStory_need__c=${Want to}                 
-    ...            copado__userStory_reason__c=${So that}        copado__Technical_Specifications__c=${Technical Specifications} 
+    ${response}=   Create Record   copado__User_Story__c         
+    ...            copado__User_Story_Title__c=${Title}       
+    ...            RecordTypeId=012am000000jAeZAAU               
+    ...            copado__Project__c=a15am000000pvwGAAQ
+    ...            copado__Acceptance_Criteria__c=${Acceptance Criteria}   
+    ...            copado__Functional_Specifications__c=${Functional Specifications}   
+    ...            copado__userStory_Role__c=${As a}             
+    ...            copado__userStory_need__c=${Want to}                 
+    ...            copado__userStory_reason__c=${So that}        
+    ...            copado__Technical_Specifications__c=${Technical Specifications} 
     Delete Record   copado__User_Story__c      ${response}
 
+Create US via UI
+    Login Playground
+    LaunchApp    User Stories
+    ClickText    New 
+    ClickText    User Story 
+    ClickText    Next
+    UseModal
+    TypeText     Title                        ${Title}
+    TypeText     As a...                      ${As a}
+    TypeText     Want to...                   ${Want to} 
+    TypeText     So that...                   ${So that} 
+    TypeText     Acceptance Criteria          ${Acceptance Criteria}
+
+    ScrollTo     Functional Specifications
+    QVision.ClickText    Functional Specifications         below=10
+    WriteText            ${Functional Specifications}  
+    QVision.ClickText    Technicnal Specifications         below=10   
+    WriteText            ${Technical Specifications} 
+    ClickText            Cancel    
 
  
