@@ -56,28 +56,6 @@ Create User Stories using Data Loader
     # verify all fields imported correctly
  
 
-# Create User Stories in Copado 
-#     Login Playground
-#     LaunchApp    User Stories
-#     ClickText    New 
-#     ClickText    User Story 
-#     ClickText    Next
-#     UseModal
-#     TypeText     Title                        Test US  #${title}
-#     TypeText     As a...                      Tester   #${role}
-#     TypeText     Want to...                   Test Something  #${action}
-#     TypeText     So that...                   It Works        #${result}
-#     TypeText     Acceptance Criteria          Nothing breaks  #${acc_crit}
-
-#     ScrollTo     Functional Specifications
-#     QVision.ClickText    Functional Specifications         below=10
-#     WriteText            Spec A, B, C                      #${func_specs}
-#     QVision.ClickText    Technicnal Specifications         below=10   
-#     WriteText            Spec D, E, F                      #${tech_specs}
-#     ClickText            Cancel    #
-
-
-
 
 
 Create US
@@ -90,7 +68,9 @@ Create US
     Delete Record   copado__User_Story__c      ${response}
 
 
+
 *** Variables ***
+
 ${user}    mkohler@copado.com.one
 ${pass}    Copado1234%
 ${sf_url}    https://copadotrial134754419.my.salesforce.com/
