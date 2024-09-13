@@ -3,9 +3,9 @@ Resource          ../resources/common.robot
 Suite Setup       Setup Browser
 Suite Teardown    End suite
 Library           QVision
-# Library           DataDriver    reader_class=TestDataApi    name=organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
-Library    DataDriver    reader_class=TestDataApi    name=Insurance_US.xlsx
-Test Template     Create US via UI
+# Library           DataDriver    reader_class=TestDataApi   
+Library    DataDriver    reader_class=TestDataApi    name=Insurance_US.xlsx   #organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
+Test Template     Create US via UI  #Create US via API
 
 *** Test Cases ***
 
