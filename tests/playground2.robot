@@ -8,7 +8,7 @@ Test Template     Create US
 
 *** Test Cases ***
 
-Create User Story ${title}
+Create User Story ${Title}
     [Documentation]    Creating User Stories from csv file using data driver lib
     [Tags]        data 
     
@@ -116,9 +116,6 @@ Create US
     ...                     copado__Acceptance_Criteria__c=${Acceptance Criteria}   copado__Functional_Specifications__c=${Functional Specifications}   
     ...                     copado__userStory_Role__c=${As a}             copado__userStory_need__c=${Want to}                 
     ...                     copado__userStory_reason__c=${So that}        copado__Technical_Specifications__c=${Technical Specifications} 
-    
-    Login Playground
-    GoTo            ${sf_url}/${response}
     Delete Record   copado__User_Story__c      ${response}
 
 
