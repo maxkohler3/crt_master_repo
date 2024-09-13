@@ -34,15 +34,16 @@ Create User Stories using Data Loader
     TypeText    Quick Find    Data import
     ClickText                 Data Import Wizard
     ClickText                 Launch Wizard!
-    # ClickText                 Custom Objects   
-    # ClickText                 User Stories  
-    ClickText                 Leads
+    ClickText                 Custom Objects   
+    ClickText                 User Stories  
     ClickText                 Add new records
     ClickText                 CSV    partial_match=false
     QVision.ClickText         Choose File    tol=.5
     QVision.DoubleClick       suite
     QVision.DoubleClick       files
-    QVision.DoubleClick       Leads.csv
+    QVision.DoubleClick       user_story.csv
+    # Select Project Field -Project Name
+    # Select Record Type - US
     ClickText                 Next
     ClickText                 Next
     ClickText                 Start Import 
