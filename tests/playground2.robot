@@ -22,8 +22,8 @@ Login Playground
     ClickText    Log In
 
 Create US via API
-    [Arguments]    ${User Story Number}    ${Title}    ${As_a}    ${Want_to}    ${So_that}    
-    ...            ${Functional_Specifications}    ${Technical_Specifications}    ${Acceptance_Criteria}    ${Object}    ${Field API Name}    ${Data Type}    ${Development Steps}
+    # [Arguments]    ${User Story Number}    ${Title}    ${As_a}    ${Want_to}    ${So_that}    
+    # ...            ${Functional_Specifications}    ${Technical_Specifications}    ${Acceptance_Criteria}    ${Object}    ${Field API Name}    ${Data Type}    ${Development Steps}
     Authenticate   ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
     ${response}=   Create Record   copado__User_Story__c         
     ...            copado__User_Story_Title__c=${Title}       
