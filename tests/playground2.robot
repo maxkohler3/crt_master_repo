@@ -4,7 +4,7 @@ Suite Setup       Setup Browser
 Suite Teardown    End suite
 # Library           DataDriver    reader_class=TestDataApi    name=organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
 Library    DataDriver    reader_class=TestDataApi    name=Insurance_US.xlsx
-Test Template     Create US via UI
+Test Template     Create US via API
 
 *** Test Cases ***
 
@@ -66,15 +66,5 @@ Create US via UI
     WriteText            ${Technical_Specifications} 
     ClickText            Cancel    
 
- 
-Example Test
-    [Arguments]    ${User Story}    ${Title}    ${As a}    ${Want to}    ${So that}    ${Functional Specifications}    ${Technical Specifications}    ${Acceptance Criteria}    ${Metadata Components}    ${Development Steps}
-    # Your tests here, this is just an example
-    # just use the values from excel using variable names
-    # ClickText     ${User Story}
-    # VerifyText    ${Title}
-    # VerifyText    ${As a}
-    # VerifyText    ${Want to}
-    # VerifyText    ${So that}
 
   
