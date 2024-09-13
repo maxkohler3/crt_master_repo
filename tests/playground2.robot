@@ -3,7 +3,7 @@ Resource          ../resources/common.robot
 Suite Setup       Setup Browser
 Suite Teardown    End suite
 Library           QVision
-# Library           DataDriver    reader_class=TestDataApi    name=#csv
+# Library           DataDriver    reader_class=TestDataApi    name=organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
 # Test Template     Create US
 
 *** Test Cases ***
@@ -109,19 +109,16 @@ Login Playground
     ClickText    Log In
 
 Create US
-    Authenticate            ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
-    ${LastName}             Last Name
-    ${Phone}                Phone Number
-    ${Company}              Company
-    ${FirstName}            First Name
-    ${Email}                Email
-    ${Salutation}           Set Variable          Mr.
-    ${Title}                Set Variable          Engineer
-    ${response}=            Create Record   copado__User_Story__c       copado__User_Story_Title__c=CRT via API      RecordTypeId=012am000000jAeZAAU    copado__Project__c=a15am000000pvwGAAQ
-    ...                     copado__Acceptance_Criteria__c=${LastName}    copado__Functional_Specifications__c=${Phone}     
-    ...                     copado__userStory_Role__c=${FirstName}        copado__userStory_need__c=${Email}                  
-    ...                     copado__userStory_reason__c=${Salutation}     copado__Technical_Specifications__c=${Company}
+    [Arguments]    ${User Story Number}    ${Title}    ${As a}    ${Want to}    ${So that}    ${Functional Specifications}    ${Technical Specifications}    ${Acceptance Criteria}    ${Object}    ${Field API Name}    ${Data Type}    ${Development Steps}
+    ${response}=            Create Record   copado__User_Story__c         copado__User_Story_Title__c=${Title}       
+    ...                     RecordTypeId=012am000000jAeZAAU               copado__Project__c=a15am000000pvwGAAQ
+    ...                     copado__Acceptance_Criteria__c=${Acceptance Criteria}   copado__Functional_Specifications__c=${Functional Specifications}   
+    ...                     copado__userStory_Role__c=${As a}             copado__userStory_need__c=${Want to}                 
+    ...                     copado__userStory_reason__c=${So that}        copado__Technical_Specifications__c=${Technical Specifications} 
     
     Login Playground
     GoTo            ${sf_url}/${response}
     Delete Record   copado__User_Story__c      ${response}
+
+
+ 
