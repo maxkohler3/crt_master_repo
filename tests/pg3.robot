@@ -123,6 +123,3 @@ Login Playground
     TypeText     Username        ${user}
     TypeText     Password        ${pass}
     ClickText    Log In
-
-    DropDown    798:0    Project Name
-    DropDown    1110:0    User Story
