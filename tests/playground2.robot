@@ -49,9 +49,9 @@ Create US via UI
     Login Playground
     LaunchApp    User Stories
     ClickText    New 
-    ClickText    User Story 
-    ClickText    Next
     UseModal
+    ClickText    User Story     Investigation 
+    ClickText    Next
     TypeText     Title                        ${Title}
     TypeText     As a...                      ${As a}
     TypeText     Want to...                   ${Want to} 
