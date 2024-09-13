@@ -17,7 +17,7 @@ Create 3 User Stories via API
         ${Email}                Email
         ${Salutation}           Set Variable          Mr.
         ${Title}                Set Variable          Engineer
-        ${response}=            Create Record   copado__User_Story__c       copado__User_Story_Title__c=CRT via API      RecordTypeId=0127Q0000005DKhQAM
+        ${response}=            Create Record   copado__User_Story__c       copado__User_Story_Title__c=CRT via API      RecordTypeId=012am000000jAeZAAU    copado__Project__c=a15am000000pvwGAAQ
         ...                     copado__Acceptance_Criteria__c=${LastName}    copado__Functional_Specifications__c=${Phone}     
         ...                     copado__userStory_Role__c=${FirstName}        copado__userStory_need__c=${Email}                  
         ...                     copado__userStory_reason__c=${Salutation}     copado__Technical_Specifications__c=${Company}
@@ -89,6 +89,8 @@ Create User Stories using Data Loader
 ${user}    mkohler@copado.com.one
 ${pass}    Copado1234%
 ${sf_url}    https://copadotrial134754419.my.salesforce.com/
+${consumer_key}    3MVG9bYGb9rFSjxRsBkkBHkPT95eY_PdmOQS.4E_iewov_A1.nLNP6oqJTIz9NMvuwR80lH9YgJ74BuxuQHGq
+${consumer_secret}    908B451920D457EFCC4885885DACAFC90A96C9287FE249CC4AEE1D4F2D631440
 
 *** Keywords ***
 
