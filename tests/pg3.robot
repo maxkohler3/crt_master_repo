@@ -27,15 +27,14 @@ Create User Stories using Data Loader
     QVision.DoubleClick       user_story.csv
     ClickText                 Next
 
-    ${document}=        Open Excel Document    ${excel_worksheet}   user_story
-    ${api_label}=      Read Excel Row         max_num=7  row_num=1   sheet_name=user_story
+    ${document}=       Open Excel Document    ${excel_worksheet}   user_story
+    ${api_label}=      Read Excel Row         max_num=7  row_num=1   sheet_name=user_story (1)
+    ${us_data}=        Read Excel Row         max_num=7  row_num=2   sheet_name=user_story (1)
     ${sf_object}=      Set Variable   Title  Project  Functional Specifications  Technical Specifications  As a...  Want to...  So that...              
 
-    # FOR   ${label}   IN   @{api_labels} 
-
-    FOR    ${x}   IN RANGE  0  6   
+    FOR          ${x}   IN RANGE  0  7   
         UseTable                  Map        
-        ClickCell                 r?${api_label}[${x}/c1   
+        ClickCell                 r?${api_label}[${x}]/c1   
         ClickText                 ${sf_object}[${x}]        
         ClickText                 Map            Cancel
     END
@@ -46,15 +45,16 @@ Create User Stories using Data Loader
     UseTable                  Job ID
     ${jobID}                  GetCellText  r1/c2
     GoTo                      ${sf_url}
-    LaunchApp                 Leads
-    VerifyText                Eleanor Camish
-    VerifyText                Monty Maguire 
-    VerifyText                Magnolia Blossom
-    ClickText                 Magnolia Blossom 
-    ClickText                 Details 
-    VerifyField               Company    Flowery  
-    #verify all fields imported correctly
+    LaunchApp                 User Stories
+    VerifyText                ${us_data}[0]
+    UseTable                  Title
+    ClickCell                 r?${us_data}[0]/c13
+    ClickText                 Delete
+    ClickText                 Delete   Cancel
 
+    # ClickCell                 r?${us_data}[0]/c?User Story Reference
+    # verify all fields imported correctly
+ 
 
 # Create User Stories in Copado 
 #     Login Playground
@@ -74,29 +74,10 @@ Create User Stories using Data Loader
 #     WriteText            Spec A, B, C                      #${func_specs}
 #     QVision.ClickText    Technicnal Specifications         below=10   
 #     WriteText            Spec D, E, F                      #${tech_specs}
-#     ClickText            Cancel    #Save
-# Create 3 User Stories via API          
-#     @{ids}                      Create List 
-#     Authenticate                ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
-#     FOR                         ${i}                        IN RANGE                    3
-#         ${LastName}             Last Name
-#         ${Phone}                Phone Number
-#         ${Company}              Company
-#         ${FirstName}            First Name
-#         ${Email}                Email
-#         ${Salutation}           Set Variable          Mr.
-#         ${Title}                Set Variable          Engineer
-#         ${response}=            Create Record   copado__User_Story__c        copado__User_Story_Title__c=CRT via API      
-#         ...                     copado__Acceptance_Criteria__c=${LastName}   copado__Functional_Specifications__c=${Phone}     
-#         ...                     copado__userStory_Role__c=${FirstName}       copado__userStory_need__c=${Email}                  
-#         ...                     copado__userStory_reason__c=${Salutation}    copado__Technical_Specifications__c=${Company}
-#         ...                     RecordTypeId=012am000000jAeZAAU              copado__Project__c=a15am000000pvwGAAQ
-#         Append To List          ${ids}                      ${response}
-#     END
+#     ClickText            Cancel    #
 
-#     FOR                 ${id}      IN       @{ids}
-#         Delete Record   copado__User_Story__c      ${id}
-#     END
+
+
 
 
 Create US
@@ -123,3 +104,27 @@ Login Playground
     TypeText     Username        ${user}
     TypeText     Password        ${pass}
     ClickText    Log In
+
+
+# Create 3 User Stories via API          
+#     @{ids}                      Create List 
+#     Authenticate                ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
+#     FOR                         ${i}                        IN RANGE                    3
+#         ${LastName}             Last Name
+#         ${Phone}                Phone Number
+#         ${Company}              Company
+#         ${FirstName}            First Name
+#         ${Email}                Email
+#         ${Salutation}           Set Variable          Mr.
+#         ${Title}                Set Variable          Engineer
+#         ${response}=            Create Record   copado__User_Story__c        copado__User_Story_Title__c=CRT via API      
+#         ...                     copado__Acceptance_Criteria__c=${LastName}   copado__Functional_Specifications__c=${Phone}     
+#         ...                     copado__userStory_Role__c=${FirstName}       copado__userStory_need__c=${Email}                  
+#         ...                     copado__userStory_reason__c=${Salutation}    copado__Technical_Specifications__c=${Company}
+#         ...                     RecordTypeId=012am000000jAeZAAU              copado__Project__c=a15am000000pvwGAAQ
+#         Append To List          ${ids}                      ${response}
+#     END
+
+#     FOR                 ${id}      IN       @{ids}
+#         Delete Record   copado__User_Story__c      ${id}
+#     END
