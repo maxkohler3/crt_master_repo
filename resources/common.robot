@@ -18,6 +18,7 @@ ${login_url}              https://slockard-dev-ed.lightning.force.com/
 ${home_url}               ${login_url}/lightning/page/home
 ${api}                    https://slockard-dev-ed.my.salesforce.com/ 
 ${file}                   ${CURDIR}/**/files/account.json 
+${excel_worksheet}       ${CURDIR}/../files/user_story.xlsx
 
 
 *** Keywords ***
