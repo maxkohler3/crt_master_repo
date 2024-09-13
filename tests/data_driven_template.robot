@@ -5,7 +5,7 @@ Suite Setup       Setup Browser
 Suite Teardown    Close All Browsers
 Test Template     Create Account
 
-*** Test Case ***
+*** Test Cases ***
 Test feature with ${account_name}
     [Tags]        data          testgen    nwise=2    numtests=2   
 
