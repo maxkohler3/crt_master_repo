@@ -17,7 +17,7 @@ Create 3 User Stories via API
         ${Email}                Email
         ${Salutation}           Set Variable          Mr.
         ${Title}                Set Variable          Engineer
-        ${response}=            Create Record   copado__User_Story__c       copado__User_Story_Title__c=CRT via API   
+        ${response}=            Create Record   copado__User_Story__c       copado__User_Story_Title__c=CRT via API      RecordTypeId=0127Q0000005DKhQAM
         ...                     copado__Acceptance_Criteria__c=${LastName}    copado__Functional_Specifications__c=${Phone}     
         ...                     copado__userStory_Role__c=${FirstName}        copado__userStory_need__c=${Email}                  
         ...                     copado__userStory_reason__c=${Salutation}     copado__Technical_Specifications__c=${Company}
@@ -25,7 +25,7 @@ Create 3 User Stories via API
     END
 
     FOR                 ${id}      IN       @{ids}
-        Delete Record   Lead       ${id}
+        Delete Record   copado__User_Story__c      ${id}
     END
     Login Playground
     
