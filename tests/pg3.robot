@@ -47,7 +47,7 @@ Create User Stories using Data Loader
     QVision.DoubleClick       user_story.csv
     ClickText                 Next
 
-    ${document}=        Open Excel Document    ${CURDIR}../files/user_story.csv    user stories
+    ${document}=        Open Excel Document    ${CURDIR}../files/user_story.xlsx    user stories
     ${api_label}=      Read Excel Row         max_num=7  row_num=1   sheet_name=user_story
     ${sf_object}=      Set Variable   Title  Project  Functional Specifications  Technical Specifications  As a...  Want to...  So that...              
 
