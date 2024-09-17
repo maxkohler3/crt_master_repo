@@ -2,4 +2,4 @@
 -s  salesforceDemo
 -s  CPQ.robot
 -s  blank_script
--s  RestAPI_examples.robot
+-s  RestAPI_examples
