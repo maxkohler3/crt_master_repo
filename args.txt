@@ -1,5 +1,5 @@
 --name Tests
-tests/salesforceDemo.robot
-tests/CPQ.robot
-tests/blank_script.robot 
-tests/RestAPI_examples.robot
+-s  salesforceDemo
+-s  CPQ.robot
+-s  blank_script
+-s  RestAPI_examples.robot
