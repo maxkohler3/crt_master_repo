@@ -1,3 +1,3 @@
--s  01__salesforceDemo
--s  02__CPQ
--s  03__RestAPI_examples
+#-s  01__salesforceDemo
+#-s  02__CPQ
+#-s  03__RestAPI_examples
