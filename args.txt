@@ -1,4 +1,4 @@
---name Tests
+# --name Tests
 -s  salesforceDemo
 -s  CPQ.robot
 -s  blank_script
