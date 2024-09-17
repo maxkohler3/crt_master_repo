@@ -146,7 +146,7 @@ Get Links
         Append To List      ${result}     ${link_text}
     END
 
-    [return]    ${result}
+    RETURN                    ${result}
 
 
 
@@ -160,7 +160,7 @@ Declare variables
 Get Record ID 
     ${url}=           GetUrl
     ${record_id}=     Evaluate    $url.split("/")[6]
-    [Return]          ${record_id}
+    RETURN          ${record_id}
 
 
 Pick Many
