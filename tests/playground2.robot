@@ -3,8 +3,8 @@ Resource          ../resources/common.robot
 Suite Setup       Setup Browser
 Suite Teardown    End suite
 Library           QVision
-# Library           DataDriver    reader_class=TestDataApi    name=Insurance_US.xlsx   #organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
-# Test Template     Create US via UI  #Create US via API
+Library           DataDriver    reader_class=TestDataApi    name=Insurance_US.xlsx   #organized_user_stories_with_separate_columns_output_from_ChatGPT_-_organized_user_stories_with_separate_columns_output_from_ChatGPT.csv
+Test Template     Create US via UI  #Create US via API
 
 *** Test Cases ***
 
@@ -62,7 +62,8 @@ Create US via UI
     WriteText            ${Functional_Specifications}  
     QVision.ClickText    Technicnal Specifications         below=10   
     WriteText            ${Technical_Specifications} 
-    ClickText            Save    
+    ClickText            Save     partial_match=false      delay=20
+    VerifyField          Title    ${Title}
 
 
   
