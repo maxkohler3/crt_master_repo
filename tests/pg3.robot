@@ -69,7 +69,7 @@ ${consumer_secret}    908B451920D457EFCC4885885DACAFC90A96C9287FE249CC4AEE1D4F2D
 Login Playground
     GoTo         ${sf_url}
     TypeText     Username        ${user}
-    TypeText     Password        ${pass}
+    TypeText     Password        Copado12#$
     ClickText    Log In
 
 
