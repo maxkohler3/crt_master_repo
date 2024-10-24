@@ -7,26 +7,7 @@ Suite Teardown                End suite
 *** Test Cases ***
 TC01 Test Case One 
     Home
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ClickIcon    ${BASE_IMAGE_PATH}
+    ClickIcon    guidance.png   tolerance=.8
 
 
 
