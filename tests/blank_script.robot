@@ -26,6 +26,7 @@ TC01 Test Case One
 
 
 
+    ClickIcon    ${BASE_IMAGE_PATH}
 
 
 
