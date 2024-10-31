@@ -8,8 +8,9 @@ Suite Teardown                End suite
 TC01 Test Case One 
     Home
     Launchapp    Salesforce Chatter
-    ClickIcon    guidance.png   tolerance=.8
-
+    Execute JavaScript    document.body.style.zoom = "120%"
+    ClickIcon    refresh.png    tolerance=.8
+    Execute JavaScript    document.body.style.zoom = "100%"
 
 
 # Email
