@@ -7,6 +7,7 @@ Library                   Collections
 Library                   RequestsLibrary
 Library                   FakerLibrary
 Library                   ExcelLibrary
+Library                  QVision
 Library                 ../libraries/gitOperations.py
 Library                 ../libraries/date.py
 
