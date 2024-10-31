@@ -7,6 +7,7 @@ Suite Teardown                End suite
 *** Test Cases ***
 TC01 Test Case One 
     Home
+    Launchapp    Salesforce Chatter
     ClickIcon    guidance.png   tolerance=.8
 
 
