@@ -7,6 +7,21 @@ Suite Teardown                End suite
 *** Test Cases ***
 Test Case 1
     Home
+    # slow down
+    # Cleanup steps
+     # Close Tabs 
+    # iFrames
+     # While loop > checkbox keyword w/table
+    # presskey vs hotkey vs \n
+    # Create records / Loop + APIs / exclude_millis concatenate
+    # Live test single step + headless
+    ClickText    New    tag=button 
+    TypeText    Search Contacts    tag=input
+    GetFieldValue   Owner   tag=a 
+
+    UseTable        Record
+    ${var}          VerifyCheckboxValue    r?accountName/c?checkboxColumnOne   on 
+
 
 
 
