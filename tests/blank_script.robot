@@ -1,26 +1,36 @@
 *** Settings ***
-Resource                      ../resources/common.robot
-Suite Setup                   Setup Browser
-Suite Teardown                End suite
+Library    Collections
 
+*** Variables ***
+@{expected_list}    item1    item2    item3    item4
 
 *** Test Cases ***
-Test Case 1
-    Home
-    # slow down
-    # Cleanup steps
-     # Close Tabs 
-    # iFrames
-     # While loop > checkbox keyword w/table
-    # presskey vs hotkey vs \n
-    # Create records / Loop + APIs / exclude_millis concatenate
-    # Live test single step + headless
-    ClickText    New    tag=button 
-    TypeText    Search Contacts    tag=input
-    GetFieldValue   Owner   tag=a 
+Verify List Items In Order
+    ${actual_list}=    Create List    item1    item2    item3    item4
+    Should Lists Be Equal    ${actual_list}    ${expected_list}
+    
+# Resource                      ../resources/common.robot
+# Suite Setup                   Setup Browser
+# Suite Teardown                End suite
 
-    UseTable        Record
-    ${var}          VerifyCheckboxValue    r?accountName/c?checkboxColumnOne   on 
+
+# *** Test Cases ***
+# Test Case 1
+#     Home
+#     # slow down
+#     # Cleanup steps
+#      # Close Tabs 
+#     # iFrames
+#      # While loop > checkbox keyword w/table
+#     # presskey vs hotkey vs \n
+#     # Create records / Loop + APIs / exclude_millis concatenate
+#     # Live test single step + headless
+#     ClickText    New    tag=button 
+#     TypeText    Search Contacts    tag=input
+#     GetFieldValue   Owner   tag=a 
+
+#     UseTable        Record
+#     ${var}          VerifyCheckboxValue    r?accountName/c?checkboxColumnOne   on 
 
 
 
