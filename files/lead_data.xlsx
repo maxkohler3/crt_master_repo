@@ -1,0 +1,4 @@
+first_name,last_name,email,phone,company,title,mobile,fax,website,annual_revenue,employees,street,city,state,zip,country,current_generators,sic_code,num_locations,description
+John,Doe,john.doe@email.com,555-0101,Acme Inc,CEO,555-0102,555-0103,www.acme.com,1000000,50,123 Main St,Springfield,IL,62701,USA,Generator A,1234,5,Test description 1
+Jane,Smith,jane.smith@email.com,555-0201,Tech Corp,CTO,555-0202,555-0203,www.techcorp.com,2000000,100,456 Oak Ave,Chicago,IL,60601,USA,Generator B,5678,3,Test description 2
+Mike,Johnson,mike.j@email.com,555-0301,Global Ltd,Director,555-0302,555-0303,www.global.com,3000000,150,789 Pine Rd,Boston,MA,02108,USA,Generator C,9012,7,Test description 3
