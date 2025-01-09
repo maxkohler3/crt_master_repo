@@ -23,9 +23,25 @@ Create Verify and Delete Lead End to End
     Delete Lead                 ${first_name}               ${last_name}
 
 Unique Test Data
-    ${Last_Name}=               Last Name
-    Set Suite Variable          ${last_name}                ${Last Name}
-    ${Company}=                 Company
-    Set Suite Variable          ${company}                  ${Company}
-    ${First_Name}=              First Name
-    Set Suite Variable          ${first_name}               ${First_Name}   
+    ${LastName}             Last Name
+    Set Suite Variable      ${LastName}
+    ${Phone}                Phone Number
+    Set Suite Variable      ${Phone}
+    ${Company}              Company
+    Set Suite Variable      ${Company}
+    ${FirstName}            First Name
+    Set Suite Variable      ${FirstName}
+    ${Email}                Email
+    Set Suite Variable      ${Email} 
+    ${Salutation}           Set Variable                Mr.
+    Set Suite Variable      ${Salutation} 
+    ${Title}                Set Variable                Engineer
+    Set Suite Variable      ${Title} 
+
+
+Create and Delete Lead
+    Authenticate                ${client_id}                ${client_secret}            ${username}                 ${password}
+    ${response}=            Create Record               Lead                        LastName=${LastName}        Phone=${Phone}              Company=${Company}
+    ...                     FirstName=${FirstName}      Email=${Email}              Salutation=${Salutation}    Title=${Title}
+
+    Delete Record   Lead       ${response}
