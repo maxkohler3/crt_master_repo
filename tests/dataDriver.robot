@@ -10,8 +10,7 @@ Test Template                   Create Verify and Delete Lead End to End
 # In this exercise we use the same salesforce scenario built with exercise 6 and 12.
 
 *** Test Cases ***                                                                            lead_status         last_name                      company        first_name     salutation
-Exercise 14 - Data Driven Testing - Create Lead using Suite Test Template Unique Data         Working              ${last_name}                  ${company}     ${first_name}  Ms.
-Exercise 14 - Data Driven Testing - Create Lead using Suite Test Template Fixed Data          Working              Smith                         Growmore       Tina           Ms.
+Data Driver Test Template Case      Working    ${last_name}     ${company}    ${first_name}  Ms.
 
 
 *** Keywords ***
@@ -38,8 +37,7 @@ Unique Test Data
 
 
 Create and Delete Lead
-    Authenticate                ${client_id}                ${client_secret}            ${username}                 ${password}
+    Authenticate            ${client_id}                ${client_secret}            ${username}                 ${password}
     ${response}=            Create Record               Lead                        LastName=${LastName}        Phone=${Phone}              Company=${Company}
     ...                     FirstName=${FirstName}      Email=${Email}              Salutation=${Salutation}    Title=${Title}
-
-    Delete Record   Lead       ${response}
+    Delete Record   Lead    ${response}
