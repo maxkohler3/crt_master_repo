@@ -7,7 +7,7 @@
 Resource                        ../resources/common.robot
 Library                         FakerLibrary
 Suite Setup                     Setup Browser
-Test Setup                      Run Keywords                Home                        Unique Test Data
+Test Setup                      Unique Test Data
 Suite Teardown                  Close All Browsers
 Test Template                   Create Verify and Delete Lead End to End
 
