@@ -17,7 +17,6 @@ Data Driver Test Template Case      ${LastName}   ${Phone}   ${Company}   ${Firs
 
 
 *** Keywords ***
-
 Create Verify and Delete Lead End to End
     [Arguments]             ${LastName}   ${Phone}   ${Company}   ${FirstName}   ${Email}   ${Salutation}   ${Title} 
     Create and Delete Lead  
