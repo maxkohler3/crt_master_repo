@@ -7,8 +7,8 @@ Suite Teardown                  Close All Browsers
 Test Template                   Create Verify and Delete Lead End to End
 
 
-*** Test Cases ***                                                                            lead_status         last_name                      company        first_name     salutation
-Data Driver Test Template Case      Working    ${last_name}     ${company}    ${first_name}  Ms.
+*** Test Cases ***                                                                            
+Data Driver Test Template Case      ${LastName}   ${Phone}   ${Company}   ${FirstName}   ${Email}   ${Salutation}   ${Title} 
 
 
 *** Keywords ***
