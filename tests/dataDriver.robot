@@ -22,19 +22,6 @@ Create Verify and Delete Lead End to End
     Verify Lead                 ${lead_status}              ${last_name}                ${company}             ${salutation}               ${first_name}             ${phone}                    ${title}                    ${email}                    ${website}                  ${lead_source}
     Delete Lead                 ${first_name}               ${last_name}
 
-Create Verify and Delete Lead End to End 2
-    [Arguments]                 ${lead_status}              ${last_name}                ${company}             ${first_name}               ${salutation}             ${phone}=${EMPTY}           ${title}=${EMPTY}           ${email}=${EMPTY}           ${website}=${EMPTY}         ${lead_source}=${EMPTY}
-    Create Lead                 ${lead_status}              ${last_name}                ${company}             ${salutation}               ${first_name}             ${phone}                    ${title}                    ${email}                    ${website}                  ${lead_source}
-    Verify Lead                 ${lead_status}              ${last_name}                ${company}             ${salutation}               ${first_name}             ${phone}                    ${title}                    ${email}                    ${website}                  ${lead_source}
-    Delete Lead                 ${first_name}               ${last_name}
-
-Create Verify and Delete Lead End to End 3
-    [Arguments]                 ${lead_status}              ${last_name}                ${company}             ${first_name}               ${salutation}             ${phone}=${EMPTY}           ${title}=${EMPTY}           ${email}=${EMPTY}           ${website}=${EMPTY}         ${lead_source}=${EMPTY}
-    Create Lead                 ${lead_status}              ${last_name}                ${company}             ${salutation}               ${first_name}             ${phone}                    ${title}                    ${email}                    ${website}                  ${lead_source}
-    Verify Lead                 ${lead_status}              ${last_name}                ${company}             ${salutation}               ${first_name}             ${phone}                    ${title}                    ${email}                    ${website}                  ${lead_source}
-    Delete Lead                 ${first_name}               ${last_name}
-
-
 Unique Test Data
     ${Last_Name}=               Last Name
     Set Suite Variable          ${last_name}                ${Last Name}
