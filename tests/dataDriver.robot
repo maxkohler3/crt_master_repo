@@ -1,13 +1,11 @@
 *** Settings ***
 Resource                        ../resources/common.robot
-Resource                        ../resources/leads.robot
 Library                         FakerLibrary
 Suite Setup                     Setup Browser
 Test Setup                      Run Keywords                Home                        Unique Test Data
 Suite Teardown                  Close All Browsers
 Test Template                   Create Verify and Delete Lead End to End
 
-# In this exercise we use the same salesforce scenario built with exercise 6 and 12.
 
 *** Test Cases ***                                                                            lead_status         last_name                      company        first_name     salutation
 Data Driver Test Template Case      Working    ${last_name}     ${company}    ${first_name}  Ms.
