@@ -4,7 +4,7 @@ Resource                        ../resources/leads.robot
 Library                         FakerLibrary
 Suite Setup                     Setup Browser
 Test Setup                      Run Keywords                Home                        Unique Test Data
-Suite Teardown                  Close All Browser Sessions
+Suite Teardown                  Close All Browsers
 Test Template                   Create Verify and Delete Lead End to End
 
 # In this exercise we use the same salesforce scenario built with exercise 6 and 12.
