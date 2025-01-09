@@ -1,3 +1,8 @@
+# Use case: Store Excel file in CRT file system (integrated with github)
+# Data drive a single script with all data rows from excel file 
+# I believe we can use ExcelLibrary lib, DataDriver lib, and Test Templates to accomplish this
+# The below script is working and can be refactored to leverage data from Excel as opposed to data generated from the Faker lib
+
 *** Settings ***
 Resource                        ../resources/common.robot
 Library                         FakerLibrary
@@ -35,7 +40,8 @@ Unique Test Data
 
 
 Create and Delete Lead
-    Authenticate            ${client_id}                ${client_secret}            ${username}                 ${password}
-    ${response}=            Create Record               Lead                        LastName=${LastName}        Phone=${Phone}              Company=${Company}
-    ...                     FirstName=${FirstName}      Email=${Email}              Salutation=${Salutation}    Title=${Title}
+    Authenticate    ${client_id}    ${client_secret}     ${username}     ${password}
+    ${response}=    Create Record   Lead     LastName=${LastName}      Phone=${Phone}    Company=${Company}              
+    ...             FirstName=${FirstName}   Email=${Email}   Salutation=${Salutation}  Title=${Title}
     Delete Record   Lead    ${response}
+
