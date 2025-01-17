@@ -12,13 +12,6 @@ User Story: ${Title}
     [Documentation]    Creating User Stories from csv file using data driver lib
     [Tags]        data 
     
-*** Variables ***
-
-${user}    mkohler+nextgen4@copado.com
-${pass}    Copado123$
-${sf_url}    https://nextgen4.my.salesforce.com
-${consumer_key}    
-${consumer_secret}    
 
 *** Keywords ***
 
@@ -51,7 +44,6 @@ Create US via UI
     VerifyField          Title    ${Title}
 
 
-
 Home
     [Documentation]       Navigate to homepage, login if needed
     GoTo                  ${home_url}
@@ -62,7 +54,17 @@ Home
     VerifyTitle           Home | Salesforce
     Sleep                 2
 
-  # Create US via API
+
+*** Variables ***
+
+${user}    mkohler+nextgen4@copado.com
+${pass}    Copado123$
+${sf_url}    https://nextgen4.my.salesforce.com
+${consumer_key}    
+${consumer_secret}    
+
+
+#     Create US via API
 #     # [Arguments]    ${User Story Number}    ${Title}    ${As_a}    ${Want_to}    ${So_that}    
 #     # ...            ${Functional_Specifications}    ${Technical_Specifications}    ${Acceptance_Criteria}    ${Object}    ${Field API Name}    ${Data Type}    ${Development Steps}
 #     Authenticate   ${consumer_key}  ${consumer_secret}  ${user}   ${pass}   
