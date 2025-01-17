@@ -16,16 +16,16 @@ Create US via UI
     ClickText    User Story     Investigation 
     ClickText    Next
     TypeText     Title                        ${Title}
-    TypeText     As a...                      ${As_a}
-    TypeText     Want to...                   ${Want_to} 
-    TypeText     So that...                   ${So_that} 
-    TypeText     Acceptance Criteria          ${Acceptance_Criteria}
+    TypeText     As a...                      ${As a} 
+    TypeText     Want to...                   ${Want to} 
+    TypeText     So that...                   ${So that} 
+    TypeText     Acceptance Criteria          ${Acceptance Criteria}
 
     ScrollTo     Functional Specifications
     QVision.ClickText    Functional Specifications         below=10
-    WriteText            ${Functional_Specifications}  
+    WriteText            ${Functional Specifications}  
     QVision.ClickText    Technicnal Specifications         below=10   
-    WriteText            ${Technical_Specifications} 
+    WriteText            ${Technical Specifications} 
     ClickText            Save     partial_match=false      delay=20
     VerifyField          Title    ${Title}
 
@@ -87,5 +87,7 @@ Login Playground
 #     ClickText            Save     partial_match=false      delay=20
 #     VerifyField          Title    ${Title}
 
+
+  
 
   
