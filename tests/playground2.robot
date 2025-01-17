@@ -30,7 +30,7 @@ Login Playground
 
 
 Create US via UI
-    Login Playground
+    Home
     LaunchApp    User Stories
     ClickText    New 
     UseModal
@@ -51,7 +51,16 @@ Create US via UI
     VerifyField          Title    ${Title}
 
 
-  
+
+Home
+    [Documentation]       Navigate to homepage, login if needed
+    GoTo                  ${home_url}
+    Sleep                 2
+    ${login_status} =     IsText                      To access this page, you have to log in to Salesforce.    2
+    Run Keyword If        ${login_status}             Login Playground
+    ClickText             Home
+    VerifyTitle           Home | Salesforce
+    Sleep                 2
 
   # Create US via API
 #     # [Arguments]    ${User Story Number}    ${Title}    ${As_a}    ${Want_to}    ${So_that}    
