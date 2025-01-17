@@ -40,7 +40,7 @@ Create US via UI
     WriteText            ${Functional_Specifications}  
     QVision.ClickText    Technicnal Specifications         below=10   
     WriteText            ${Technical_Specifications} 
-    ClickText            Save     partial_match=false      delay=20
+    ClickText            Save     partial_match=false      delay=5
     VerifyField          Title    ${Title}
 
 
