@@ -23,7 +23,7 @@ Login Playground
 
 
 Create US via UI
-    Home
+    Home Playground
     LaunchApp    User Stories
     ClickText    New 
     UseModal
@@ -44,7 +44,7 @@ Create US via UI
     VerifyField          Title    ${Title}
 
 
-Home
+Home Playground
     [Documentation]       Navigate to homepage, login if needed
     GoTo                  ${home_url}
     Sleep                 2
