@@ -57,9 +57,10 @@ Home
 
 *** Variables ***
 
-${user}    mkohler+nextgen4@copado.com
-${pass}    Copado123$
-${sf_url}    https://nextgen4.my.salesforce.com
+${user}            mkohler+nextgen4@copado.com
+${pass}            Copado123$
+${sf_url}          https://nextgen4.my.salesforce.com
+${home_url}        ${sf_url}/lightning/page/home
 ${consumer_key}    
 ${consumer_secret}    
 
