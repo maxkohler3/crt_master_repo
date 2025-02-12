@@ -2,7 +2,7 @@
 Resource                      ../resources/common.robot
 Library                       QWeb
 Library                       QForce
-Library                       DataDriver    file=../data/leads.csv    encoding=utf-8
+Library                       DataDriver    file=../files/leads.csv    encoding=utf-8
 Suite Setup                   Setup Browser
 Suite Teardown               End suite
 Test Template                Create Lead Using CSV Data
