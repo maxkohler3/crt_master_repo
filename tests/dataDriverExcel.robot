@@ -1,6 +1,6 @@
 *** Settings ***
 Resource                        ../resources/common.robot
-Library                         DataDriver    file=../data/leads.xlsx    sheet_name=Leads
+Library                         DataDriver    file=../files/lead_data.xlsx    sheet_name=Leads
 Library                         ExcelLibrary
 Library                         Collections
 Suite Setup                     Run Keywords    Setup Browser    Setup Excel
