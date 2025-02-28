@@ -6,7 +6,7 @@ Suite Setup             Open Browser    about:blank    chrome
 Suite Teardown          Close All Browsers
 
 *** Test Cases ***
-Test Lists
+Collections Test
     @{first_name}=        Set Variable                Xarl                        Monty                       Magnolia
     @{last_name}=         Set Variable                Chin                        Maguire                     Blossom
     @{gender}=            Set Variable                Female                      Male                        Female
