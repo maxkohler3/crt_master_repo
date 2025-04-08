@@ -45,16 +45,32 @@ Create Lead via UI then delete via API
 
 
 QForce API Examples (Salesforce)
-    Authenticate                ${client_id}                ${client_secret}            ${username}                 ${password}
-    ${contact}=                 Create Record               Contact                     FirstName=Jane              LastName=Doe
-    ${account}=                 Create Record               Account                     Name=KindCorp               Type=Prospect               Industry=Consulting
+    Authenticate     ${client_id}                ${client_secret}            ${username}                 ${password}
+    ${contact}=      Create Record               Contact                     FirstName=Jane              LastName=Doe
+    ${account}=      Create Record               Account                     Name=KindCorp               Type=Prospect               Industry=Consulting
 
-    ${account1}=                Get Record                  Account                     ${account}
+    ${account1}=     Get Record                  Account                     ${account}
 
-    Update Record               Contact                     ${contact}                  FirstName=Jamie             Email=jamie.doe@fake.com
-    Verify Record               Contact                     ${contact}                  FirstName=Jamie             LastName=Doe                Email=jamie.doe@fake.com
+    Update Record    Contact                     ${contact}                  FirstName=Jamie             Email=jamie.doe@fake.com
+    Verify Record    Contact                     ${contact}                  FirstName=Jamie             LastName=Doe                Email=jamie.doe@fake.com
 
-    ${results}=                 QueryRecords                SELECT id,name from Contact WHERE name LIKE 'Jane%'
+    ${results}=      QueryRecords                SELECT id,name from Contact WHERE name LIKE 'Jane%'
+    ${record_id}=    SetVariable                 ${results}[records][0][Id]
+
+    ${account}=      Get Record     Contact                ${record_id}
+    ${creator}=      SetVariable    ${account}[CreatedById]
+    
+    
+    Authenticate              ${client_id}                ${client_secret}            ${username}                 ${password}
+    ${resp}=                  QueryRecords                Select Id,name,PersonMailingState from account where CreatedBy.Alias = 'sinte' and EnrolledinProgram__c='No Active Enrollment' and AccountStatus__c= 'Active' and Name like '% Doe %' and PersonMailingState in ('NC','KY','AL','AK','AL','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY')
+    ${record_id}=    SetVariable    ${resp}[records][0][Id]
+
+    
+
+
+    ${resp}=    QueryRecords    query=SELECT Id, SelloutContributionMargin__c, ProjectedContributionMargin__c FROM Event__c WHERE Id='a1QDF00000AIY0w2AH' 
+    ${scm}=    SetVariable    ${resp}[records][0][SelloutContributionMargin__c]
+    ${pcm}=    SetVariable    ${resp}[records][0][ProjectedContributionMargin__c]
 
     Delete Record               Contact                     ${contact}
     Delete Record               Account                     ${account}
