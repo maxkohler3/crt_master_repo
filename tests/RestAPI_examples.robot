@@ -45,20 +45,20 @@ Create Lead via UI then delete via API
 
 
 QForce API Examples (Salesforce)
-    Authenticate     ${client_id}                ${client_secret}            ${username}                 ${password}
-    ${contact}=      Create Record               Contact                     FirstName=Jane              LastName=Doe
-    ${account}=      Create Record               Account                     Name=KindCorp               Type=Prospect               Industry=Consulting
+    Authenticate     ${client_id}       ${client_secret}            ${username}                 ${password}
+    ${contact}=      Create Record      Contact                     FirstName=Jane              LastName=Doe
+    ${account}=      Create Record      Account                     Name=KindCorp               Type=Prospect               Industry=Consulting
 
-    ${account1}=     Get Record                  Account                     ${account}
+    ${account1}=     Get Record         Account                     ${account}
 
-    Update Record    Contact                     ${contact}                  FirstName=Jamie             Email=jamie.doe@fake.com
-    Verify Record    Contact                     ${contact}                  FirstName=Jamie             LastName=Doe                Email=jamie.doe@fake.com
+    Update Record    Contact            ${contact}                  FirstName=Jamie             Email=jamie.doe@fake.com
+    Verify Record    Contact            ${contact}                  FirstName=Jamie             LastName=Doe                Email=jamie.doe@fake.com
 
-    ${results}=      QueryRecords                SELECT id,name from Contact WHERE name LIKE 'Jane%'
-    ${record_id}=    SetVariable                 ${results}[records][0][Id]
+    ${results}=      QueryRecords       SELECT id,name from Contact WHERE name LIKE 'Jane%'
+    ${record_id}=    SetVariable        ${results}[records][0][Id]
 
-    ${account}=      Get Record     Contact                ${record_id}
-    ${creator}=      SetVariable    ${account}[CreatedById]
+    ${account}=      Get Record         Contact                ${record_id}
+    ${creator}=      SetVariable        ${account}[CreatedById]
     
     
     Authenticate              ${client_id}                ${client_secret}            ${username}                 ${password}
