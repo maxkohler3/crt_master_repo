@@ -61,9 +61,9 @@ QForce API Examples (Salesforce)
     ${creator}=      SetVariable        ${account}[CreatedById]
     
     
-    Authenticate              ${client_id}                ${client_secret}            ${username}                 ${password}
-    ${resp}=                  QueryRecords                Select Id,name,PersonMailingState from account where CreatedBy.Alias = 'sinte' and EnrolledinProgram__c='No Active Enrollment' and AccountStatus__c= 'Active' and Name like '% Doe %' and PersonMailingState in ('NC','KY','AL','AK','AL','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY')
-    ${record_id}=    SetVariable    ${resp}[records][0][Id]
+    Authenticate     ${client_id}       ${client_secret}            ${username}                 ${password}
+    ${resp}=         QueryRecords       Select Id,name,PersonMailingState from account where CreatedBy.Alias = 'sinte' and EnrolledinProgram__c='No Active Enrollment' and AccountStatus__c= 'Active' and Name like '% Doe %' and PersonMailingState in ('NC','KY','AL','AK','AL','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY')
+    ${record_id}=    SetVariable        ${resp}[records][0][Id]
 
     
 
